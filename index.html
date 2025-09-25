@@ -13,11 +13,21 @@
 
   <title>Index</title>
   <style>
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
+    @media (max-width: 1200px) {
+
+      .animation-container,
+      .parallaxComp-section,
+      .fleetguard-wrapper,
+      .nebula-card-archipelago,
+      .stickyComp-section,
+      .cta2,
+      .logo-slider,
+      .title-container {
+        overflow-x: hidden;
+        max-width: 100%;
+      }
     }
+
 
     * {
       box-sizing: border-box;
@@ -27,13 +37,13 @@
       max-height: 800px;
     }
 
-    @media (min-width: 1381px) {
+    @media (min-width: 1201px) {
       .animation-container {
         display: none;
       }
     }
 
-    @media (max-width: 1380px) {
+    @media (max-width: 1200px) {
       .animation-container {
         text-align: center;
         padding: 40px;
