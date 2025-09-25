@@ -22,18 +22,88 @@
 
         }
 
-        /* ---------- Navbar ---------- */
-        .navbar {
-            background-color: #212b4d;
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 2rem;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: 100px;
+        @media (min-width: 1201px) {
+
+            /* ---------- Navbar ---------- */
+            .navbar {
+                background-color: #212b4d;
+                display: flex;
+                align-items: center;
+                padding: 0.75rem 2rem;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+                height: 100px;
+                width: 100%;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            /* Transition effect for hiding/revealing navbar */
+            .navbar {
+                transition: transform 0.4s ease-in-out;
+                /* smooth slide effect */
+            }
+
+            .navbar.hide {
+                transform: translateY(-100%);
+                /* slide up (hide) */
+            }
+
+            .navbar.show {
+                transform: translateY(0);
+                /* slide down (show) */
+            }
+
         }
+
+        @media (max-width: 1200px) {
+            .navbar {
+                background-color: #212b4d;
+                display: flex;
+                align-items: center;
+                padding: 0.75rem 2rem;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                position: fixed;
+                /* FIXED instead of sticky */
+                top: 0;
+                z-index: 1000;
+                height: 100px;
+                width: 100%;
+            }
+
+            /* ensure page content starts below navbar */
+            body {
+                padding-top: 100px;
+            }
+
+            /* make hamburger dropdown scrollable */
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                background: #1b1e27;
+                width: 100%;
+                max-height: calc(100vh - 180px);
+                /* full height minus navbar */
+                overflow-y: auto;
+                /* scroll inside if needed */
+                padding: 2rem 1rem 1.5rem;
+                position: fixed;
+                /* also fixed, so it attaches under navbar */
+                top: 100px;
+                left: 0;
+                z-index: 999;
+                box-shadow: 0 6px 24px rgba(11, 13, 18, 0.45);
+            }
+
+            .navbar-menu.show {
+                display: flex;
+                animation: slideDown 0.28s ease forwards;
+            }
+        }
+
+
+
 
         /* ---------- Desktop Menu (default) ---------- */
         .navbar-menu {
@@ -62,7 +132,7 @@
         }
 
         /* .navbar-menu a:hover {
-            color: #38bdf8;
+            color: #cf7016;
         } */
 
         /* Brand (center) */
@@ -126,7 +196,7 @@
             position: absolute;
             top: 120%;
             left: 0;
-            background: #2E3344;
+            background: #212b4d;
             min-width: 200px;
             padding: 2.4rem 0 1rem 0;
             opacity: 0;
@@ -187,7 +257,7 @@
             position: absolute;
             top: 0;
             left: 100%;
-            background: #2E3344;
+            background: #212b4d;
             min-width: 200px;
             padding: 1rem 0;
             opacity: 0;
@@ -214,25 +284,38 @@
             z-index: 1100;
         }
 
+        /* hamburger container already in your code:
+   .hamburger { width:28px; height:20px; display:flex; justify-content:space-between; ... }
+*/
+
         .hamburger span {
             display: block;
             height: 3px;
             width: 100%;
             background: white;
             border-radius: 5px;
-            transition: all 0.28s ease;
+
+            /* Smooth transitions for transform + opacity */
+            transition: transform 0.34s cubic-bezier(.2, .9, .2, 1), opacity 0.22s ease;
+            transform-origin: center;
+            /* <---- important for scaleX to collapse from center */
         }
 
+        /* active state → top line moves down & rotates */
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: translateY(10px) rotate(45deg);
         }
 
+        /* active state → middle line smoothly collapses + fades */
         .hamburger.active span:nth-child(2) {
+            transform: scaleX(0);
+            /* shrink horizontally from center */
             opacity: 0;
         }
 
+        /* active state → bottom line moves up & rotates */
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         /* Hide arrows on small devices */
@@ -475,7 +558,7 @@
 
             /* Highlight opened section */
             .navbar-menu .menu-item>a.active-link {
-                color: #38bdf8;
+                color: #cf7016;
                 /* same blue as hover */
                 font-weight: 600;
             }
@@ -569,7 +652,7 @@
             .dropdown a i {
                 margin-right: 10px;
                 font-size: 1rem;
-                color: #38bdf8;
+                color: #cf7016;
                 /* icon color */
             }
         }
@@ -578,6 +661,22 @@
             .dropdown a i {
                 display: none;
             }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        .navbar-menu.hide {
+            animation: slideUp 0.28s ease forwards;
         }
     </style>
 </head>
@@ -645,27 +744,49 @@
         const hamburger = document.getElementById('hamburger');
         const navbarMenu = document.getElementById('navbarMenu');
 
-        hamburger.addEventListener('click', () => {
+        // Toggle hamburger
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent bubbling to document
             hamburger.classList.toggle('active');
-            navbarMenu.classList.toggle('show');
+
+            if (navbarMenu.classList.contains('show')) {
+                navbarMenu.classList.remove('show');
+                navbarMenu.classList.add('hide'); // slide up
+            } else {
+                navbarMenu.classList.remove('hide');
+                navbarMenu.classList.add('show'); // slide down
+            }
         });
 
-        // Submenu toggle
-        // Submenu toggle (works for PRODUCTS and OTHER FILTERS)
+        // Submenu toggle (Products / Other Filters, etc.)
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', (e) => {
+                e.stopPropagation(); // don’t close the menu when toggling submenu
                 const parentLi = item.closest('li');
                 const icon = item.querySelector('.plus-icon');
                 const link = item.querySelector('a');
 
                 parentLi.classList.toggle('open');
-                icon.classList.toggle('rotate');
-                link.classList.toggle('active-link');
+                if (icon) icon.classList.toggle('rotate');
+                if (link) link.classList.toggle('active-link');
             });
         });
 
+        // Prevent clicks inside the menu from closing it
+        navbarMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
 
+        // Close when clicking outside
+        document.addEventListener('click', () => {
+            if (navbarMenu.classList.contains('show')) {
+                hamburger.classList.remove('active');
+                navbarMenu.classList.remove('show');
+                navbarMenu.classList.add('hide'); // smooth slide up
+            }
+        });
     </script>
+
 
     <script>
         const currentPage = window.location.pathname.split("/").pop();
@@ -682,6 +803,25 @@
             }
         });
     </script>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > lastScrollY + 50) {
+                // Scrolling down more than 50px → hide navbar
+                navbar.classList.remove("show");
+                navbar.classList.add("hide");
+            } else if (window.scrollY < lastScrollY - 10) {
+                // Scrolling up a bit → show navbar
+                navbar.classList.remove("hide");
+                navbar.classList.add("show");
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+
 
 
 
