@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <title>Contact Us - MicroGuard Filters Corporation</title>
+    <style>
+        :root {
+            --primary-color: #001a66;
+            --secondary-color: #ff7f27;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #002080 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-title .highlight {
+            color: var(--secondary-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info Cards */
+        .contact-info-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .form-content h3 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(255, 127, 39, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--secondary-color), #e55a0f);
+            color: var(--white);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #e55a0f, var(--secondary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 127, 39, 0.4);
+        }
+
+        /* Business Hours */
+        .business-hours {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .business-hours h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .time {
+            color: var(--text-light);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 100px 0;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .map-section .section-title {
+            color: var(--white);
+        }
+
+        .map-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .map-container {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .map-placeholder {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--secondary-color);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            background: #f8f9fa;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            padding: 25px 30px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #002080 100%);
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #e55a0f;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 127, 39, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 15px 35px;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #e55a0f;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-card,
+            .contact-form {
+                padding: 30px 25px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="hero-content fade-in">
+                <div class="hero-badge">Get In Touch With Us</div>
+                <h1 class="hero-title">Contact <span class="highlight">MicroGuard</span><br>Filters Corporation</h1>
+                <p class="hero-subtitle">Ready to discuss your filtration needs? Our expert team is here to help you
+                    find the perfect solution for your automotive, industrial, marine, or heavy equipment applications.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Info Cards -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Multiple ways to reach us for all your filtration solution needs. We're
+                        here to help you every step of the way.</p>
+                </div>
+
+                <div class="contact-cards">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>Send us your inquiries and we'll get back to you within 24 hours.</p>
+                        <a href="mailto:info@microguardfilters.com">info@microguardfilters.com</a>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>Speak directly with our filtration experts for immediate assistance.</p>
+                        <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>Come see our manufacturing facility and discuss your requirements in person.</p>
+                        <p>Industrial District, City, Country</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-content slide-in-left">
+                        <h3>Send Us a Message</h3>
+                        <p>Have a specific filtration requirement or need a custom solution? Fill out the form and our
+                            technical team will provide you with detailed information and pricing.</p>
+                        <p>Whether you're looking for automotive filters, industrial solutions, marine applications, or
+                            heavy equipment filters, we have the expertise to meet your needs.</p>
+
+                        <div class="business-hours">
+                            <h4>Business Hours</h4>
+                            <ul class="hours-list">
+                                <li>
+                                    <span class="day">Monday - Friday</span>
+                                    <span class="time">9:00 AM - 6:00 PM</span>
+                                </li>
+                                <li>
+                                    <span class="day">Saturday</span>
+                                    <span class="time">9:00 AM - 2:00 PM</span>
+                                </li>
+                                <li>
+                                    <span class="day">Sunday</span>
+                                    <span class="time">Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-form slide-in-right">
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                            We'll get back to you soon.
+                        </div>
+
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="industry">Industry/Application *</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="automobile">Automobile</option>
+                                    <option value="marine">Marine</option>
+                                    <option value="industrial">Industrial</option>
+                                    <option value="heavy-equipment">Heavy Earth Movers</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="filterType">Filter Type of Interest</label>
+                                <select id="filterType" name="filterType">
+                                    <option value="">Select Filter Type</option>
+                                    <option value="air-filters">Air Filters</option>
+                                    <option value="fuel-filters">Fuel Filters</option>
+                                    <option value="fuel-water-separator">Fuel Water Separator</option>
+                                    <option value="oil-filters">Oil Filters</option>
+                                    <option value="steering-filters">Steering Filters</option>
+                                    <option value="urea-filters">Urea Filters</option>
+                                    <option value="hydraulic-filters">Hydraulic Filters</option>
+                                    <option value="multiple">Multiple Types</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message"
+                                    placeholder="Please describe your filtration requirements, quantity needed, or any specific questions you have..."
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Find Our Location</h2>
+                    <p class="section-subtitle">Visit our state-of-the-art manufacturing facility to see our filtration
+                        solutions in action.</p>
+                </div>
+
+                <div class="map-container fade-in">
+                    <div class="map-placeholder">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.4006144847103!2d72.8155379758357!3d18.957906855668107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfb873858955%3A0xee07039e396e2e74!2sMicroguard%20Filters%20Corporation%20%7C%20AutoMobile%20Filters!5e0!3m2!1sen!2sin!4v1758820743450!5m2!1sen!2sin"
+                            width="1160" height="400" style="border:20;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p style="font-size: 1rem; margin-top: 10px;">Industrial District, City, Country</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common questions about our filtration solutions and
+                        services.</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <span>What types of filters do you manufacture?</span>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We manufacture a comprehensive range of filters including Air Filters, Fuel Filters,
+                                Fuel Water Separators, Oil Filters, Steering Filters, Urea Filters, and Hydraulic
+                                Filters for automotive, marine, industrial, and heavy equipment applications.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <span>Do you provide custom filtration solutions?</span>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, we specialize in custom filtration solutions. Our engineering team can design and
+                                manufacture filters to meet your specific requirements, including unique dimensions,
+                                flow rates, and filtration specifications.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <span>What is your typical lead time for orders?</span>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Lead times vary depending on the product type and quantity. Standard filters typically
+                                ship within 5-7 business days, while custom solutions may take 2-4 weeks. We'll provide
+                                accurate timing when you place your order.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <span>Do you offer technical support and consultation?</span>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Absolutely! Our technical team provides comprehensive support including filter selection
+                                guidance, application analysis, and ongoing technical consultation to ensure optimal
+                                performance of your filtration systems.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <span>What quality standards do your filters meet?</span>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                All our filters are manufactured to meet or exceed international quality standards
+                                including ISO 9001:2015. We conduct rigorous testing to ensure consistent performance,
+                                reliability, and durability across all our products.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content fade-in">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact us today to discuss your filtration needs and discover how MicroGuard Filters can enhance
+                        your equipment's performance and longevity.</p>
+
+                    <div class="cta-buttons">
+                        <a href="tel:+15551234567" class="btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                        <a href="mailto:info@microguardfilters.com" class="btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Utility to load HTML and execute its scripts
+        function loadHTML(containerId, file) {
+            fetch(file)
+                .then((res) => res.text())
+                .then((data) => {
+                    const container = document.getElementById(containerId);
+                    container.innerHTML = data;
+
+                    // Run any <script> tags inside the loaded file
+                    const scripts = container.querySelectorAll("script");
+                    scripts.forEach((oldScript) => {
+                        const newScript = document.createElement("script");
+                        if (oldScript.src) {
+                            // External script file
+                            newScript.src = oldScript.src;
+                        } else {
+                            // Inline script
+                            newScript.textContent = oldScript.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    });
+                });
+        }
+
+        // Load navbar and footer
+        loadHTML("navbar", "navbar.html");
+        loadHTML("footer", "footer.html");
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+
+            // Reset form
+            this.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+
+            // Scroll to top of form
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form validation enhancement
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', function () {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+
+            input.addEventListener('input', function () {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+        });
+    </script>
+    <script>
+        window.history.scrollRestoration = "manual"; // disable browser restoring scroll
+        window.scrollTo(0, 0); // force back to top
+    </script>
+</body>
+
+</html>

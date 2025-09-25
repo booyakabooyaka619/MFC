@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Scroll Timeline - Stylish</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+            overflow-x: hidden;
+        }
+
+        .timeline-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Stylish vertical line */
+        .line {
+            position: relative;
+            width: 6px;
+            height: 400px;
+            background: linear-gradient(to bottom, #2D237A, #FF7F27);
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 0 60px;
+        }
+
+        /* Static balls */
+        .ball {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #888;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .ball.active {
+            background: #FF7F27;
+            transform: translateX(-50%) scale(1.4);
+            box-shadow: 0 0 15px rgba(255, 127, 39, 0.7);
+        }
+
+        .ball:hover {
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 12px rgba(255, 127, 39, 0.5);
+        }
+
+        /* Moving pointer ball */
+        .moving-ball {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #2D237A;
+            box-shadow: 0 0 15px rgba(45, 35, 122, 0.8);
+            transition: top 0.5s, transform 0.3s;
+            z-index: 2;
+        }
+
+        .info-box {
+            position: absolute;
+            width: 250px;
+            /* Box width */
+            padding: 16px 20px;
+            background: linear-gradient(145deg, #ffffff, #f9f9f9);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+            white-space: normal;
+            line-height: 1.5;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            pointer-events: none;
+
+            /* Position relative to ball center */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Start at ball center */
+        }
+
+        /* Distance from the ball to the box */
+        :root {
+            --box-margin: 20px;
+            /* space between ball and box */
+        }
+
+        /* Slide effect */
+        .info-box.show-left {
+            opacity: 1;
+            transform: translateX(calc(-50% - var(--box-margin) - 250px));
+            /* center -> left */
+        }
+
+        .info-box.show-right {
+            opacity: 1;
+            transform: translateX(calc(-50% + var(--box-margin) + 250px));
+            /* center -> right */
+        }
+
+        /* Accent line */
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 4px;
+            height: 60%;
+            background: #FF7F27;
+            border-radius: 2px;
+            transform: translateY(-50%);
+        }
+
+        .info-box.left::before {
+            right: -8px;
+        }
+
+        .info-box.right::before {
+            left: -8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="timeline-container">
+        <div class="line"></div>
+
+        <!-- 6 balls -->
+        <div class="ball" style="top: 0%;"></div>
+        <div class="ball" style="top: 20%;"></div>
+        <div class="ball" style="top: 40%;"></div>
+        <div class="ball" style="top: 60%;"></div>
+        <div class="ball" style="top: 80%;"></div>
+        <div class="ball" style="top: 100%;"></div>
+
+        <!-- Moving pointer ball -->
+        <div class="moving-ball" id="movingBall" style="top: 0%;"></div>
+
+        <!-- Info boxes for balls 2-6 -->
+        <div class="info-box right" id="info1" style="top: 20%;">
+            <p>
+                This is the first line of information for Ball 2.<br>
+                Here is the second line providing more details.<br>
+                And the third line completes the explanation nicely.
+            </p>
+        </div>
+
+        <div class="info-box left" id="info2" style="top: 40%;">
+            <p>
+                Ball 3 contains its own information paragraph.<br>
+                The second line adds context to the first one.<br>
+                Finally, the third line summarizes the key points.
+            </p>
+        </div>
+
+        <div class="info-box right" id="info3" style="top: 60%;">
+            <p>
+                Details for Ball 4 appear here in three lines.<br>
+                Line two expands upon the first statement.<br>
+                Line three wraps up the explanation neatly.
+            </p>
+        </div>
+
+        <div class="info-box left" id="info4" style="top: 80%;">
+            <p>
+                Ball 5 shows information in three lines.<br>
+                The middle line provides additional context.<br>
+                And the last line completes the paragraph.
+            </p>
+        </div>
+
+        <div class="info-box right" id="info5" style="top: 100%;">
+            <p>
+                Finally, Ball 6 contains its information.<br>
+                Line two gives more details.<br>
+                Line three concludes the information neatly.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        const movingBall = document.getElementById("movingBall");
+        const balls = document.querySelectorAll(".ball");
+        const infoBoxes = [
+            null,
+            document.getElementById("info1"),
+            document.getElementById("info2"),
+            document.getElementById("info3"),
+            document.getElementById("info4"),
+            document.getElementById("info5")
+        ];
+
+        const positions = [0, 20, 40, 60, 80, 100];
+        let currentIndex = 0;
+        let scrollTimeout;
+        let scrollDirection = 0;
+
+        function updateTimeline(index) {
+            movingBall.style.top = positions[index] + "%";
+
+            balls.forEach((b, i) => b.classList.remove("active"));
+            balls[index].classList.add("active");
+
+            infoBoxes.forEach(box => {
+                if (box) box.classList.remove("show-left", "show-right");
+            });
+
+            if (infoBoxes[index]) {
+                if (index % 2 === 0) {
+                    infoBoxes[index].classList.add("show-right");
+                } else {
+                    infoBoxes[index].classList.add("show-left");
+                }
+            }
+        }
+
+        window.addEventListener("wheel", (e) => {
+            e.preventDefault(); // Prevent default page scroll
+            scrollDirection = e.deltaY > 0 ? 1 : -1;
+
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+
+            scrollTimeout = setTimeout(() => {
+                currentIndex += scrollDirection;
+                currentIndex = Math.max(0, Math.min(currentIndex, positions.length - 1));
+                updateTimeline(currentIndex);
+                scrollDirection = 0;
+            }, 200);
+        }, { passive: false }); // passive:false is required to allow preventDefault
+
+
+        updateTimeline(currentIndex);
+    </script>
+
+</body>
+
+</html>

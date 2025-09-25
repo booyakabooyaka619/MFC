@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <title>MicroGuard Filters Corporation - Premium Filtration Solutions</title>
+    <style>
+        :root {
+            --primary-color: #001a66;
+            --secondary-color: #ff7f27;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .carousel-item {
+            max-height: 800px;
+        }
+
+        @media (min-width: 1381px) {
+            .animation-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1380px) {
+            .animation-container {
+                text-align: center;
+                padding: 60px 40px;
+                font-family: 'Inter', serif;
+                position: relative;
+                overflow: hidden;
+                background: linear-gradient(135deg, var(--background-light) 0%, #e9ecef 100%);
+            }
+
+            .slogans {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 0;
+                margin-top: 30px;
+                position: relative;
+            }
+
+            .slogan-box {
+                background: var(--secondary-color);
+                color: var(--white);
+                font-weight: bold;
+                padding: 15px 30px;
+                display: inline-block;
+                margin: 0;
+                opacity: 0;
+                animation-duration: 1.5s;
+                animation-fill-mode: forwards;
+                transform: skew(-20deg);
+                box-shadow: var(--shadow);
+            }
+
+            .slogan-box span {
+                display: inline-block;
+                transform: skew(20deg);
+            }
+
+            @keyframes slideInLeft {
+                from {
+                    transform: translateX(-100%) skew(-25deg);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0) skew(-25deg);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%) skew(-25deg);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0) skew(-25deg);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideInLeftNoSkew {
+                from {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideInRightNoSkew {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            .slogan-box.left {
+                animation-name: slideInLeft;
+                animation-delay: 1s;
+                margin-top: -25px;
+            }
+
+            .slogan-box.right {
+                animation-name: slideInRight;
+                animation-delay: 1.5s;
+                margin-top: 25px;
+                margin-left: -25px;
+            }
+
+            .mcg-brand {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin: 0 auto 50px auto;
+            }
+
+            .mcg-block .line {
+                height: 3px;
+                width: auto;
+                background: var(--primary-color);
+                border-radius: 10px;
+                opacity: 0;
+                animation: slideInLeftNoSkew 1.2s forwards;
+            }
+
+            .mcg-block .line:first-child {
+                animation-delay: 0.2s;
+            }
+
+            .mcg-block .line:last-child {
+                animation-delay: 0.6s;
+            }
+
+            .mcg-block .word {
+                font-size: 2.2rem;
+                font-weight: 600;
+                color: var(--primary-color);
+                letter-spacing: 1px;
+                opacity: 0;
+                animation: slideInLeftNoSkew 1.2s forwards;
+                transform: none;
+                animation-delay: 0.4s;
+            }
+
+            .mcg-block .word .big {
+                font-size: 4rem;
+                font-weight: 400;
+                color: var(--secondary-color);
+            }
+
+            .mcgfilters-text {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-top: 5px;
+                color: var(--primary-color);
+                opacity: 0;
+                animation: slideInRightNoSkew 1.2s forwards;
+                transform: none;
+                animation-delay: 0.8s;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s ease;
+        }
+
+        .reveal.left {
+            transform: translateX(-100px);
+        }
+
+        .reveal.right {
+            transform: translateX(100px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .third-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 80px 2%;
+            background: var(--white);
+        }
+
+        .third-container>.wrapper {
+            flex: 0 0 25%;
+            max-width: 20%;
+            min-width: 220px;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .third-container>.wrapper:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .slider-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .single-item {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            background: var(--white);
+            border-radius: 15px;
+        }
+
+        .single-item img,
+        .third-container>.wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .square {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 100%;
+            background: var(--secondary-color);
+            box-sizing: border-box;
+        }
+
+        .square p {
+            margin: 0;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .single-item .content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            background: rgba(0, 26, 102, 0.8);
+            color: var(--white);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .single-item .content p {
+            margin-top: 20%;
+            letter-spacing: 2px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .single-item:hover .content {
+            opacity: 1;
+        }
+
+        .single-item:hover img {
+            filter: blur(6px);
+        }
+
+        @media (max-width: 1200px) {
+            .third-container>.wrapper {
+                flex: 0 0 calc(50% - 12px);
+                max-width: calc(50% - 12px);
+                min-width: 260px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .third-container>.wrapper {
+                flex: 0 0 100%;
+                max-width: 90%;
+                min-width: 0;
+            }
+        }
+
+        .fleetguard-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background: linear-gradient(135deg, var(--background-light) 0%, #e9ecef 100%);
+        }
+
+        .fleetguard-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 5%;
+            flex-wrap: wrap;
+            color: var(--text-dark);
+            gap: 80px;
+        }
+
+        .fleetguard-content {
+            flex: 1 1 500px;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .fleetguard-content h1 {
+            font-size: 4rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .fleetguard-content h2 {
+            font-size: 2rem;
+            margin: 25px 0;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .fleetguard-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+
+        .fleetguard-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(255, 127, 39, 0.4);
+        }
+
+        .fleetguard-btn:hover {
+            background: #e55a0f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 127, 39, 0.6);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .fleetguard-map {
+            flex: 1 1 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .fleetguard-map img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 900px) {
+            .fleetguard-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 30px;
+                gap: 50px;
+            }
+
+            .fleetguard-content {
+                max-width: 100%;
+            }
+
+            .fleetguard-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .fleetguard-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .nebula-card-archipelago {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            width: 90%;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .aetherial-card {
+            flex: 1 1 calc(30% - 20px);
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .aetherial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .aetherial-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(70%);
+            transition: filter 0.35s ease;
+        }
+
+        .aetherial-card:hover img {
+            filter: brightness(60%);
+        }
+
+        .luminous-card-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            color: var(--white);
+            z-index: 2;
+            transition: transform 0.35s ease;
+        }
+
+        .hover-red-bar {
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary-color), #e55a0f);
+            border-radius: 25px;
+            z-index: 1;
+            overflow: hidden;
+            transition: bottom 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .aetherial-card:hover .hover-red-bar {
+            transform: translateY(-20px);
+            bottom: -80px;
+        }
+
+        .aetherial-card:hover .luminous-card-content {
+            transform: translateY(-65px);
+        }
+
+        .luminous-card-content h2 {
+            margin: 0 0 15px;
+            font-size: 1.8rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .luminous-card-content p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .read-more-text {
+            color: var(--white);
+            font-weight: 600;
+            z-index: 2;
+            position: relative;
+            pointer-events: none;
+        }
+
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: left 0.4s ease;
+            z-index: 1;
+        }
+
+        .hover-red-bar:hover .hover-overlay {
+            left: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .aetherial-card {
+                flex: 1 1 calc(45% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .aetherial-card {
+                flex: 1 1 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .nebula-card-archipelago {
+                padding: 60px 20px;
+            }
+        }
+
+        .parallaxComp-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .parallaxComp-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: url("./images/industrial-filter.png") center -50px / cover no-repeat;
+            transform: translateY(0);
+            will-change: transform;
+            z-index: 1;
+        }
+
+        .parallaxComp-contentBox {
+            position: relative;
+            z-index: 2;
+            padding: 50px 60px;
+            border-radius: 20px;
+            background: rgba(0, 26, 102, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: var(--white);
+            max-width: 950px;
+            margin: 0 auto;
+            margin-top: 12%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .parallaxComp-contentBox:hover {
+            transform: translateY(-6px);
+        }
+
+        .parallaxComp-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 25px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .parallaxComp-title span {
+            color: var(--secondary-color);
+        }
+
+        .parallaxComp-subtitle {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease forwards 0.5s;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .parallaxComp-cta {
+            margin-top: 30px;
+            background: linear-gradient(135deg, var(--secondary-color), #e55a0f);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(255, 127, 39, 0.4);
+            display: inline-block;
+            border: none;
+        }
+
+        .parallaxComp-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 127, 39, 0.6);
+            background: linear-gradient(135deg, #e55a0f, var(--secondary-color));
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .parallaxComp-title {
+                font-size: 2.5rem;
+            }
+
+            .parallaxComp-subtitle {
+                font-size: 1rem;
+            }
+
+            .parallaxComp-contentBox {
+                padding: 30px 25px;
+                margin-top: 20%;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .parallaxComp-mobileBanner {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .parallaxComp-contentBox {
+                display: none;
+            }
+
+            .parallaxComp-section {
+                height: 70vh;
+            }
+
+            .parallaxComp-bg {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center top;
+            }
+
+            .parallaxComp-mobileBanner {
+                position: absolute;
+                top: 50%;
+                left: -100%;
+                transform: translateY(-50%);
+                background: rgba(0, 26, 102, 0.9);
+                color: var(--white);
+                padding: 20px 30px;
+                border-radius: 15px;
+                font-family: 'Inter', sans-serif;
+                font-size: 1.3rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                white-space: nowrap;
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+                transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+                z-index: 3;
+                border-left: 4px solid var(--secondary-color);
+            }
+
+            .parallaxComp-mobileBanner.show {
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .parallaxComp-mobileBanner::after {
+                content: "";
+                position: absolute;
+                top: -3px;
+                bottom: -3px;
+                left: -3px;
+                right: -3px;
+                border-radius: 18px;
+                background: linear-gradient(135deg, rgba(255, 127, 39, 0.3), rgba(0, 26, 102, 0.3));
+                z-index: -1;
+                opacity: 0;
+                transition: opacity 0.6s ease;
+            }
+
+            .parallaxComp-mobileBanner.show::after {
+                opacity: 1;
+            }
+        }
+
+        .stickyComp-section {
+            width: 100%;
+            padding: 100px 20px;
+            background: var(--white);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .stickyComp-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stickyComp-imageWrapper {
+            flex: 1.2;
+            position: sticky;
+            top: 80px;
+        }
+
+        .stickyComp-imageWrapper img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .stickyComp-imageWrapper img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .stickyComp-content {
+            flex: 2.5;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .stickyComp-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .stickyComp-content p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+
+        .stickyComp-content ul {
+            margin: 30px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .stickyComp-content li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .stickyComp-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            background: var(--secondary-color);
+            color: var(--white);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .stickyComp-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--secondary-color), #e55a0f);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(255, 127, 39, 0.4);
+        }
+
+        .stickyComp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 127, 39, 0.6);
+            background: linear-gradient(135deg, #e55a0f, var(--secondary-color));
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .stickyComp-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .stickyComp-imageWrapper {
+                position: relative;
+                top: auto;
+            }
+
+            .stickyComp-content h2 {
+                font-size: 2rem;
+            }
+
+            .stickyComp-content {
+                font-size: 1rem;
+            }
+        }
+
+        :root {
+            --slidecards: 4;
+            --slidecardTopPadding: 1.5em;
+            --slidecardMargin: 4vw;
+        }
+
+        .slidecard-container {
+            align-items: center;
+            width: 100%;
+            background-color: #ffffff;
+            padding-top: 50px;
+            height: auto;
+        }
+
+        #slidecards {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(var(--slidecards), var(--slidecardHeight));
+            gap: 30px;
+            padding-bottom: calc(var(--slidecards) * var(--slidecardTopPadding));
+        }
+
+        #slidecard1 {
+            --index: 1;
+        }
+
+        #slidecard2 {
+            --index: 2;
+        }
+
+        #slidecard3 {
+            --index: 3;
+        }
+
+        #slidecard4 {
+            --index: 4;
+        }
+
+        .slidecard {
+            align-items: center;
+            margin-left: 30%;
+            width: 40%;
+            position: sticky;
+            top: 0;
+            padding-top: calc(var(--index) * var(--slidecardTopPadding));
+            z-index: 1;
+        }
+
+        #slidecard1 .slidecard-body {
+            background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+        }
+
+        #slidecard2 .slidecard-body {
+            background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+        }
+
+        #slidecard3 .slidecard-body {
+            background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+        }
+
+        #slidecard4 .slidecard-body {
+            background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+        }
+
+        .slidecard-body {
+            box-sizing: border-box;
+            padding: 30px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            height: auto;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        /* Hover expansion */
+        .slidecard-body:hover {
+            transform: scaleY(1.05);
+        }
+
+        /* Card Title */
+        .slidecard-body h2 {
+            color: #ffffff;
+            position: relative;
+            padding: 10px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        /* FontAwesome Icon */
+        /* FontAwesome Icon */
+        .icon {
+            font-size: 4.5em;
+            /* enlarged size */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px auto;
+            /* centers horizontally */
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .card-header img {
+            width: 40%;
+
+        }
+
+
+        /* Inner card (hidden by default) */
+        .innersidecard {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+            width: 100%;
+            border-radius: 20px;
+            background-color: #ffffff;
+            margin-top: 15px;
+            padding: 0 15px;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Inner card text */
+        .innersidecard p {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Show inner card on hover */
+        .slidecard-body:hover .innersidecard {
+            max-height: 300px;
+            /* adjust if needed */
+            opacity: 1;
+            padding: 15px;
+        }
+
+        /* Section Title */
+        .slidecard-container h1 {
+            padding-bottom: 15px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slidecard-container h1 {
+                font-size: 26px;
+            }
+
+            .slidecard {
+                align-items: center;
+                margin-left: 10%;
+                width: 80%;
+                position: sticky;
+                top: 0;
+                padding-top: calc(var(--index) * var(--slidecardTopPadding));
+            }
+
+            .slidecard-body {
+                box-sizing: border-box;
+                padding: 20px;
+                border-radius: 30px;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+                transition: all 0.5s ease;
+            }
+
+            .slidecard-body h2 {
+                font-size: 1.6em;
+                padding: 10px;
+            }
+
+            .icon {
+                font-size: 2.5em;
+                margin: 15px 0;
+            }
+
+            .innersidecard p {
+                font-size: 0.75rem;
+                padding: 8px;
+            }
+        }
+
+        .cta2 {
+            width: 100%;
+            background: linear-gradient(45deg, #111b24, #09223b, #2f3841);
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cta2-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            /* allows stacking on smaller screens */
+        }
+
+        .cta2 h1 {
+            font-family: Gill Sans, sans-serif;
+            color: #fff;
+            font-size: 2.8rem;
+            flex: 1 1 500px;
+            /* flexible resizing */
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .vertline {
+            width: 3px;
+            height: 100px;
+            background-color: #fff;
+            flex-shrink: 0;
+        }
+
+        .button-19 {
+            align-items: center;
+            background-color: #fff;
+            border: 0;
+            border-radius: 100px;
+            box-sizing: border-box;
+            color: #203444;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 1rem;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 20px;
+            padding: 15px 30px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .button-19:hover,
+        .button-19:focus {
+            background-color: #111b24;
+            color: #ffffff;
+            border: 1px solid #fff;
+        }
+
+        .button-19 .c-arrow {
+            font-size: 1.5rem;
+            padding-left: 8px;
+        }
+
+        /* Tablets */
+        @media (max-width: 1024px) {
+            .cta2 h1 {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+
+            .cta2-inner {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .vertline {
+                display: none;
+                /* hide decorative line on smaller screens */
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .cta2 {
+                padding: 40px 15px;
+            }
+
+            .cta2 h1 {
+                font-size: 1.6rem;
+            }
+
+            .button-19 {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #e55a0f;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .logo-slider {
+            width: 70%;
+            padding: 40px 0;
+            margin-bottom: 50px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f7fa;
+            border-radius: 12px;
+            height: 150px;
+            transition: transform 0.3s;
+        }
+
+        .swiper-slide img {
+            max-width: 80%;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .swiper-slide:hover {
+            transform: scale(1.05);
+        }
+
+        /* Pagination dots */
+        .swiper-pagination-bullet {
+            background: #bbb;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main>
+        <div class="animation-container">
+            <div class="mcg-brand">
+                <div class="mcg-text">
+                    <div class="mcg-block">
+                        <!-- <div class="line"></div> -->
+                        <div class="word">
+                            <span class="big">M</span>ICRO<span class="big">G</span>UARD
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="mcgfilters-text">FILTERS CORPORATION</div>
+                </div>
+            </div>
+
+            <div class="slogans">
+                <div class="slogan-box left"><span>Lets Filter</span></div>
+                <div class="slogan-box right"><span>The Unfiltered</span></div>
+            </div>
+        </div>
+
+        <div class="parallaxComp-section" id="parallaxCompSection">
+            <div class="parallaxComp-bg" id="parallaxCompBg"></div>
+
+            <!-- Mobile Promo Banner -->
+            <div class="parallaxComp-mobileBanner" id="parallaxCompMobileBanner">
+                <p>Get the Best Filter Today</p>
+            </div>
+
+            <!-- Blurred box wrapper -->
+            <div class="parallaxComp-contentBox">
+                <div class="parallaxComp-content">
+                    <h1 class="parallaxComp-title">
+                        Get the <span>Best Filters</span> of Your Choice
+                    </h1>
+                    <p class="parallaxComp-subtitle">
+                        Microguard Filters Corporation delivers high-performance filtration solutions for Automobile,
+                        Industrial,
+                        Marine, and Heavy Earth Mover applications. Our products include Fuel Filters, Fuel Water
+                        Separators, Oil
+                        Filters, Steering Filters, Urea Filters, and Hydraulic Filters, ensuring reliability and
+                        efficiency across
+                        industries.
+                    </p>
+
+
+                    <div class="parallaxComp-cta" id="exploreBtn">Explore Now</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fleetguard-wrapper">
+            <div class="fleetguard-section" id="fleetguardSection">
+                <!-- Left side -->
+                <div class="fleetguard-content">
+                    <h1>MICROGUARD<br />FILTERS</h1>
+                    <h2>World Class Filtration Solutions for All Applications</h2>
+                    <p>
+                        MicroGuard Filters Corporation specializes in high-quality automotive and industrial filters all
+                        over India,
+                        engineered for superior engine protection and performance. With a strong focus on innovation and
+                        precision
+                        design,
+                        we manufacture custom filters for automobiles, marine, heavy earth movers, and industrial
+                        applications.
+                        Our filters are built to meet international standards, delivering durability, reliability, and
+                        efficiency
+                        for vehicles and critical machinery.
+                    </p>
+                    <a href="#" class="fleetguard-btn">READ MORE</a>
+                </div>
+
+                <!-- Right side -->
+                <div class="fleetguard-map">
+                    <img src="./images/map.png" alt="India Map" />
+                </div>
+            </div>
+        </div>
+
+        <div class="nebula-card-archipelago">
+
+
+            <!-- Card 1: Air Filters -->
+            <div class="aetherial-card">
+                <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Air Filter" />
+                <div class="luminous-card-content">
+                    <h2>Air Filters</h2>
+                    <p>
+                        Keep your engine breathing clean with MicroGuard Air Filters. Designed to block dust and dirt,
+                        they improve efficiency and extend engine life.
+                    </p>
+                    <!-- Example card red bar -->
+                    <div class="hover-red-bar">
+                        <span class="read-more-text">Read More</span>
+                        <span class="hover-overlay"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 2: Fuel Filters -->
+            <div class="aetherial-card">
+                <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Coolant Fluid" />
+                <div class="luminous-card-content">
+                    <h2>Fuel Filters</h2>
+                    <p>
+                        Ensure a clean fuel supply with our high-performance Fuel Filters.
+                        They remove impurities to protect engines and boost performance.
+                    </p>
+                    <!-- Example card red bar -->
+                    <div class="hover-red-bar">
+                        <span class="read-more-text">Read More</span>
+                        <span class="hover-overlay"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 3: Fuel Water Separator -->
+            <div class="aetherial-card">
+                <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+                <div class="luminous-card-content">
+                    <h2>Fuel Water Separator</h2>
+                    <p>
+                        MicroGuard Fuel Water Separators eliminate water and debris from diesel fuel.
+                        Protects engines from corrosion and costly damage.
+                    </p>
+                    <!-- Example card red bar -->
+                    <div class="hover-red-bar">
+                        <span class="read-more-text">Read More</span>
+                        <span class="hover-overlay"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="aetherial-card">
+                <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+                <div class="luminous-card-content">
+                    <h2>Oil Filters</h2>
+                    <p>
+                        Get superior engine protection with MicroGuard Oil Filters.
+                        They trap contaminants for smooth lubrication and longer engine life.
+                    </p>
+                    <!-- Example card red bar -->
+                    <div class="hover-red-bar">
+                        <span class="read-more-text">Read More</span>
+                        <span class="hover-overlay"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="aetherial-card">
+                <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+                <div class="luminous-card-content">
+                    <h2>Steering Filters</h2>
+                    <p>
+                        Enhance control with our Steering Filters.
+                        They safeguard hydraulic steering systems for reliable, responsive performance.
+                    </p>
+                    <!-- Example card red bar -->
+                    <div class="hover-red-bar">
+                        <span class="read-more-text">Read More</span>
+                        <span class="hover-overlay"></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="aetherial-card">
+                <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+                <div class="luminous-card-content">
+                    <h2>Hydraulic Filters</h2>
+                    <p>
+                        MicroGuard Hydraulic Filters protect heavy-duty machinery from contaminants.
+                        Built for durability, they ensure efficiency and reduce downtime.
+                    </p>
+                    <!-- Example card red bar -->
+                    <div class="hover-red-bar">
+                        <span class="read-more-text">Read More</span>
+                        <span class="hover-overlay"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="stickyComp-section">
+            <div class="stickyComp-container">
+                <!-- Left: Image -->
+                <div class="stickyComp-imageWrapper">
+                    <img src="./images/industrial_bg.png" alt="FleetguardFIT Technology" />
+                </div>
+
+                <!-- Right: Content -->
+                <div class="stickyComp-content">
+                    <h2>MicroGuard Filters – Reliable Protection for Every Engine</h2>
+                    <p>
+                        Our advanced filtration solutions are designed to keep your engines and machinery running at
+                        peak
+                        efficiency.
+                        From automobiles to heavy earth movers, MicroGuard Filters deliver unmatched performance and
+                        reliability.
+                    </p>
+
+                    <ul>
+                        <li>Enhances engine life with superior dust, dirt, and contaminant removal</li>
+                        <li>Improves fuel efficiency and ensures clean combustion</li>
+                        <li>Prevents corrosion and costly damage with effective water separation</li>
+                        <li>Ensures smooth lubrication for reduced wear and tear</li>
+                        <li>Delivers precise hydraulic and steering performance</li>
+                        <li>Reduces downtime and maintenance costs with durable design</li>
+                    </ul>
+
+                    <p>
+                        Every MicroGuard Filter is precision-engineered to meet global standards, ensuring long-term
+                        protection,
+                        consistent performance, and peace of mind for our customers.
+                    </p>
+
+                    <a href="#" class="stickyComp-btn">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slidecard-container">
+
+            <ul id="slidecards">
+                <li class="slidecard" id="slidecard1">
+                    <div class="slidecard-body">
+                        <div class="card-header">
+                            <h2>Automobile Filters</h2>
+                            <img src="./images/automobile_filters.png" alt="" style="width: 60%;">
+                        </div>
+                        <div class="innersidecard">
+                            <p>Our automobile filters are designed to protect engines from dust,
+                                dirt, and contaminants, ensuring smoother performance and longer engine life.
+                                Ideal for cars, SUVs, and light vehicles, they maintain optimal fuel efficiency and
+                                reduce maintenance
+                                costs.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slidecard" id="slidecard2">
+                    <div class="slidecard-body">
+                        <div class="card-header">
+                            <h2>Industrial Filters</h2>
+                            <img src="./images/industrial_filters.png" alt="">
+                        </div>
+                        <div class="innersidecard">
+                            <p>Industrial filters safeguard heavy machinery and equipment from harmful particles,
+                                ensuring uninterrupted operations. Perfect for manufacturing plants, factories, and
+                                workshops,
+                                they enhance machine efficiency, reliability, and lifespan.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slidecard" id="slidecard3">
+                    <div class="slidecard-body">
+                        <div class="card-header">
+                            <h2>Marine Filters</h2>
+                            <img src="./images/marine_filters.png" alt="" style="width: 51%;">
+                        </div>
+                        <div class="innersidecard">
+                            <p>Marine filters are built to withstand harsh maritime conditions, protecting boat and ship
+                                engines from
+                                salt, debris, and contaminants. They ensure consistent engine performance, fuel
+                                efficiency, and safe
+                                marine operations.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slidecard" id="slidecard4">
+                    <div class="slidecard-body">
+                        <div class="card-header">
+                            <h2>Heavy Earth Mover Filters</h2>
+                            <img src="./images/HEM_filters.png" alt="">
+                        </div>
+                        <div class="innersidecard">
+                            <p>Specially designed for construction and mining equipment, heavy earth mover filters
+                                protect engines
+                                under extreme conditions. They reduce wear and tear, prevent breakdowns, and maintain
+                                peak performance
+                                in heavy-duty vehicles like excavators, bulldozers, and loaders.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cta2">
+            <div class="cta2-inner">
+                <div class="vertline"></div>
+                <h1>Have a Custom Filter? <br>Don't Worry, Get your quote now!</h1>
+                <button class="button-19" role="button">
+                    GET QUOTE
+                    <span class="c-arrow">&#8594;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="logo-slider swiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="images/slider/cummins.png" alt="Logo 1"></div>
+                <div class="swiper-slide"><img src="images/slider/donaldson.png" alt="Logo 2"></div>
+                <div class="swiper-slide"><img src="images/slider/fleetguard.png" alt="Logo 3"></div>
+                <div class="swiper-slide"><img src="images/slider/lefong.png" alt="Logo 4"></div>
+                <div class="swiper-slide"><img src="images/slider/sakura.png" alt="Logo 5"></div>
+                <div class="swiper-slide"><img src="images/slider/stal.png" alt="Logo 6"></div>
+                <div class="swiper-slide"><img src="images/slider/Tata.png" alt="Logo 6"></div>
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Utility to load HTML and execute its scripts
+        function loadHTML(containerId, file) {
+            fetch(file)
+                .then((res) => res.text())
+                .then((data) => {
+                    const container = document.getElementById(containerId);
+                    container.innerHTML = data;
+
+                    // Run any <script> tags inside the loaded file
+                    const scripts = container.querySelectorAll("script");
+                    scripts.forEach((oldScript) => {
+                        const newScript = document.createElement("script");
+                        if (oldScript.src) {
+                            // External script file
+                            newScript.src = oldScript.src;
+                        } else {
+                            // Inline script
+                            newScript.textContent = oldScript.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    });
+                });
+        }
+
+        // Load navbar and footer
+        loadHTML("navbar", "navbar.html");
+        loadHTML("footer", "footer.html");
+
+        // Scroll animations - same as about.html and contact.html
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect
+        const parallaxCompBg = document.getElementById("parallaxCompBg");
+        const banner = document.getElementById("parallaxCompMobileBanner");
+        const section = document.getElementById("parallaxCompSection");
+
+        window.addEventListener("scroll", () => {
+            let scrollY = window.scrollY;
+
+            // Parallax background effect
+            if (parallaxCompBg) {
+                parallaxCompBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+            }
+
+            // Banner slide-in effect (mobile only)
+            if (window.innerWidth <= 1200 && banner && section) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const windowHeight = window.innerHeight;
+
+                const sectionCenter = sectionTop + sectionHeight / 2;
+                const viewportCenter = scrollY + windowHeight / 2;
+
+                if (Math.abs(viewportCenter - sectionCenter) < 150) {
+                    banner.classList.add("show");
+                } else {
+                    banner.classList.remove("show");
+                }
+            }
+        });
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Explore button functionality
+        document.getElementById("exploreBtn").addEventListener("click", function () {
+            document.getElementById("fleetguardSection").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+    <script>
+        const swiper = new Swiper('.logo-slider', {
+            slidesPerView: 4,
+            spaceBetween: 30,   // 🔹 reduced gap (try 0 if you want no space at all)
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                1200: { slidesPerView: 6, spaceBetween: 5 },
+                1024: { slidesPerView: 5, spaceBetween: 5 },
+                768: { slidesPerView: 4, spaceBetween: 4 },
+                480: { slidesPerView: 3, spaceBetween: 2 },
+                0: { slidesPerView: 2, spaceBetween: 2 }
+            }
+
+        });
+    </script>
+</body>
+
+</html>
