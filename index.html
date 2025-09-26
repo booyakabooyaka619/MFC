@@ -20,8 +20,7 @@
       .fleetguard-wrapper,
       .stickyComp-section,
       .cta2,
-      .logo-slider,
-      .title-container {
+      .logo-slider {
         overflow-x: hidden;
         max-width: 100%;
       }
@@ -444,7 +443,7 @@
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1200px) {
       .fleetguard-section {
         display: block;
         text-align: center;
@@ -593,7 +592,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .aetherial-card {
         flex: 1 1 100%;
       }
@@ -732,7 +731,7 @@
     }
 
     /* Mobile responsiveness */
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .parallaxComp-title {
         font-size: 2.2rem;
       }
@@ -942,7 +941,7 @@
       text-decoration: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .stickyComp-container {
         flex-direction: column;
         gap: 40px;
@@ -1013,19 +1012,27 @@
     }
 
     #slidecard1 .slidecard-body {
-      background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+      background: linear-gradient(25deg, #212b4d, #252f4e, #29324d);
+      border: 2px solid #D1E5EE;
+
     }
 
     #slidecard2 .slidecard-body {
-      background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+      background: linear-gradient(25deg, #212b4d, #252f4e, #29324d);
+      border: 2px solid #D1E5EE;
+
     }
 
     #slidecard3 .slidecard-body {
-      background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+      background: linear-gradient(25deg, #212b4d, #252f4e, #29324d);
+      border: 2px solid #D1E5EE;
+
     }
 
     #slidecard4 .slidecard-body {
-      background: linear-gradient(25deg, #80b4fc, #9bbff3, #bbd5f8);
+      background: linear-gradient(25deg, #212b4d, #252f4e, #29324d);
+      border: 2px solid #D1E5EE;
+
     }
 
     .slidecard-body {
@@ -1123,7 +1130,7 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .slidecard-container h1 {
         font-size: 26px;
       }
@@ -1133,7 +1140,8 @@
         margin-left: 10%;
         width: 80%;
         position: sticky;
-        top: 0;
+        top: 160px;
+        /* 👈 Add margin from navbar / top */
         padding-top: calc(var(--index) * var(--slidecardTopPadding));
       }
 
@@ -1230,7 +1238,7 @@
     }
 
     /* Tablets */
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
       .cta2 h1 {
         font-size: 2.2rem;
         text-align: center;
@@ -1248,7 +1256,7 @@
     }
 
     /* Mobile */
-    @media (max-width: 600px) {
+    @media (max-width: 1200px) {
       .cta2 {
         padding: 40px 15px;
       }
@@ -1291,7 +1299,7 @@
       margin-bottom: 0%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .title-container.we-also {
         margin-top: 50px;
         margin-bottom: 0%;
@@ -1336,7 +1344,7 @@
       /* underline expands across full title */
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       .fancy-title {
         font-size: 1.4em;
       }
@@ -1348,7 +1356,7 @@
       margin-bottom: 50px;
     }
 
-    @media (max-width: 768px) {}
+    @media (max-width: 1200px) {}
 
 
     .swiper-slide {
@@ -2040,6 +2048,63 @@
     window.history.scrollRestoration = "manual";
     window.scrollTo(0, 0); 
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll(".slidecard-body");
+
+      if (window.innerWidth <= 768) {
+        cards.forEach(card => {
+          const inner = card.querySelector(".innersidecard");
+
+          // Toggle on click
+          card.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent immediate close by document click
+            // Close all other cards
+            cards.forEach(c => {
+              if (c !== card) {
+                c.querySelector(".innersidecard").style.maxHeight = "0";
+                c.querySelector(".innersidecard").style.opacity = "0";
+                c.querySelector(".innersidecard").style.padding = "0 15px";
+              }
+            });
+
+            // Toggle this one
+            if (inner.style.maxHeight && inner.style.maxHeight !== "0px") {
+              inner.style.maxHeight = "0";
+              inner.style.opacity = "0";
+              inner.style.padding = "0 15px";
+            } else {
+              inner.style.maxHeight = "300px";
+              inner.style.opacity = "1";
+              inner.style.padding = "15px";
+            }
+          });
+        });
+
+        // Collapse on outside click
+        document.addEventListener("click", function () {
+          cards.forEach(card => {
+            const inner = card.querySelector(".innersidecard");
+            inner.style.maxHeight = "0";
+            inner.style.opacity = "0";
+            inner.style.padding = "0 15px";
+          });
+        });
+
+        // Collapse on scroll
+        window.addEventListener("scroll", function () {
+          cards.forEach(card => {
+            const inner = card.querySelector(".innersidecard");
+            inner.style.maxHeight = "0";
+            inner.style.opacity = "0";
+            inner.style.padding = "0 15px";
+          });
+        });
+      }
+    });
+  </script>
+
 
 
 </body>
