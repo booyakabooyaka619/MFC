@@ -533,6 +533,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      text-decoration: none;
+      /* remove underline */
+      color: inherit;
+      /* keep text color consistent */
+      cursor: pointer;
+      /* hand cursor */
     }
 
     /* Hover effect */
@@ -1006,7 +1012,7 @@
       margin-left: 30%;
       width: 40%;
       position: sticky;
-      top: 0;
+      top: 50px;
       padding-top: calc(var(--index) * var(--slidecardTopPadding));
       z-index: 1;
     }
@@ -1620,7 +1626,7 @@
       </div>
 
       <div class="aetherial-card fade-in">
-        <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+        <img src="./images/ofm/OFM_opening2.png" alt="Fluid Analysis" />
         <div class="luminous-card-content">
           <h2>Oil Filters</h2>
           <p>
@@ -1628,10 +1634,13 @@
             They trap contaminants for smooth lubrication and longer engine life.
           </p>
           <!-- Example card red bar -->
-          <div class="hover-red-bar">
-            <span class="read-more-text">Read More</span>
-            <span class="hover-overlay"></span>
+          <div class="hover-red-bar-wrapper">
+            <a href="./ofm_pd.html" class="hover-red-bar">
+              <span class="read-more-text">Read More</span>
+              <span class="hover-overlay"></span>
+            </a>
           </div>
+
 
         </div>
       </div>

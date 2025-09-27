@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oil Filters - Premium Engine Protection | Advanced Filtration Technology</title>
+    <meta name="description"
+        content="Discover premium oil filters with advanced filtration technology. High-efficiency synthetic media, superior flow rates, and extended service life for optimal engine protection." />
+    <meta name="keywords"
+        content="oil filters, engine protection, automotive filters, synthetic media, high efficiency filtration" />
+    <meta name="author" content="Premium Oil Filters" />
+
+    <meta property="og:title" content="Oil Filters - Premium Engine Protection | Advanced Filtration Technology" />
+    <meta property="og:description"
+        content="Discover premium oil filters with advanced filtration technology. High-efficiency synthetic media, superior flow rates, and extended service life for optimal engine protection." />
+    <meta property="og:type" content="website" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: 0 0% 98%;
+            --foreground: 220 15% 15%;
+            --card: 0 0% 100%;
+            --card-foreground: 220 15% 15%;
+            --primary: 221 83% 53%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 220 15% 15%;
+            --muted: 220 14% 96%;
+            --muted-foreground: 220 8.9% 46%;
+            --accent: 22 88% 62%;
+            --accent-foreground: 0 0% 98%;
+            --border: 220 13% 91%;
+            --radius: 0.75rem;
+
+            /* Industrial color palette */
+            --industrial-blue: 221 83% 53%;
+            --industrial-blue-dark: 221 83% 43%;
+            --industrial-blue-light: 221 83% 63%;
+            --industrial-gray: 220 8.9% 46%;
+            --industrial-gray-light: 220 14% 96%;
+
+            /* Filter accent colors */
+            --filter-orange: 22 88% 62%;
+            --filter-red: 0 72% 51%;
+            --filter-yellow: 43 96% 56%;
+
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, hsl(var(--industrial-blue)) 0%, hsl(var(--industrial-blue-dark)) 100%);
+            --gradient-section: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--industrial-gray-light)) 100%);
+            --gradient-accent: linear-gradient(135deg, hsl(var(--filter-orange)) 0%, hsl(var(--filter-red)) 100%);
+
+            /* Shadows */
+            --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-hero: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --shadow-filter: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+            /* Animations */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        @media (min-width: 1201px) {
+            body {
+                margin-top: 70px;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Animation classes */
+        .slide-in-left {
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide-in-right {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide-in-up {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide-in-visible {
+            transform: translateX(0) translateY(0);
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: bold;
+            color: hsl(var(--primary-foreground));
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-description {
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            color: hsl(var(--primary-foreground) / 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: var(--gradient-accent);
+            color: hsl(var(--accent-foreground));
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            box-shadow: var(--shadow-hero);
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: bold;
+            color: hsl(var(--foreground));
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: hsl(var(--muted-foreground));
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--gradient-section);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .about-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+        }
+
+        .about-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .about-text h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text p {
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-filter);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Filter Types Section */
+        .filter-types-section {
+            background: var(--gradient-section);
+        }
+
+        .filter-types-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .filter-types-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .filter-type-card {
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .filter-type-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-filter);
+        }
+
+        .filter-type-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .filter-type-description {
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Product Gallery Section */
+        .gallery-section {
+            background: hsl(var(--background));
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .slider-track {
+            display: flex;
+            animation: slide 20s infinite linear;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .slide {
+            min-width: 300px;
+            margin-right: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-filter);
+            transition: var(--transition-smooth);
+        }
+
+        .slide:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hero);
+        }
+
+        .slide-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            transition: var(--transition-smooth);
+            padding-top: 20px;
+        }
+
+        .slide:hover .slide-image {
+            transform: scale(1.1);
+        }
+
+        .slide-content {
+            padding: 1.5rem;
+            text-align: center;
+
+        }
+
+        .slide-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-description {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Technical Section */
+        .technical-section {
+            background: var(--gradient-section);
+        }
+
+        .technical-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .technical-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .technical-card {
+            text-align: center;
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .technical-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-filter);
+        }
+
+        .technical-metric {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: hsl(var(--primary));
+            margin-bottom: 0.5rem;
+        }
+
+        .technical-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .technical-description {
+            color: hsl(var(--muted-foreground));
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #e55a0f;
+            transform: translateY(-3px) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <img src="./images/ofm/OFM_opening.png" alt="Premium Oil Filters Collection" class="hero-image" />
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title slide-in-up">Premium Oil Filters</h1>
+            <p class="hero-description slide-in-up">Advanced filtration technology for optimal engine performance and
+                protection</p>
+            <div class="hero-actions slide-in-up">
+                <button id="exploreBtn" class="btn-primary">Explore Features</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">What Are Oil Filters?</h2>
+                <p class="section-description">
+                    Oil filters are essential automotive components that remove contaminants from engine oil, ensuring
+                    optimal lubrication and engine protection.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-item slide-in-left">
+                    <div class="about-icon">🔧</div>
+                    <div class="about-text">
+                        <h3>Engine Protection</h3>
+                        <p>Removes harmful particles, dirt, and debris from engine oil to prevent wear and extend engine
+                            life.</p>
+                    </div>
+                </div>
+
+                <div class="about-item slide-in-right">
+                    <div class="about-icon">⚙️</div>
+                    <div class="about-text">
+                        <h3>Optimal Performance</h3>
+                        <p>Maintains clean oil circulation for smooth engine operation and consistent performance.</p>
+                    </div>
+                </div>
+
+                <div class="about-item slide-in-left">
+                    <div class="about-icon">🛡️</div>
+                    <div class="about-text">
+                        <h3>Contamination Control</h3>
+                        <p>Captures metal particles, carbon deposits, and other contaminants before they damage engine
+                            components.</p>
+                    </div>
+                </div>
+
+                <div class="about-item slide-in-right">
+                    <div class="about-icon">💧</div>
+                    <div class="about-text">
+                        <h3>Oil Quality</h3>
+                        <p>Preserves oil viscosity and chemical properties for maximum lubrication efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-description">
+                    Advanced engineering and premium materials deliver superior filtration performance
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card slide-in-left">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">High Efficiency</h3>
+                    <p class="feature-description">Advanced synthetic media captures 99%+ of harmful particles down to
+                        20 microns</p>
+                </div>
+
+                <div class="feature-card slide-in-up">
+                    <div class="feature-icon">💨</div>
+                    <h3 class="feature-title">Superior Flow Rate</h3>
+                    <p class="feature-description">Optimized design maintains consistent oil flow even under extreme
+                        conditions</p>
+                </div>
+
+                <div class="feature-card slide-in-right">
+                    <div class="feature-icon">⏱️</div>
+                    <h3 class="feature-title">Extended Life</h3>
+                    <p class="feature-description">Premium construction provides longer service intervals and reliable
+                        performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Types Section -->
+    <section id="filter-types" class="section filter-types-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Filter Types</h2>
+                <p class="section-description">
+                    Different filter technologies for various automotive applications
+                </p>
+            </div>
+
+            <div class="filter-types-grid">
+                <div class="filter-type-card slide-in-left">
+                    <h3 class="filter-type-title">Synthetic Media</h3>
+                    <p class="filter-type-description">Premium synthetic fibers provide superior filtration efficiency
+                        and longer service life</p>
+                </div>
+
+                <div class="filter-type-card slide-in-up">
+                    <h3 class="filter-type-title">Paper Element</h3>
+                    <p class="filter-type-description">Traditional pleated paper media offers reliable filtration for
+                        standard applications</p>
+                </div>
+
+                <div class="filter-type-card slide-in-right">
+                    <h3 class="filter-type-title">Mesh Screen</h3>
+                    <p class="filter-type-description">Reusable metal mesh screens for heavy-duty and racing
+                        applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Product Gallery</h2>
+                <p class="section-description">
+                    Explore our comprehensive range of oil filters designed for various applications
+                </p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide">
+                        <img src="./images/ofm/cbr6bzcwmxoctnmgneqb.jpg" alt="OFM-163 High Efficiency"
+                            class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">OFM-163 High Efficiency</h3>
+                            <p class="slide-description">Premium synthetic media filter</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/ofm/l1o7fj0cg0zyrr06et8b.jpg" alt="Paper Element Filter"
+                            class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">Paper Element Filter</h3>
+                            <p class="slide-description">Traditional pleated paper media</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/ofm/lmuk2awujw6acsa0k7uu.jpg" alt="OFM-028 Extended Life"
+                            class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">OFM-028 Extended Life</h3>
+                            <p class="slide-description">Long-service interval filter</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/ofm/mroevh3y8imiimqhtizg.jpg" alt="OFM-UT-150 Universal"
+                            class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">OFM-UT-150 Universal</h3>
+                            <p class="slide-description">Wide compatibility range</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/ofm/qtwr04syheugwdmz5kdv.jpg" alt="OFM 90 Heavy Duty" class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">OFM 90 Heavy Duty</h3>
+                            <p class="slide-description">Commercial grade filtration</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Section -->
+    <section id="technical" class="section technical-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Technical Specifications</h2>
+                <p class="section-description">
+                    Advanced engineering specifications for optimal performance
+                </p>
+            </div>
+
+            <div class="technical-grid">
+                <div class="technical-card slide-in-left">
+                    <div class="technical-metric">99.5%</div>
+                    <div class="technical-label">Filtration Efficiency</div>
+                    <p class="technical-description">Removes particles down to 20 microns</p>
+                </div>
+
+                <div class="technical-card slide-in-up">
+                    <div class="technical-metric">15,000</div>
+                    <div class="technical-label">Service Miles</div>
+                    <p class="technical-description">Extended drain intervals</p>
+                </div>
+
+                <div class="technical-card slide-in-right">
+                    <div class="technical-metric">350°F</div>
+                    <div class="technical-label">Operating Temperature</div>
+                    <p class="technical-description">High-temperature resistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollTopBtn" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div id="footer"></div>
+
+</body>
+<script>
+    // Utility to load HTML and execute its scripts
+    function loadHTML(containerId, file) {
+        fetch(file)
+            .then((res) => res.text())
+            .then((data) => {
+                const container = document.getElementById(containerId);
+                container.innerHTML = data;
+
+                // Run any <script> tags inside the loaded file
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach((oldScript) => {
+                    const newScript = document.createElement("script");
+                    if (oldScript.src) {
+                        // External script file
+                        newScript.src = oldScript.src;
+                    } else {
+                        // Inline script
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            });
+    }
+
+    // Load navbar and footer
+    loadHTML("navbar", "navbar.html");
+    loadHTML("footer", "footer.html");
+</script>
+<script>
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up');
+        animatedElements.forEach(el => observer.observe(el));
+    }
+
+    // Smooth scroll to next section
+    function initScrollToSection() {
+        const exploreBtn = document.getElementById('exploreBtn');
+        const aboutSection = document.getElementById('about');
+
+        if (exploreBtn && aboutSection) {
+            exploreBtn.addEventListener('click', () => {
+                aboutSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    }
+
+    // Initialize automatic slider
+    function initSlider() {
+        const sliderTrack = document.getElementById('sliderTrack');
+        if (!sliderTrack) return;
+
+        // Clone slides for seamless loop
+        const slides = sliderTrack.children;
+        const slideCount = slides.length;
+
+        // Clone all slides and append them for seamless loop
+        for (let i = 0; i < slideCount; i++) {
+            const clone = slides[i].cloneNode(true);
+            sliderTrack.appendChild(clone);
+        }
+
+        // Pause animation on hover
+        sliderTrack.addEventListener('mouseenter', () => {
+            sliderTrack.style.animationPlayState = 'paused';
+        });
+
+        sliderTrack.addEventListener('mouseleave', () => {
+            sliderTrack.style.animationPlayState = 'running';
+        });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        initScrollAnimations();
+        initScrollToSection();
+        initSlider();
+    });
+
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', () => {
+        // Reinitialize animations if needed
+        initScrollAnimations();
+    });
+</script>
+
+<script>
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0); 
+</script>
+
+<script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+</script>
+
+</html>

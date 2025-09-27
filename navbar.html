@@ -706,7 +706,7 @@
                     <li><a href="#urea"><i class="fas fa-flask"></i> UREA FILTERS</a></li>
                     <li><a href="#hydraulic"><i class="fas fa-cogs"></i> HYDRAULIC FILTERS</a></li>
                     <li class="has-dropdown">
-                        <div class="menu-item">
+                        <!-- <div class="menu-item">
                             <a href="#other">OTHER FILTERS <span class="arrow-right"></span></a>
                             <span class="plus-icon">+</span>
                         </div>
@@ -717,7 +717,7 @@
                             <li><a href="#donaldson">DONALDSON FILTERS</a></li>
                             <li><a href="#fleetguard">FLEETGUARD FILTERS</a></li>
                             <li><a href="#tata">TATA FILTERS</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
                 </ul>
             </li>
@@ -809,12 +809,12 @@
         const navbar = document.querySelector(".navbar");
 
         window.addEventListener("scroll", () => {
-            if (window.scrollY > lastScrollY + 50) {
-                // Scrolling down more than 50px → hide navbar
+            if (window.scrollY > lastScrollY) {
+                // Any scroll down → hide navbar
                 navbar.classList.remove("show");
                 navbar.classList.add("hide");
-            } else if (window.scrollY < lastScrollY - 10) {
-                // Scrolling up a bit → show navbar
+            } else if (window.scrollY < lastScrollY) {
+                // Any scroll up → show navbar
                 navbar.classList.remove("hide");
                 navbar.classList.add("show");
             }
