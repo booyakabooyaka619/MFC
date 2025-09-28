@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroGuard Oil Filters - Professional Automotive Parts</title>
+    <meta name="description"
+        content="Premium oil filters from MicroGuard Filters Corp - High efficiency automotive filtration solutions">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+            margin-top: 5%;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #001a66, #e66c16);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+            margin-top: 5%;
+        }
+
+        .products-section h1 {
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #001a66, #e66c16);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .product-card:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .product-card.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-category {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .product-code {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .product-features {
+            font-size: 0.85rem;
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .product-button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .product-button:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        /* Bottom Section */
+        .bottom-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .bottom-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .bottom-section p {
+            font-size: 1.1rem;
+            color: #666666;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header {
+                padding: 40px 0;
+            }
+
+            .products-section {
+                padding: 50px 0;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #e55a0f;
+            transform: translateY(-3px) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <!-- <header class="header">
+        <div class="container">
+            <h1>MicroGuard Oil Filters</h1>
+            <p>Premium automotive oil filters engineered for maximum performance and engine protection. High efficiency
+                filtration solutions for professionals.</p>
+        </div>
+    </header> -->
+
+    <main class="products-section">
+        <div class="container">
+            <h1>MicroGuard Oil Filters</h1>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <button id="scrollTopBtn" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div id="footer"></div>
+
+    <!-- <section class="bottom-section">
+        <div class="container">
+            <h2>Professional Grade Filtration</h2>
+            <p>Click on any product to view detailed specifications and place your order. All filters meet or exceed OEM
+                standards.</p>
+        </div>
+    </section> -->
+
+    <script>
+        // Product data
+        const products = [
+            { id: 1, name: "MicroGuard OFM-163 Oil Filter", code: "OFM-163", image: "./images/ofm/ofm-163.jpg" },
+            { id: 2, name: "MicroGuard OFM-051 Oil Filter", code: "OFM-051", image: "./images/ofm/ofm-051.jpg" },
+            { id: 3, name: "MicroGuard OFM-149 Oil Filter", code: "OFM-149", image: "./images/ofm/ofm-149.jpg" },
+            { id: 1, name: "MicroGuard OFM-40 Oil Filter", code: "OFM-40", image: "./images/ofm/ofm-40.jpg" },
+            { id: 5, name: "MicroGuard OFM-028 Oil Filter", code: "OFM-028", image: "./images/ofm/ofm-028.jpg" },
+            { id: 6, name: "MicroGuard OFM-40 Heavy Duty", code: "OFM-40HD", image: "./images/ofm/ofm-40.jpg" },
+            { id: 7, name: "MicroGuard OFM-051 Pro Series", code: "OFM-051P", image: "./images/ofm/ofm-051.jpg" },
+            { id: 8, name: "MicroGuard OFM-149 Extended Life", code: "OFM-149EL", image: "./images/ofm/ofm-149.jpg" },
+            { id: 9, name: "MicroGuard OFM-163 Premium", code: "OFM-163P", image: "./images/ofm/ofm-163.jpg" },
+            { id: 10, name: "MicroGuard OFM-028 Racing", code: "OFM-028R", image: "./images/ofm/ofm-028.jpg" },
+            { id: 11, name: "MicroGuard OFM-40 Commercial", code: "OFM-40C", image: "./images/ofm/ofm-40.jpg" },
+            { id: 12, name: "MicroGuard OFM-051 Marine", code: "OFM-051M", image: "./images/ofm/ofm-051.jpg" },
+            { id: 13, name: "MicroGuard OFM-149 Industrial", code: "OFM-149I", image: "./images/ofm/ofm-149.jpg" },
+            { id: 14, name: "MicroGuard OFM-163 Fleet", code: "OFM-163F", image: "./images/ofm/ofm-163.jpg" },
+            { id: 15, name: "MicroGuard OFM-028 Performance", code: "OFM-028P", image: "./images/ofm/ofm-028.jpg" },
+            { id: 16, name: "MicroGuard OFM-40 Eco", code: "OFM-40E", image: "./images/ofm/ofm-40.jpg" },
+            { id: 17, name: "MicroGuard OFM-051 Synthetic", code: "OFM-051S", image: "./images/ofm/ofm-051.jpg" },
+            { id: 18, name: "MicroGuard OFM-149 MaxFlow", code: "OFM-149MF", image: "./images/ofm/ofm-149.jpg" },
+            { id: 19, name: "MicroGuard OFM-163 TurboGuard", code: "OFM-163T", image: "./images/ofm/ofm-163.jpg" },
+            { id: 20, name: "MicroGuard OFM-028 PowerFlow", code: "OFM-028PF", image: "./images/ofm/ofm-028.jpg" },
+            { id: 21, name: "MicroGuard OFM-40 UltraClean", code: "OFM-40UC", image: "./images/ofm/ofm-40.jpg" },
+            { id: 22, name: "MicroGuard OFM-051 MaxGuard", code: "OFM-051MG", image: "./images/ofm/ofm-051.jpg" },
+            { id: 23, name: "MicroGuard OFM-149 ProTech", code: "OFM-149PT", image: "./images/ofm/ofm-149.jpg" },
+            { id: 24, name: "MicroGuard OFM-163 SuperFlow", code: "OFM-163SF", image: "./images/ofm/ofm-163.jpg" },
+            { id: 25, name: "MicroGuard OFM-028 EliteGuard", code: "OFM-028EG", image: "./images/ofm/ofm-028.jpg" },
+            { id: 26, name: "MicroGuard OFM-40 PureFlow", code: "OFM-40PF", image: "./images/ofm/ofm-40.jpg" },
+            { id: 27, name: "MicroGuard OFM-051 TechGuard", code: "OFM-051TG", image: "./images/ofm/ofm-051.jpg" },
+            { id: 28, name: "MicroGuard OFM-149 FleetPro", code: "OFM-149FP", image: "./images/ofm/ofm-149.jpg" },
+            { id: 29, name: "MicroGuard OFM-163 EnduranceMax", code: "OFM-163EM", image: "./images/ofm/ofm-163.jpg" },
+            { id: 30, name: "MicroGuard OFM-028 PlatinumGuard", code: "OFM-028PG", image: "./images/ofm/ofm-028.jpg" }
+        ];
+
+        // Generate product cards
+        function generateProducts() {
+            const grid = document.getElementById('productsGrid');
+
+            products.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.style.transitionDelay = `${(index % 6) * 100}ms`;
+
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-category">Oil Filter</div>
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-code">Part Number: ${product.code}</div>
+                    <div class="product-features">• High Efficiency • OEM Quality</div>
+                    <button class="product-button" onclick="viewProduct('${product.code}')">View Details</button>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Product click handler
+        function viewProduct(productCode) {
+            window.location.href = `/${productCode}.html`;
+        }
+
+
+
+        // Scroll animation observer
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all product cards
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.product-card');
+                cards.forEach(card => observer.observe(card));
+            }, 100);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            generateProducts();
+            initScrollAnimations();
+        });
+    </script>
+
+    <script>
+        // Utility to load HTML and execute its scripts
+        function loadHTML(containerId, file) {
+            fetch(file)
+                .then((res) => res.text())
+                .then((data) => {
+                    const container = document.getElementById(containerId);
+                    container.innerHTML = data;
+
+                    // Run any <script> tags inside the loaded file
+                    const scripts = container.querySelectorAll("script");
+                    scripts.forEach((oldScript) => {
+                        const newScript = document.createElement("script");
+                        if (oldScript.src) {
+                            // External script file
+                            newScript.src = oldScript.src;
+                        } else {
+                            // Inline script
+                            newScript.textContent = oldScript.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    });
+                });
+        }
+
+        // Load navbar and footer
+        loadHTML("navbar", "navbar.html");
+        loadHTML("footer", "footer.html");
+    </script>
+    <script>
+        window.history.scrollRestoration = "manual";
+        window.scrollTo(0, 0); 
+    </script>
+    <script>
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+    </script>
+</body>
+
+</html>
