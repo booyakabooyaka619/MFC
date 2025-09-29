@@ -552,6 +552,92 @@
             background: #e55a0f;
             transform: translateY(-3px) scale(1.1);
         }
+
+        .cta2 {
+            width: 100%;
+            background: linear-gradient(45deg, #0d2235, #09223b, #2f3841);
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cta2-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            /* allows stacking on smaller screens */
+        }
+
+        .cta2 h1 {
+            font-family: Gill Sans, sans-serif;
+            color: #fff;
+            font-size: 2.8rem;
+            flex: 1 1 500px;
+            /* flexible resizing */
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .vertline {
+            width: 3px;
+            height: 100px;
+            background-color: #fff;
+            flex-shrink: 0;
+        }
+
+        .button-19 {
+            align-items: center;
+            background-color: #fff;
+            border: 0;
+            border-radius: 100px;
+            box-sizing: border-box;
+            color: #203444;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 1rem;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 20px;
+            padding: 15px 30px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .button-19:hover,
+        .button-19:focus {
+            background-color: #111b24;
+            color: #ffffff;
+            border: 1px solid #fff;
+        }
+
+        .button-19 .c-arrow {
+            font-size: 1.5rem;
+            padding-left: 8px;
+        }
+
+        /* Tablets */
+        @media (max-width: 1200px) {
+            .cta2 h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .cta2-inner {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .vertline {
+                display: none;
+                /* hide decorative line on smaller screens */
+            }
+        }
     </style>
 </head>
 
@@ -658,6 +744,18 @@
             </div>
         </div>
     </section>
+
+    <div class="cta2 fade-in">
+        <div class="cta2-inner">
+            <div class="vertline"></div>
+            <h1>Explore Our Wide Range of <br>Premium MicroGuard Oil Filters</h1>
+            <a href="./ofm_products.html" class="button-19" role="button">
+                EXPLORE PRODUCTS
+                <span class="c-arrow">&#8594;</span>
+            </a>
+
+        </div>
+    </div>
 
     <!-- Filter Types Section -->
     <section id="filter-types" class="section filter-types-section">

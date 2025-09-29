@@ -198,15 +198,21 @@
         /* ---------- Desktop dropdown behavior (unchanged) ---------- */
         .dropdown {
             position: absolute;
-            top: 120%;
+            top: 80px;
             left: 0;
             background: #212b4d;
             min-width: 200px;
-            padding: 2.4rem 0 1rem 0;
+            padding: 1.4rem 0 1rem 0;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
+            border-radius: 8px;
+            /* smooth corners */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* softer border */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            /* smooth depth */
         }
 
         .dropdown li {
@@ -637,6 +643,10 @@
 
 
 
+        }
+
+        .menu-item a {
+            height: 87px;
         }
 
         /* .dropdown li:hover>a .arrow-right {
