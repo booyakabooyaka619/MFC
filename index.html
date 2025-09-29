@@ -1360,13 +1360,16 @@
     }
 
     .logo-slider {
-      width: 70%;
+      width: 100%;
+      height: 550px;
+      /* fixed height for the slider */
       padding: 40px 0;
-      margin-bottom: 50px;
+      margin: 0 auto 50px auto;
     }
 
-    @media (max-width: 1200px) {}
-
+    .swiper-wrapper {
+      margin: 0 !important;
+    }
 
     .swiper-slide {
       display: flex;
@@ -1374,19 +1377,20 @@
       justify-content: center;
       background: #f4f7fa;
       border-radius: 12px;
-      height: 150px;
+      height: 100%;
+      padding-left: 2%;
       transition: transform 0.3s;
     }
 
     .swiper-slide img {
-      max-width: 80%;
-      height: 100px;
+      height: 90%;
+      /* all images same height */
+      width: auto;
+      /* maintain proportions */
       object-fit: contain;
     }
 
-    .swiper-slide:hover {
-      transform: scale(1.05);
-    }
+
 
     /* Pagination dots */
     .swiper-pagination-bullet {
@@ -1804,25 +1808,27 @@
     </div>
 
     <div class="title-container we-also">
-      <h1 class="fancy-title">WE ASLO STOCK</h1>
+      <h1 class="fancy-title">WE ALSO STOCK</h1>
     </div>
 
     <!-- Swiper Container -->
     <div class="logo-slider swiper">
       <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide"><img src="images/slider/cummins.png" alt="Logo 1"></div>
-        <div class="swiper-slide"><img src="images/slider/donaldson.png" alt="Logo 2"></div>
-        <div class="swiper-slide"><img src="images/slider/fleetguard.png" alt="Logo 3"></div>
-        <div class="swiper-slide"><img src="images/slider/lefong.png" alt="Logo 4"></div>
-        <div class="swiper-slide"><img src="images/slider/sakura.png" alt="Logo 5"></div>
-        <div class="swiper-slide"><img src="images/slider/stal.png" alt="Logo 6"></div>
-        <div class="swiper-slide"><img src="images/slider/Tata.png" alt="Logo 6"></div>
+        <!-- Replace logos with big images -->
+        <div class="swiper-slide"><img src="images/slider/ofm-028.jpg" alt="Oil Filter 1"></div>
+        <div class="swiper-slide"><img src="images/slider/ofm-037.jpg" alt="Oil Filter 2"></div>
+        <div class="swiper-slide"><img src="images/slider/ofm-40.jpg" alt="Oil Filter 3"></div>
+        <div class="swiper-slide"><img src="images/slider/ofm-051.jpg" alt="Oil Filter 4"></div>
+        <div class="swiper-slide"><img src="images/slider/ofm-062.jpg" alt="Oil Filter 5"></div>
+        <div class="swiper-slide"><img src="images/slider/ofm-064.jpg" alt="Oil Filter 5"></div>
+        <div class="swiper-slide"><img src="images/slider/ofm-70n.jpg" alt="Oil Filter 5"></div>
+
       </div>
 
       <!-- Pagination Dots -->
       <div class="swiper-pagination"></div>
     </div>
+
 
     <button id="scrollTopBtn" class="scroll-top">
       <i class="fas fa-arrow-up"></i>
@@ -2000,8 +2006,9 @@
   <script>
     const swiper = new Swiper('.logo-slider', {
       slidesPerView: 4,
-      spaceBetween: 30,   // 🔹 reduced gap (try 0 if you want no space at all)
+      spaceBetween: 30,
       loop: true,
+      centeredSlides: false,   // 🚀 ensures no extra left margin
       autoplay: {
         delay: 2000,
         disableOnInteraction: false,
@@ -2017,7 +2024,6 @@
         480: { slidesPerView: 3, spaceBetween: 2 },
         0: { slidesPerView: 2, spaceBetween: 2 }
       }
-
     });
   </script>
 
