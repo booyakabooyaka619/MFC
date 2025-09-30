@@ -390,13 +390,41 @@
       text-align: left;
     }
 
+    /* Fleetguard H1 with white honeycomb pattern inside the letters */
     .fleetguard-content h1 {
       font-size: 4rem;
-      color: var(--primary-color);
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.05;
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+
+      /* Top layer: white honeycomb SVG
+     Bottom layer: solid primary color */
+      background-image:
+        url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='60'%20height='52'%20viewBox='0%200%2060%2052'%3E%3Cpolygon%20points='30,1%2058,13%2058,39%2030,51%202,39%202,13'%20fill='none'%20stroke='white'%20stroke-width='2'%20stroke-opacity='1'/%3E%3C/svg%3E"),
+        linear-gradient(var(--primary-color), var(--primary-color));
+
+      background-repeat: repeat, no-repeat;
+      background-size: 60px 52px, 100% 100%;
+      background-position: 0 0, center;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
     }
+
+    @media (max-width:1200px) {
+      .fleetguard-content h1 {
+        font-size: 2.5rem;
+        background-size: 40px 35px, 100% 100%;
+        /* smaller hexes on smaller screens */
+      }
+    }
+
 
     .fleetguard-content h2 {
       font-size: 2rem;
@@ -1360,11 +1388,10 @@
     }
 
     .logo-slider {
-      width: 100%;
-      height: 550px;
+      width: 80%;
+      height: 370px;
       /* fixed height for the slider */
-      padding: 40px 0;
-      margin: 0 auto 50px auto;
+
     }
 
     .swiper-wrapper {
@@ -1375,22 +1402,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f4f7fa;
+      background: #ffffff;
       border-radius: 12px;
-      height: 100%;
-      padding-left: 2%;
+      height: 300px;
+      /* all images same height */
+      width: 300px;
       transition: transform 0.3s;
     }
 
     .swiper-slide img {
-      height: 90%;
+      height: 300px;
       /* all images same height */
-      width: auto;
+      width: 300px;
       /* maintain proportions */
       object-fit: contain;
+      margin: auto;
     }
 
-
+    .swiper-pagination {
+      position: absolute;
+      margin-bottom: 20px;
+    }
 
     /* Pagination dots */
     .swiper-pagination-bullet {
@@ -1551,7 +1583,8 @@
       <div class="fleetguard-section" id="fleetguardSection">
         <!-- Left side -->
         <div class="fleetguard-content slide-in-left">
-          <h1>MICROGUARD<br />FILTERS</h1>
+          <h1>MICROGUARD</h1>
+          <!-- <h2 style="color: var(--primary-color);">FILTERS CORPORATION</h2> -->
           <h2>World Class Filtration Solutions for All Applications</h2>
           <p>
             MicroGuard Filters Corporation specializes in high-quality automotive and industrial filters all over India,
@@ -1808,7 +1841,7 @@
     </div>
 
     <div class="title-container we-also">
-      <h1 class="fancy-title">WE ALSO STOCK</h1>
+      <h1 class="fancy-title">OUR PRODUCT GALLERY</h1>
     </div>
 
     <!-- Swiper Container -->

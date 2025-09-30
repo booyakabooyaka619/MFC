@@ -111,12 +111,37 @@
             color: var(--secondary-color);
         }
 
+        .hero-line {
+            height: 3px;
+            background: white;
+            margin: 10px auto;
+            /* centers it */
+            width: fit-content;
+        }
+
+        .hero-subtext {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero-line,
+        .hero-subtext {
+            width: 100%;
+            /* inherits same width as MicroGuard text */
+            text-align: center;
+        }
+
         .hero-subtitle {
             font-size: 1.3rem;
             font-weight: 400;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            margin-top: 30px;
         }
 
         /* Contact Info Cards */
@@ -701,7 +726,12 @@
             <div class="hero-bg"></div>
             <div class="hero-content fade-in">
                 <div class="hero-badge">Get In Touch With Us</div>
-                <h1 class="hero-title">Contact <span class="highlight">MicroGuard</span><br>Filters Corporation</h1>
+                <h1 class="hero-title">
+                    Contact <br>
+                    <span class="highlight" style="display: inline-block; margin-top: 20px;">MicroGuard</span>
+                    <div class="hero-line"></div>
+                    <div class="hero-subtext">Filters Corporation</div>
+                </h1>
                 <p class="hero-subtitle">Ready to discuss your filtration needs? Our expert team is here to help you
                     find the perfect solution for your automotive, industrial, marine, or heavy equipment applications.
                 </p>

@@ -97,9 +97,10 @@
         }
 
         .hero-title {
+            display: inline-block;
+            /* ensures width matches content */
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
             line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -109,12 +110,38 @@
             color: var(--secondary-color);
         }
 
+        .hero-line {
+            height: 3px;
+            background: white;
+            margin: 10px auto;
+            /* centers it */
+            width: fit-content;
+        }
+
+        .hero-subtext {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero-line,
+        .hero-subtext {
+            width: 100%;
+            /* inherits same width as MicroGuard text */
+            text-align: center;
+        }
+
+
         .hero-subtitle {
             font-size: 1.3rem;
             font-weight: 400;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            margin-top: 30px;
         }
 
         /* Company Overview */
@@ -681,7 +708,13 @@
             <div class="hero-bg"></div>
             <div class="hero-content fade-in">
                 <div class="hero-badge">Industry Leader Since Inception</div>
-                <h1 class="hero-title">About <span class="highlight">MicroGuard</span><br>Filters Corporation</h1>
+                <h1 class="hero-title">
+                    About <br>
+                    <span class="highlight" style="display: inline-block; margin-top: 20px;">MicroGuard</span>
+                    <div class="hero-line"></div>
+                    <div class="hero-subtext">Filters Corporation</div>
+                </h1>
+
                 <p class="hero-subtitle">Engineering Excellence in Filtration Solutions for Automotive, Industrial,
                     Marine, and Heavy Equipment Applications</p>
             </div>
