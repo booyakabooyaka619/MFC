@@ -30,7 +30,6 @@
             background-color: #ffffff;
             margin-top: 6%;
             -webkit-tap-highlight-color: transparent;
-
         }
 
         .container {
@@ -67,7 +66,7 @@
         .product-image {
             width: 100%;
             height: 500px;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .badge-overlay {
@@ -157,29 +156,6 @@
             font-size: 1.25rem;
             color: #6b7280;
             margin-bottom: 1.5rem;
-        }
-
-        .rating-section {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .stars {
-            display: flex;
-            align-items: center;
-        }
-
-        .star {
-            width: 1.25rem;
-            height: 1.25rem;
-            color: #fbbf24;
-            fill: #fbbf24;
-        }
-
-        .rating-text {
-            font-size: 0.875rem;
-            color: #6b7280;
         }
 
         .key-features {
@@ -316,6 +292,7 @@
             color: #6b7280;
         }
 
+        /* Benefits Section */
         .benefits-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -350,6 +327,7 @@
             flex-shrink: 0;
         }
 
+        /* Technical Highlight */
         .technical-highlight {
             padding: 2rem;
             background: linear-gradient(135deg, #3b82f6, #1d4ed8);
@@ -410,371 +388,6 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Gallery Section */
-        .gallery-section {
-            padding: 4rem 0;
-            background-color: #ffffff;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 1500px;
-            margin: 0 auto;
-        }
-
-        .main-image-container {
-            position: relative;
-        }
-
-        .main-image-card {
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
-        }
-
-        .image-wrapper {
-            position: relative;
-            background: linear-gradient(135deg, #ffffff, #f9fafb);
-            padding: 2rem;
-        }
-
-        .main-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 0.5rem;
-        }
-
-        .nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.8);
-            border: none;
-            border-radius: 50%;
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-arrow:hover {
-            background-color: #ffffff;
-        }
-
-        .nav-arrow-left {
-            left: 0.5rem;
-        }
-
-        .nav-arrow-right {
-            right: 0.5rem;
-        }
-
-        .expand-button {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: none;
-            border-radius: 50%;
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .expand-button:hover {
-            background-color: #ffffff;
-        }
-
-        .image-counter {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 9999px;
-            padding: 0.5rem 0.75rem;
-        }
-
-        .image-counter span {
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .thumbnails-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .thumbnails-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1f2937;
-        }
-
-        .thumbnails-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .thumbnail-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            background-color: #ffffff;
-            border: 2px solid transparent;
-            box-shadow: 0 2px 8px -2px rgba(31, 41, 55, 0.1);
-        }
-
-        .thumbnail-card:hover {
-            box-shadow: 0 4px 12px -2px rgba(31, 41, 55, 0.15);
-            transform: scale(1.02);
-        }
-
-        .thumbnail-card.active {
-            border-color: #3b82f6;
-            box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.25);
-            transform: scale(1.05);
-        }
-
-        .thumbnail-wrapper {
-            padding: 1rem;
-            background: linear-gradient(135deg, #ffffff, #f9fafb);
-        }
-
-        .thumbnail-image {
-            width: 100%;
-            height: 6rem;
-            object-fit: cover;
-            border-radius: 0.25rem;
-        }
-
-        .thumbnail-label {
-            text-align: center;
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #374151;
-        }
-
-        .features-highlight {
-            padding: 1.5rem;
-            background-color: rgba(249, 250, 251, 0.5);
-            border-radius: 0.5rem;
-        }
-
-        .features-highlight-title {
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .features-highlight-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .highlight-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .highlight-dot {
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            background-color: #3b82f6;
-        }
-
-        .highlight-feature span {
-            font-size: 0.875rem;
-            color: #374151;
-        }
-
-        /* Specifications Section */
-        .specs-section {
-            padding: 4rem 0;
-            background-color: rgba(249, 250, 251, 0.5);
-        }
-
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .specs-card {
-            background-color: #ffffff;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px -2px rgba(31, 41, 55, 0.1);
-            border: 1px solid #f3f4f6;
-        }
-
-        .card-header-specs {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-title-specs {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1f2937;
-        }
-
-        .part-number-badge {
-            background-color: #f3f4f6;
-            color: #374151;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .specs-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f3f4f6;
-        }
-
-        .spec-item:last-child {
-            border-bottom: none;
-        }
-
-        .spec-label {
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-
-        .spec-value {
-            font-weight: 500;
-            color: #1f2937;
-        }
-
-        .compatibility-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .compatibility-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .compatibility-dot {
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            background-color: #3b82f6;
-        }
-
-        .compatibility-item span {
-            font-size: 0.875rem;
-            color: #374151;
-        }
-
-        .compatibility-button {
-            padding-top: 1rem;
-        }
-
-        .check-compatibility-btn {
-            width: 100%;
-            padding: 0.75rem;
-            background-color: #ffffff;
-            border: 1px solid #d1d5db;
-            border-radius: 0.375rem;
-            color: #374151;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .check-compatibility-btn:hover {
-            background-color: #f9fafb;
-            border-color: #9ca3af;
-        }
-
-        .certifications-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .certification-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .certification-icon {
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            background-color: rgba(251, 191, 36, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .certification-dot {
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 50%;
-            background-color: #fbbf24;
-        }
-
-        .certification-item span {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
-        }
-
-        .warranty-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding-top: 1rem;
-        }
-
-        .warranty-item {
-            background-color: #f9fafb;
-            border-radius: 0.5rem;
-            padding: 0.75rem;
-        }
-
-        .warranty-item p {
-            font-size: 0.75rem;
-            color: #6b7280;
-        }
-
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-grid {
@@ -783,11 +396,6 @@
             }
 
             .benefits-section {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -810,14 +418,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .thumbnails-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
             .floating-feature-1,
             .floating-feature-2 {
                 display: none;
@@ -835,8 +435,8 @@
                 <!-- Product Image -->
                 <div class="hero-image">
                     <div class="image-container">
-                        <img src="./images/ofm/products/oil-filter-main.jpg"
-                            alt="MicroGuard OFM-163 High Efficiency Oil Filter" class="product-image">
+                        <img src="./images/ofm/ofm_163.jpg" alt="MicroGuard OFM-163 High Efficiency Oil Filter"
+                            class="product-image">
                         <div class="badge-overlay">
                             <span class="efficiency-badge">High Efficiency</span>
                         </div>
@@ -869,18 +469,6 @@
                             Engineered with precision for optimal flow and superior contaminant removal.
                         </p>
                     </div>
-
-                    <!-- Rating -->
-                    <!-- <div class="rating-section">
-                        <div class="stars">
-                            <i data-lucide="star" class="star filled"></i>
-                            <i data-lucide="star" class="star filled"></i>
-                            <i data-lucide="star" class="star filled"></i>
-                            <i data-lucide="star" class="star filled"></i>
-                            <i data-lucide="star" class="star filled"></i>
-                        </div>
-                        <span class="rating-text">(4.9/5 from 1,247 reviews)</span>
-                    </div> -->
 
                     <!-- Key Features -->
                     <div class="key-features">
@@ -1070,237 +658,6 @@
         </div>
     </section>
 
-    <!-- Product Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Product Gallery</h2>
-                <p class="section-subtitle">Detailed views of the MicroGuard OFM-163 oil filter</p>
-            </div>
-
-            <div class="gallery-grid">
-                <!-- Main Image -->
-                <div class="main-image-container">
-                    <div class="main-image-card">
-                        <div class="image-wrapper">
-                            <img id="mainImage" src="./images/ofm/products/oil-filter-main.jpg"
-                                alt="MicroGuard Oil Filter - Front View" class="main-image">
-
-                            <!-- Navigation Arrows -->
-                            <button class="nav-arrow nav-arrow-left" onclick="prevImage()">
-                                <i data-lucide="chevron-left"></i>
-                            </button>
-                            <button class="nav-arrow nav-arrow-right" onclick="nextImage()">
-                                <i data-lucide="chevron-right"></i>
-                            </button>
-
-                            <!-- Expand Button -->
-                            <button class="expand-button">
-                                <i data-lucide="expand"></i>
-                            </button>
-
-                            <!-- Image Counter -->
-                            <div class="image-counter">
-                                <span id="imageCounter">1 / 4</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail Grid -->
-                <div class="thumbnails-container">
-                    <h3 class="thumbnails-title">Different Angles</h3>
-                    <div class="thumbnails-grid">
-                        <div class="thumbnail-card active" onclick="selectImage(0)">
-                            <div class="thumbnail-wrapper">
-                                <img src="./images/ofm/products/oil-filter-main.jpg" alt="Front View"
-                                    class="thumbnail-image">
-                                <p class="thumbnail-label">Front View</p>
-                            </div>
-                        </div>
-                        <div class="thumbnail-card" onclick="selectImage(1)">
-                            <div class="thumbnail-wrapper">
-                                <img src="./images/ofm/products/oil-filter-side.jpg" alt="Side View"
-                                    class="thumbnail-image">
-                                <p class="thumbnail-label">Side View</p>
-                            </div>
-                        </div>
-                        <div class="thumbnail-card" onclick="selectImage(2)">
-                            <div class="thumbnail-wrapper">
-                                <img src="./images/ofm/products/oil-filter-bottom.jpg" alt="Bottom Threading"
-                                    class="thumbnail-image">
-                                <p class="thumbnail-label">Bottom Threading</p>
-                            </div>
-                        </div>
-                        <div class="thumbnail-card" onclick="selectImage(3)">
-                            <div class="thumbnail-wrapper">
-                                <img src="./images/ofm/products/oil-filter-angle.jpg" alt="Angled View"
-                                    class="thumbnail-image">
-                                <p class="thumbnail-label">Angled View</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Features Highlight -->
-                    <div class="features-highlight">
-                        <h4 class="features-highlight-title">Key Features Visible</h4>
-                        <div class="features-highlight-list">
-                            <div class="highlight-feature">
-                                <div class="highlight-dot"></div>
-                                <span>Precision-molded housing</span>
-                            </div>
-                            <div class="highlight-feature">
-                                <div class="highlight-dot"></div>
-                                <span>Standard 3/4-16 UNF threading</span>
-                            </div>
-                            <div class="highlight-feature">
-                                <div class="highlight-dot"></div>
-                                <span>Nitrile rubber gasket seal</span>
-                            </div>
-                            <div class="highlight-feature">
-                                <div class="highlight-dot"></div>
-                                <span>Anti-drainback valve</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Specifications Section -->
-    <section class="specs-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Specifications</h2>
-                <p class="section-subtitle">Engineered to exceed OEM standards with premium materials and precision
-                    manufacturing</p>
-            </div>
-
-            <div class="specs-grid">
-                <!-- Specifications -->
-                <div class="specs-card">
-                    <div class="card-header-specs">
-                        <h3 class="card-title-specs">Product Specifications</h3>
-                        <span class="part-number-badge">OFM-163</span>
-                    </div>
-                    <div class="specs-list">
-                        <div class="spec-item">
-                            <span class="spec-label">Part Number</span>
-                            <span class="spec-value">OFM-163</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Thread Size</span>
-                            <span class="spec-value">3/4-16 UNF</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Height</span>
-                            <span class="spec-value">4.75 inches</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Outer Diameter</span>
-                            <span class="spec-value">3.25 inches</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Filter Media</span>
-                            <span class="spec-value">Synthetic Blend</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Bypass Valve</span>
-                            <span class="spec-value">8-12 PSI</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Anti-Drainback Valve</span>
-                            <span class="spec-value">Silicone</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Gasket Material</span>
-                            <span class="spec-value">Nitrile Rubber</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Compatibility -->
-                <div class="specs-card">
-                    <div class="card-header-specs">
-                        <h3 class="card-title-specs">Vehicle Compatibility</h3>
-                    </div>
-                    <div class="compatibility-list">
-                        <div class="compatibility-item">
-                            <div class="compatibility-dot"></div>
-                            <span>Honda Civic 2016-2023</span>
-                        </div>
-                        <div class="compatibility-item">
-                            <div class="compatibility-dot"></div>
-                            <span>Honda Accord 2018-2023</span>
-                        </div>
-                        <div class="compatibility-item">
-                            <div class="compatibility-dot"></div>
-                            <span>Toyota Camry 2018-2023</span>
-                        </div>
-                        <div class="compatibility-item">
-                            <div class="compatibility-dot"></div>
-                            <span>Toyota Corolla 2020-2023</span>
-                        </div>
-                        <div class="compatibility-item">
-                            <div class="compatibility-dot"></div>
-                            <span>Nissan Altima 2019-2023</span>
-                        </div>
-                        <div class="compatibility-item">
-                            <div class="compatibility-dot"></div>
-                            <span>And 150+ more models</span>
-                        </div>
-                    </div>
-                    <div class="compatibility-button">
-                        <button class="check-compatibility-btn">Check Vehicle Compatibility</button>
-                    </div>
-                </div>
-
-                <!-- Certifications -->
-                <div class="specs-card">
-                    <div class="card-header-specs">
-                        <h3 class="card-title-specs">Quality Certifications</h3>
-                    </div>
-                    <div class="certifications-list">
-                        <div class="certification-item">
-                            <div class="certification-icon">
-                                <div class="certification-dot"></div>
-                            </div>
-                            <span>ISO/TS 16949 Certified</span>
-                        </div>
-                        <div class="certification-item">
-                            <div class="certification-icon">
-                                <div class="certification-dot"></div>
-                            </div>
-                            <span>SAE J1858 Compliant</span>
-                        </div>
-                        <div class="certification-item">
-                            <div class="certification-icon">
-                                <div class="certification-dot"></div>
-                            </div>
-                            <span>OEM Specification</span>
-                        </div>
-                        <div class="certification-item">
-                            <div class="certification-icon">
-                                <div class="certification-dot"></div>
-                            </div>
-                            <span>EPA Approved</span>
-                        </div>
-                    </div>
-
-                    <div class="warranty-info">
-                        <div class="warranty-item">
-                            <p><strong>Warranty:</strong> 12 months or 12,000 miles</p>
-                        </div>
-                        <div class="warranty-item">
-                            <p><strong>Made in:</strong> USA with global materials</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <div id="footer"></div>
 </body>
@@ -1330,107 +687,16 @@
     }
 
     // Load navbar and footer
-    loadHTML("navbar", "../navbar.html");
-    loadHTML("footer", "../footer.html");
+    loadHTML("navbar", "./navbar.html");
+    loadHTML("footer", "./footer.html");
 </script>
 <script>
-    const images = [
-        {
-            src: "./images/ofm/products/oil-filter-main.jpg",
-            alt: "MicroGuard Oil Filter - Front View",
-            title: "Front View"
-        },
-        {
-            src: "./images/ofm/products/oil-filter-side.jpg",
-            alt: "MicroGuard Oil Filter - Side View",
-            title: "Side View"
-        },
-        {
-            src: "./images/ofm/products/oil-filter-bottom.jpg",
-            alt: "MicroGuard Oil Filter - Bottom View with Threading",
-            title: "Bottom Threading"
-        },
-        {
-            src: "./images/ofm/products/oil-filter-angle.jpg",
-            alt: "MicroGuard Oil Filter - Angled View",
-            title: "Angled View"
-        }
-    ];
-
-    let currentImageIndex = 0;
-
-    function selectImage(index) {
-        currentImageIndex = index;
-        updateMainImage();
-        updateThumbnails();
-        updateCounter();
-    }
-
-    function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        updateMainImage();
-        updateThumbnails();
-        updateCounter();
-    }
-
-    function prevImage() {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        updateMainImage();
-        updateThumbnails();
-        updateCounter();
-    }
-
-    function updateMainImage() {
-        const mainImage = document.getElementById('mainImage');
-        const currentImage = images[currentImageIndex];
-        mainImage.src = currentImage.src;
-        mainImage.alt = currentImage.alt;
-    }
-
-    function updateThumbnails() {
-        const thumbnails = document.querySelectorAll('.thumbnail-card');
-        thumbnails.forEach((thumbnail, index) => {
-            if (index === currentImageIndex) {
-                thumbnail.classList.add('active');
-            } else {
-                thumbnail.classList.remove('active');
-            }
-        });
-    }
-
-    function updateCounter() {
-        const counter = document.getElementById('imageCounter');
-        counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
-    }
 
     // Initialize Lucide icons
     document.addEventListener('DOMContentLoaded', function () {
         lucide.createIcons();
     });
 
-    // Smooth scrolling for any anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Add some hover effects for interactive elements
-    document.addEventListener('DOMContentLoaded', function () {
-        // Add click effect to check compatibility button
-        const compatibilityBtn = document.querySelector('.check-compatibility-btn');
-        if (compatibilityBtn) {
-            compatibilityBtn.addEventListener('click', function () {
-                alert('Vehicle compatibility checker would open here. This is a demo.');
-            });
-        }
-    });
 </script>
 
 </html>

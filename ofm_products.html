@@ -151,7 +151,7 @@
         .product-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #1a1a1a;
+            color: #ad5414;
             margin-bottom: 10px;
             line-height: 1.4;
         }
@@ -165,13 +165,19 @@
 
         .product-features {
             font-size: 0.85rem;
-            color: #2563eb;
-            margin-bottom: 20px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
             font-weight: 500;
+            line-height: 2;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .product-button {
-            background-color: #3b82f6;
+            background: linear-gradient(90deg, #001a66, #e66c16);
+            background-size: 200% 100%;
+            /* make gradient wider */
+            background-position: left center;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -179,14 +185,16 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-position 0.6s ease, transform 0.3s ease;
             width: 100%;
         }
 
         .product-button:hover {
-            background-color: #2563eb;
+            background-position: right center;
+            /* slide gradient smoothly */
             transform: translateY(-2px);
         }
+
 
         /* Bottom Section */
         .bottom-section {
@@ -491,37 +499,44 @@
     <script>
         // Product data
         const products = [
-            { id: 1, name: "MicroGuard OFM-163 Oil Filter", code: "OFM-163", image: "./images/ofm/ofm_163.jpg" },
-            { id: 2, name: "MicroGuard OFM-051 Oil Filter", code: "OFM-051", image: "./images/ofm/ofm-051.jpg" },
-            { id: 3, name: "MicroGuard OFM-149 Oil Filter", code: "OFM-149", image: "./images/ofm/ofm_149.jpg" },
-            { id: 1, name: "MicroGuard OFM-40 Oil Filter", code: "OFM-40", image: "./images/ofm/ofm-40.jpg" },
-            { id: 5, name: "MicroGuard OFM-028 Oil Filter", code: "OFM-028", image: "./images/ofm/ofm-028.jpg" },
-            { id: 6, name: "MicroGuard OFM-40 Heavy Duty", code: "OFM-40HD", image: "./images/ofm/ofm-40.jpg" },
-            { id: 7, name: "MicroGuard OFM-051 Pro Series", code: "OFM-051P", image: "./images/ofm/ofm-051.jpg" },
-            { id: 8, name: "MicroGuard OFM-149 Extended Life", code: "OFM-149EL", image: "./images/ofm/ofm_149.jpg" },
-            { id: 9, name: "MicroGuard OFM-163 Premium", code: "OFM-163P", image: "./images/ofm/ofm_163.jpg" },
-            { id: 10, name: "MicroGuard OFM-028 Racing", code: "OFM-028R", image: "./images/ofm/ofm-028.jpg" },
-            { id: 11, name: "MicroGuard OFM-40 Commercial", code: "OFM-40C", image: "./images/ofm/ofm-40.jpg" },
-            { id: 12, name: "MicroGuard OFM-051 Marine", code: "OFM-051M", image: "./images/ofm/ofm-051.jpg" },
-            { id: 13, name: "MicroGuard OFM-149 Industrial", code: "OFM-149I", image: "./images/ofm/ofm_149.jpg" },
-            { id: 14, name: "MicroGuard OFM-163 Fleet", code: "OFM-163F", image: "./images/ofm/ofm_163.jpg" },
-            { id: 15, name: "MicroGuard OFM-028 Performance", code: "OFM-028P", image: "./images/ofm/ofm-028.jpg" },
-            { id: 16, name: "MicroGuard OFM-40 Eco", code: "OFM-40E", image: "./images/ofm/ofm-40.jpg" },
-            { id: 17, name: "MicroGuard OFM-051 Synthetic", code: "OFM-051S", image: "./images/ofm/ofm-051.jpg" },
-            { id: 18, name: "MicroGuard OFM-149 MaxFlow", code: "OFM-149MF", image: "./images/ofm/ofm_149.jpg" },
-            { id: 19, name: "MicroGuard OFM-163 TurboGuard", code: "OFM-163T", image: "./images/ofm/ofm_163.jpg" },
-            { id: 20, name: "MicroGuard OFM-028 PowerFlow", code: "OFM-028PF", image: "./images/ofm/ofm-028.jpg" },
-            { id: 21, name: "MicroGuard OFM-40 UltraClean", code: "OFM-40UC", image: "./images/ofm/ofm-40.jpg" },
-            { id: 22, name: "MicroGuard OFM-051 MaxGuard", code: "OFM-051MG", image: "./images/ofm/ofm-051.jpg" },
-            { id: 23, name: "MicroGuard OFM-149 ProTech", code: "OFM-149PT", image: "./images/ofm/ofm_149.jpg" },
-            { id: 24, name: "MicroGuard OFM-163 SuperFlow", code: "OFM-163SF", image: "./images/ofm/ofm_163.jpg" },
-            { id: 25, name: "MicroGuard OFM-028 EliteGuard", code: "OFM-028EG", image: "./images/ofm/ofm-028.jpg" },
-            { id: 26, name: "MicroGuard OFM-40 PureFlow", code: "OFM-40PF", image: "./images/ofm/ofm-40.jpg" },
-            { id: 27, name: "MicroGuard OFM-051 TechGuard", code: "OFM-051TG", image: "./images/ofm/ofm-051.jpg" },
-            { id: 28, name: "MicroGuard OFM-149 FleetPro", code: "OFM-149FP", image: "./images/ofm/ofm_149.jpg" },
-            { id: 29, name: "MicroGuard OFM-163 EnduranceMax", code: "OFM-163EM", image: "./images/ofm/ofm_163.jpg" },
-            { id: 30, name: "MicroGuard OFM-028 PlatinumGuard", code: "OFM-028PG", image: "./images/ofm/ofm-028.jpg" }
+            { id: 1, name: "MicroGuard OFM-028 Oil Filter", code: "OFM-028", image: "./images/ofm/ofm-028.jpg", crossRef: ["RefA-028", "RefB-028", "RefC-028"] },
+            { id: 2, name: "MicroGuard OFM-UT-150 Oil Filter", code: "OFM-UT-150", image: "./images/ofm/ofm-ut-150.jpg", crossRef: ["RefA-UT150", "RefB-UT150"] },
+            { id: 3, name: "MicroGuard OFM-UT-500 Oil Filter", code: "OFM-UT-500", image: "./images/ofm/ofm-ut-500.jpg", crossRef: ["RefA-UT500", "RefB-UT500", "RefC-UT500"] },
+            { id: 4, name: "MicroGuard OFM-060 Oil Filter", code: "OFM-060", image: "./images/ofm/ofm-060.jpg", crossRef: ["RefA-060", "RefB-060"] },
+            { id: 5, name: "MicroGuard OFM-510 Oil Filter", code: "OFM-510", image: "./images/ofm/ofm-510.jpg", crossRef: ["RefA-510", "RefB-510", "RefC-510"] },
+            { id: 6, name: "MicroGuard OFM-064 Oil Filter", code: "OFM-064", image: "./images/ofm/ofm-064.jpg", crossRef: ["RefA-064", "RefB-064"] },
+            { id: 7, name: "MicroGuard OFM-110 Oil Filter", code: "OFM-110", image: "./images/ofm/ofm-110.jpg", crossRef: ["RefA-110", "RefB-110", "RefC-110"] },
+            { id: 8, name: "MicroGuard OFM-163 Oil Filter", code: "OFM-163", image: "./images/ofm/ofm_163.jpg", crossRef: ["RefA-163", "RefB-163", "RefC-163"] },
+            { id: 9, name: "MicroGuard OFM-061 Oil Filter", code: "OFM-061", image: "./images/ofm/ofm-061.jpg", crossRef: ["RefA-061", "RefB-061"] },
+            { id: 10, name: "MicroGuard OFM-804 Oil Filter", code: "OFM-804", image: "./images/ofm/ofm-804.jpg", crossRef: ["RefA-804", "RefB-804", "RefC-804"] },
+            { id: 11, name: "MicroGuard OFM-90 Oil Filter", code: "OFM-90", image: "./images/ofm/ofm-90.jpg", crossRef: ["RefA-90", "RefB-90"] },
+            { id: 12, name: "MicroGuard OFM-444 Oil Filter", code: "OFM-444", image: "./images/ofm/ofm-444.jpg", crossRef: ["RefA-444", "RefB-444", "RefC-444"] },
+            { id: 13, name: "MicroGuard OFM-100 Oil Filter", code: "OFM-100", image: "./images/ofm/ofm-100.jpg", crossRef: ["RefA-100", "RefB-100"] },
+            { id: 14, name: "MicroGuard OFM-516 Oil Filter", code: "OFM-516", image: "./images/ofm/ofm-516.jpg", crossRef: ["RefA-516", "RefB-516", "RefC-516"] },
+            { id: 15, name: "MicroGuard OFM-500 Oil Filter", code: "OFM-500", image: "./images/ofm/ofm-500.jpg", crossRef: ["RefA-500", "RefB-500"] },
+            { id: 16, name: "MicroGuard OFM-959 Oil Filter", code: "OFM-959", image: "./images/ofm/ofm-959.jpg", crossRef: ["RefA-959", "RefB-959", "RefC-959"] },
+            { id: 17, name: "MicroGuard OFM-104/OFM-056 Oil Filter", code: "OFM-104/OFM-056", image: "./images/ofm/ofm-104-056.jpg", crossRef: ["RefA-104", "RefB-056"] },
+            { id: 18, name: "MicroGuard OFM-966 Oil Filter", code: "OFM-966", image: "./images/ofm/ofm-966.jpg", crossRef: ["RefA-966", "RefB-966", "RefC-966"] },
+            { id: 19, name: "MicroGuard OFM-303 Oil Filter", code: "OFM-303", image: "./images/ofm/ofm-303.jpg", crossRef: ["RefA-303", "RefB-303"] },
+            { id: 20, name: "MicroGuard OFM-809 Oil Filter", code: "OFM-809", image: "./images/ofm/ofm-809.jpg", crossRef: ["RefA-809", "RefB-809", "RefC-809"] },
+            { id: 21, name: "MicroGuard OFM-230 Oil Filter", code: "OFM-230", image: "./images/ofm/ofm-230.jpg", crossRef: ["RefA-230", "RefB-230"] },
+            { id: 22, name: "MicroGuard OFM-080 Oil Filter", code: "OFM-080", image: "./images/ofm/ofm-080.jpg", crossRef: ["RefA-080", "RefB-080", "RefC-080"] },
+            { id: 23, name: "MicroGuard OFM-051 Oil Filter", code: "OFM-051", image: "./images/ofm/ofm-051.jpg", crossRef: ["RefA-051", "RefB-051"] },
+            { id: 24, name: "MicroGuard OFM-40 Oil Filter", code: "OFM-40", image: "./images/ofm/ofm-40.jpg", crossRef: ["RefA-40", "RefB-40", "RefC-40"] },
+            { id: 25, name: "MicroGuard OFM-22 Oil Filter", code: "OFM-22", image: "./images/ofm/ofm-22.jpg", crossRef: ["RefA-22", "RefB-22"] },
+            { id: 26, name: "MicroGuard OFM-70N Oil Filter", code: "OFM-70N", image: "./images/ofm/ofm-70n.jpg", crossRef: ["RefA-70N", "RefB-70N", "RefC-70N"] },
+            { id: 27, name: "MicroGuard OFM-7141 Oil Filter", code: "OFM-7141", image: "./images/ofm/ofm-7141.jpg", crossRef: ["RefA-7141", "RefB-7141"] },
+            { id: 28, name: "MicroGuard OFM-312 Oil Filter", code: "OFM-312", image: "./images/ofm/ofm-312.jpg", crossRef: ["RefA-312", "RefB-312", "RefC-312"] },
+            { id: 29, name: "MicroGuard OFM-445 Oil Filter", code: "OFM-445", image: "./images/ofm/ofm-445.jpg", crossRef: ["RefA-445", "RefB-445"] },
+            { id: 30, name: "MicroGuard OFM-300 Oil Filter", code: "OFM-300", image: "./images/ofm/ofm-300.jpg", crossRef: ["RefA-300", "RefB-300", "RefC-300"] },
+            { id: 31, name: "MicroGuard OFM-149 Oil Filter", code: "OFM-149", image: "./images/ofm/ofm_149.jpg", crossRef: ["RefA-149", "RefB-149"] },
+            { id: 32, name: "MicroGuard OFM-307 Oil Filter", code: "OFM-307", image: "./images/ofm/ofm-307.jpg", crossRef: ["RefA-307", "RefB-307", "RefC-307"] },
+            { id: 33, name: "MicroGuard OFM-119 Oil Filter", code: "OFM-119", image: "./images/ofm/ofm-119.jpg", crossRef: ["RefA-119", "RefB-119"] },
+            { id: 34, name: "MicroGuard OFM-062 Oil Filter", code: "OFM-062", image: "./images/ofm/ofm-062.jpg", crossRef: ["RefA-062", "RefB-062", "RefC-062"] },
+            { id: 35, name: "MicroGuard OFM-037 Oil Filter", code: "OFM-037", image: "./images/ofm/ofm-037.jpg", crossRef: ["RefA-037", "RefB-037"] },
+            { id: 36, name: "MicroGuard OFM-162 Oil Filter", code: "OFM-162", image: "./images/ofm/ofm-162.jpg", crossRef: ["RefA-162", "RefB-162", "RefC-162"] }
         ];
+
 
         function generateProducts() {
             const grid = document.getElementById('productsGrid');
@@ -531,23 +546,28 @@
                 card.classList.add('flip-card');
 
                 card.innerHTML = `
-          <div class="flip-card-inner">
-            <div class="flip-card-front product-card">
-                <img src="${product.image}" alt="${product.name}" class="product-image">
-                <h2 class="product-title">${product.name}</h2>
-                <p class="product-code">${product.code}</p>
-                <p class="product-features">High efficiency filtration</p>
-                <button class="product-button" onclick="viewProduct('${product.code}')">View Details</button>
-            </div>
-            <div class="flip-card-back">
-    <div class="back-content">
-        <img src="${product.image}" alt="${product.name}" class="back-image">
-        <p class="back-text">Some random text about ${product.name}. Reliable, durable, and efficient for all vehicles.</p>
-    </div>
-</div>
-
-          </div>
-        `;
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front product-card">
+                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                            <h2 class="product-title">${product.name}</h2>
+                            <p class="product-code">Part Number: ${product.code}</p>
+                            <p class="product-features">
+                                <strong>Cross Reference Number:</strong><br>
+                                ${product.crossRef.join(", ")}
+                            </p>
+                            <button class="product-button" onclick="viewProduct('${product.code}')">View Details</button>
+                        </div>
+                        <div class="flip-card-back">
+                        <div class="back-content">
+                            <img src="${product.image}" alt="${product.name}" class="back-image">
+                            <p class="back-text">
+                                <strong>Cross Reference Numbers:</strong><br>
+                                ${product.crossRef.join(", ")}
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                `;
 
                 const img = card.querySelector('.product-image');
                 const back = card.querySelector('.flip-card-back');
@@ -565,12 +585,6 @@
                 grid.appendChild(card);
             });
         }
-
-        generateProducts();
-
-
-
-
 
         // Product click handler
         function viewProduct(productCode) {
