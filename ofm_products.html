@@ -126,7 +126,7 @@
             object-fit: contain;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             border-radius: 8px;
             padding: 20px;
         }
@@ -305,6 +305,153 @@
             background: #e55a0f;
             transform: translateY(-3px) scale(1.1);
         }
+
+        /* FLIP CARD STYLES */
+
+        /* Container */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            /* responsive height */
+            perspective: 1000px;
+        }
+
+        /* Inner wrapper that actually flips */
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            /* match child content */
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* Flipped state for mobile click */
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and back sides */
+        .flip-card-front,
+        .flip-card-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .back-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .back-image {
+            width: 90%;
+            height: 80%;
+            object-fit: contain;
+            /* fills area, may crop */
+            border-radius: 8px;
+            background: #fff;
+            padding: 8px;
+        }
+
+        .back-text {
+            width: 90%;
+            height: 20%;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* FRONT SIDE */
+        .flip-card-front {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+
+            .flip-card .product-image:hover~.flip-card-back,
+            .flip-card .product-image:hover {
+                cursor: pointer;
+            }
+
+            .flip-card .product-image:hover {
+                /* Add a class to flip via JS */
+            }
+        }
+
+        /* BACK SIDE */
+        .flip-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(90deg, #717da3, #be9374);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* RESPONSIVE ADJUSTMENTS */
+        @media (max-width: 768px) {
+
+            .flip-card-front,
+            .flip-card-back {
+                padding: 20px;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .flip-card-front,
+            .flip-card-back {
+                padding: 15px;
+            }
+
+            .product-image {
+                height: 180px;
+            }
+        }
+
+        .flip-card-inner {
+            transition: transform 0.8s;
+        }
+
+        .flip-card-inner.show-back {
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
 
@@ -376,27 +523,54 @@
             { id: 30, name: "MicroGuard OFM-028 PlatinumGuard", code: "OFM-028PG", image: "./images/ofm/ofm-028.jpg" }
         ];
 
-        // Generate product cards
         function generateProducts() {
             const grid = document.getElementById('productsGrid');
 
-            products.forEach((product, index) => {
+            products.forEach((product) => {
                 const card = document.createElement('div');
-                card.className = 'product-card';
-                card.style.transitionDelay = `${(index % 6) * 100}ms`;
+                card.classList.add('flip-card');
 
                 card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
-                    <div class="product-category">Oil Filter</div>
-                    <h3 class="product-title">${product.name}</h3>
-                    <div class="product-code">Part Number: ${product.code}</div>
-                    <div class="product-features">• High Efficiency • OEM Quality</div>
-                    <button class="product-button" onclick="viewProduct('${product.code}')">View Details</button>
-                `;
+          <div class="flip-card-inner">
+            <div class="flip-card-front product-card">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <h2 class="product-title">${product.name}</h2>
+                <p class="product-code">${product.code}</p>
+                <p class="product-features">High efficiency filtration</p>
+                <button class="product-button" onclick="viewProduct('${product.code}')">View Details</button>
+            </div>
+            <div class="flip-card-back">
+    <div class="back-content">
+        <img src="${product.image}" alt="${product.name}" class="back-image">
+        <p class="back-text">Some random text about ${product.name}. Reliable, durable, and efficient for all vehicles.</p>
+    </div>
+</div>
+
+          </div>
+        `;
+
+                const img = card.querySelector('.product-image');
+                const back = card.querySelector('.flip-card-back');
+
+                // Only add click behavior for touch devices
+                if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+                    img.addEventListener('click', () => {
+                        card.classList.add('flipped');
+                    });
+                    back.addEventListener('click', () => {
+                        card.classList.remove('flipped');
+                    });
+                }
 
                 grid.appendChild(card);
             });
         }
+
+        generateProducts();
+
+
+
+
 
         // Product click handler
         function viewProduct(productCode) {
@@ -484,6 +658,40 @@
         });
 
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+            document.querySelectorAll(".flip-card").forEach(card => {
+                const img = card.querySelector(".product-image");
+                const back = card.querySelector(".flip-card-back");
+                const inner = card.querySelector(".flip-card-inner");
+
+                if (isTouchDevice) {
+                    // 👉 Mobile: tap to flip, tap back to return
+                    img.addEventListener("click", () => {
+                        card.classList.add("flipped");
+                    });
+
+                    back.addEventListener("click", () => {
+                        card.classList.remove("flipped");
+                    });
+                } else {
+                    // 👉 Desktop: hover image flips, leaving card flips back
+                    img.addEventListener("mouseenter", () => {
+                        inner.classList.add("show-back");
+                    });
+
+                    card.addEventListener("mouseleave", () => {
+                        inner.classList.remove("show-back");
+                    });
+                }
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>
