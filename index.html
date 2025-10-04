@@ -527,11 +527,20 @@
     .aetherial-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
+      margin: auto;
       filter: brightness(70%);
       transition: filter 0.35s ease;
+      background-image: url('./images/blue_bg.png');
+      /* replace with your image file name */
+      background-size: cover;
+      /* ensures it fills the area */
+      background-position: center;
+      /* centers the background image */
+      background-repeat: no-repeat;
     }
+
 
     .aetherial-card:hover img {
       filter: brightness(60%);
@@ -882,7 +891,7 @@
       display: flex;
       align-items: flex-start;
       gap: 80px;
-      max-width: 1400px;
+      max-width: 80%;
       margin: 0 auto;
     }
 
@@ -1389,9 +1398,18 @@
 
     .logo-slider {
       width: 80%;
-      height: 370px;
-      /* fixed height for the slider */
+      height: 340px;
+      /* slider height */
+      margin: 0 auto;
+      position: relative;
+      padding-bottom: 100px;
+      /* 🔥 reserve space for bullets */
+    }
 
+    @media (max-width: 1200px) {
+      .logo-slider {
+        margin-top: 40px;
+      }
     }
 
     .swiper-wrapper {
@@ -1404,69 +1422,44 @@
       justify-content: center;
       background: #ffffff;
       border-radius: 12px;
-      height: 300px;
-      /* all images same height */
-      width: 300px;
       transition: transform 0.3s;
+      padding: 10px;
+      box-sizing: border-box;
     }
 
     .swiper-slide img {
-      height: 300px;
-      /* all images same height */
-      width: 300px;
-      /* maintain proportions */
+      width: 100%;
+      height: auto;
+      max-height: 250px;
       object-fit: contain;
-      margin: auto;
     }
 
     .swiper-pagination {
       position: absolute;
+      bottom: 20px;
+      /* place bullets 20px above bottom */
+      left: 0;
+      right: 0;
+      text-align: center;
+      margin-top: 20px;
+      /* adds spacing above bullets */
       margin-bottom: 20px;
+      /* adds spacing below bullets */
     }
 
-    /* Pagination dots */
+
     .swiper-pagination-bullet {
       background: #bbb;
       opacity: 1;
+      width: 10px;
+      height: 10px;
+      margin: 0 6px;
+      transition: background 0.3s;
+      border-radius: 50%;
     }
 
     .swiper-pagination-bullet-active {
       background: #007bff;
-    }
-
-    /* Scroll to Top Button */
-    .scroll-top {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--secondary-color);
-      color: var(--white);
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(20px);
-      transition: var(--transition);
-      border: none;
-    }
-
-    .scroll-top.show {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .scroll-top:hover {
-      background: #e55a0f;
-      transform: translateY(-3px) scale(1.1);
     }
 
     .fade-in {
@@ -1613,7 +1606,7 @@
 
       <!-- Card 1: Air Filters -->
       <div class="aetherial-card fade-in">
-        <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Air Filter" />
+        <img src="./images/afm/air_filter_readmore-Photoroom.png" alt="Air Filter" />
         <div class="luminous-card-content">
           <h2>Air Filters</h2>
           <p>
@@ -1631,7 +1624,7 @@
 
       <!-- Card 2: Fuel Filters -->
       <div class="aetherial-card fade-in">
-        <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Coolant Fluid" />
+        <img src="./images/ffm/fuel_filter_readmore-Photoroom.png" alt="Coolant Fluid" />
         <div class="luminous-card-content">
           <h2>Fuel Filters</h2>
           <p>
@@ -1649,7 +1642,7 @@
 
       <!-- Card 3: Fuel Water Separator -->
       <div class="aetherial-card fade-in">
-        <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+        <img src="./images/fsm/fsw_readmore-Photoroom.png" alt="Fluid Analysis" />
         <div class="luminous-card-content">
           <h2>Fuel Water Separator</h2>
           <p>
@@ -1666,7 +1659,7 @@
       </div>
 
       <div class="aetherial-card fade-in">
-        <img src="./images/ofm/ofm_opening2.png" alt="Fluid Analysis" />
+        <img src="./images/ofm/ofm_opening2-Photoroom.png" alt="Fluid Analysis" />
         <div class="luminous-card-content">
           <h2>Oil Filters</h2>
           <p>
@@ -1686,7 +1679,7 @@
       </div>
 
       <div class="aetherial-card fade-in">
-        <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+        <img src="./images/stm/steering_filter_readmore-Photoroom.png" alt="Fluid Analysis" />
         <div class="luminous-card-content">
           <h2>Steering Filters</h2>
           <p>
@@ -1703,11 +1696,11 @@
       </div>
 
       <div class="aetherial-card fade-in">
-        <img src="https://images.pexels.com/photos/1054214/pexels-photo-1054214.jpeg" alt="Fluid Analysis" />
+        <img src="./images/ufm/urea_filter_readmore-Photoroom.png" alt="Fluid Analysis" />
         <div class="luminous-card-content">
-          <h2>Hydraulic Filters</h2>
+          <h2>Urea Filters</h2>
           <p>
-            MicroGuard Hydraulic Filters protect heavy-duty machinery from contaminants.
+            MicroGuard Urea Filters protect heavy-duty machinery from contaminants.
             Built for durability, they ensure efficiency and reduce downtime.
           </p>
           <!-- Example card red bar -->
@@ -1863,11 +1856,6 @@
     </div>
 
 
-    <button id="scrollTopBtn" class="scroll-top">
-      <i class="fas fa-arrow-up"></i>
-    </button>
-
-
     <!-- <div class="third-container">
         <div class="wrapper" id="air-filter-slider"></div>
         <div class="wrapper" id="oil-filter-slider"></div>
@@ -1882,7 +1870,7 @@
     <!-- <iframe src="circle.html" width="100%" height="600px" style="border: none"></iframe> -->
   </main>
 
-
+  <div id="scroll"></div>
   <div id="footer"></div>
 
   <script>
@@ -1913,6 +1901,7 @@
     // Load navbar and footer
     loadHTML("navbar", "navbar.html");
     loadHTML("footer", "footer.html");
+    loadHTML("scroll", "scroll.html");
   </script>
 
   <!-- <script>
@@ -2039,11 +2028,11 @@
   <script>
     const swiper = new Swiper('.logo-slider', {
       slidesPerView: 4,
-      spaceBetween: 30,
+      spaceBetween: 20,
       loop: true,
-      centeredSlides: false,   // 🚀 ensures no extra left margin
+      speed: 2000,              // smooth continuous speed
       autoplay: {
-        delay: 2000,
+        delay: 0,               // no pause between slides
         disableOnInteraction: false,
       },
       pagination: {
@@ -2051,34 +2040,18 @@
         clickable: true,
       },
       breakpoints: {
-        1200: { slidesPerView: 6, spaceBetween: 5 },
-        1024: { slidesPerView: 5, spaceBetween: 5 },
-        768: { slidesPerView: 4, spaceBetween: 4 },
-        480: { slidesPerView: 3, spaceBetween: 2 },
-        0: { slidesPerView: 2, spaceBetween: 2 }
+        1400: { slidesPerView: 6, spaceBetween: 20 },
+        1200: { slidesPerView: 5, spaceBetween: 15 },
+        992: { slidesPerView: 4, spaceBetween: 15 },
+        768: { slidesPerView: 3, spaceBetween: 10 },
+        480: { slidesPerView: 2, spaceBetween: 8 },
+        0: { slidesPerView: 1, spaceBetween: 5 }
       }
     });
   </script>
 
-  <script>
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        scrollTopBtn.classList.add("show");
-      } else {
-        scrollTopBtn.classList.remove("show");
-      }
-    });
 
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-
-  </script>
 
   <script>
     // Reveal elements on scroll

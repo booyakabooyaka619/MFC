@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>MicroGuard Air Filters - Professional Automotive Parts</title>
     <meta name="description"
         content="Premium air filters from MicroGuard Filters Corp - High efficiency automotive filtration solutions">
@@ -486,6 +488,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <div id="scroll"></div>
     <div id="footer"></div>
 
     <!-- <section class="bottom-section">
@@ -498,67 +501,75 @@
 
     <script>
         // Product data
+
+
         const products = [
-            { id: 1, name: "MicroGuard AFM-305 Air Filter", code: "AFM-305", image: "./images/afm/afm-305.jpg", crossRef: ["221AB"] },
-            { id: 2, name: "MicroGuard AFM-306 Air Filter", code: "AFM-306", image: "./images/afm/afm-306.jpg", crossRef: [] },
-            { id: 3, name: "MicroGuard AFM-910 Air Filter", code: "AFM-910", image: "./images/afm/afm-910.jpg", crossRef: [] },
-            { id: 4, name: "MicroGuard AFM-911 Air Filter", code: "AFM-911", image: "./images/afm/afm-911.jpg", crossRef: [] },
-            { id: 5, name: "MicroGuard AFM-485 Air Filter", code: "AFM-485", image: "./images/afm/afm-485.jpg", crossRef: [] },
-            { id: 6, name: "MicroGuard AFM-486 Air Filter", code: "AFM-486", image: "./images/afm/afm-486.jpg", crossRef: [] },
-            { id: 7, name: "MicroGuard AFM-699 Air Filter", code: "AFM-699", image: "./images/afm/afm-699.jpg", crossRef: [] },
-            { id: 8, name: "MicroGuard AFM-670 Air Filter", code: "AFM-670", image: "./images/afm/afm-670.jpg", crossRef: [] },
-            { id: 9, name: "MicroGuard AFM-669 Air Filter", code: "AFM-669", image: "./images/afm/afm-669.jpg", crossRef: [] },
-            { id: 10, name: "MicroGuard AFM-671 Air Filter", code: "AFM-671", image: "./images/afm/afm-671.jpg", crossRef: [] },
-            { id: 11, name: "MicroGuard AFM-672 Air Filter", code: "AFM-672", image: "./images/afm/afm-672.jpg", crossRef: [] },
-            { id: 12, name: "MicroGuard AFM-117 Air Filter", code: "AFM-117", image: "./images/afm/afm-117.jpg", crossRef: [] },
-            { id: 13, name: "MicroGuard AFM-118 Air Filter", code: "AFM-118", image: "./images/afm/afm-118.jpg", crossRef: [] },
-            { id: 14, name: "MicroGuard AFM-011 Air Filter", code: "AFM-011", image: "./images/afm/afm-011.jpg", crossRef: [] },
-            { id: 15, name: "MicroGuard AFM-012 Air Filter", code: "AFM-012", image: "./images/afm/afm-012.jpg", crossRef: [] },
-            { id: 16, name: "MicroGuard AFM-700 Air Filter", code: "AFM-700", image: "./images/afm/afm-700.jpg", crossRef: [] },
-            { id: 17, name: "MicroGuard AFM-701 Air Filter", code: "AFM-701", image: "./images/afm/afm-701.jpg", crossRef: [] },
-            { id: 18, name: "MicroGuard AFM-932 Air Filter", code: "AFM-932", image: "./images/afm/afm-932.jpg", crossRef: [] },
-            { id: 19, name: "MicroGuard AFM-933 Air Filter", code: "AFM-933", image: "./images/afm/afm-933.jpg", crossRef: [] },
-            { id: 20, name: "MicroGuard AFM-6077 Air Filter", code: "AFM-6077", image: "./images/afm/afm-6077.jpg", crossRef: [] },
-            { id: 21, name: "MicroGuard AFM-6078 INNER Air Filter", code: "AFM-6078 INNER", image: "./images/afm/afm-6078-inner.jpg", crossRef: [] },
-            { id: 22, name: "MicroGuard AFM-092 Air Filter", code: "AFM-092", image: "./images/afm/afm-092.jpg", crossRef: [] },
-            { id: 23, name: "MicroGuard AFM-974 Air Filter", code: "AFM-974", image: "./images/afm/afm-974.jpg", crossRef: [] },
-            { id: 24, name: "MicroGuard AFM-975 Air Filter", code: "AFM-975", image: "./images/afm/afm-975.jpg", crossRef: [] },
-            { id: 25, name: "MicroGuard AFM-250 Air Filter", code: "AFM-250", image: "./images/afm/afm-250.jpg", crossRef: [] },
-            { id: 26, name: "MicroGuard AFM-5566 Air Filter", code: "AFM-5566", image: "./images/afm/afm-5566.jpg", crossRef: [] },
-            { id: 27, name: "MicroGuard AFM-5567 Air Filter", code: "AFM-5567", image: "./images/afm/afm-5567.jpg", crossRef: [] },
-            { id: 28, name: "MicroGuard AFM-2233 Air Filter", code: "AFM-2233", image: "./images/afm/afm-2233.jpg", crossRef: [] },
-            { id: 29, name: "MicroGuard AFM-025 Air Filter", code: "AFM-025", image: "./images/afm/afm-025.jpg", crossRef: [] },
-            { id: 30, name: "MicroGuard AFM-026 Air Filter", code: "AFM-026", image: "./images/afm/afm-026.jpg", crossRef: [] },
-            { id: 31, name: "MicroGuard AFM-104 Air Filter", code: "AFM-104", image: "./images/afm/afm-104.jpg", crossRef: [] },
-            { id: 32, name: "MicroGuard AFM-105 Air Filter", code: "AFM-105", image: "./images/afm/afm-105.jpg", crossRef: [] },
-            { id: 33, name: "MicroGuard AFM-248 Air Filter", code: "AFM-248", image: "./images/afm/afm-248.jpg", crossRef: [] },
-            { id: 34, name: "MicroGuard AFM-249 Air Filter", code: "AFM-249", image: "./images/afm/afm-249.jpg", crossRef: [] },
-            { id: 35, name: "MicroGuard AFM-928 Air Filter", code: "AFM-928", image: "./images/afm/afm-928.jpg", crossRef: [] },
-            { id: 36, name: "MicroGuard AFM-929 Air Filter", code: "AFM-929", image: "./images/afm/afm-929.jpg", crossRef: [] },
-            { id: 37, name: "MicroGuard AFM-481 Air Filter", code: "AFM-481", image: "./images/afm/afm-481.jpg", crossRef: [] },
-            { id: 38, name: "MicroGuard AFM-482 Air Filter", code: "AFM-482", image: "./images/afm/afm-482.jpg", crossRef: [] },
-            { id: 39, name: "MicroGuard AFM-797 Air Filter", code: "AFM-797", image: "./images/afm/afm-797.jpg", crossRef: [] },
-            { id: 40, name: "MicroGuard AFM-798 Air Filter", code: "AFM-798", image: "./images/afm/afm-798.jpg", crossRef: [] },
-            { id: 41, name: "MicroGuard AFM-483 Air Filter", code: "AFM-483", image: "./images/afm/afm-483.jpg", crossRef: [] },
-            { id: 42, name: "MicroGuard AFM-484 Air Filter", code: "AFM-484", image: "./images/afm/afm-484.jpg", crossRef: [] },
-            { id: 43, name: "MicroGuard AFM-400 Air Filter", code: "AFM-400", image: "./images/afm/afm-400.jpg", crossRef: [] },
-            { id: 44, name: "MicroGuard AFM-300 Air Filter", code: "AFM-300", image: "./images/afm/afm-300.jpg", crossRef: [] },
-            { id: 45, name: "MicroGuard AFM-2234 Air Filter", code: "AFM-2234", image: "./images/afm/afm-2234.jpg", crossRef: [] },
-            { id: 46, name: "MicroGuard AFM-600 Air Filter", code: "AFM-600", image: "./images/afm/afm-600.jpg", crossRef: [] },
-            { id: 47, name: "MicroGuard AFM-155 Air Filter", code: "AFM-155", image: "./images/afm/afm-155.jpg", crossRef: [] },
-            { id: 48, name: "MicroGuard AFM-156 Air Filter", code: "AFM-156", image: "./images/afm/afm-156.jpg", crossRef: [] },
-            { id: 49, name: "MicroGuard AFM-260 Air Filter", code: "AFM-260", image: "./images/afm/afm-260.jpg", crossRef: [] },
-            { id: 50, name: "MicroGuard AFM-261 Air Filter", code: "AFM-261", image: "./images/afm/afm-261.jpg", crossRef: [] },
-            { id: 51, name: "MicroGuard AFM-485 WITH ASSEMBLY Air Filter", code: "AFM-485 WITH ASSEMBLY", image: "./images/afm/afm-485-assembly.jpg", crossRef: [] },
-            { id: 52, name: "MicroGuard AFM-207 Air Filter", code: "AFM-207", image: "./images/afm/afm-207.jpg", crossRef: [] },
-            { id: 53, name: "MicroGuard AFM-345 Air Filter", code: "AFM-345", image: "./images/afm/afm-345.jpg", crossRef: [] },
-            { id: 54, name: "MicroGuard AFM-669 FILTER WITH ASSEMBLY Air Filter", code: "AFM-669 FILTER WITH ASSEMBLY", image: "./images/afm/afm-669-assembly.jpg", crossRef: [] },
-            { id: 55, name: "MicroGuard AFM-315 Air Filter", code: "AFM-315", image: "./images/afm/afm-315.jpg", crossRef: [] },
-            { id: 56, name: "MicroGuard AFM-316 Air Filter", code: "AFM-316", image: "./images/afm/afm-316.jpg", crossRef: [] },
-            { id: 57, name: "MicroGuard AFM-777 Air Filter", code: "AFM-777", image: "./images/afm/afm-777.jpg", crossRef: [] },
-            { id: 58, name: "MicroGuard AFM-778 Air Filter", code: "AFM-778", image: "./images/afm/afm-778.jpg", crossRef: [] },
-            { id: 59, name: "MicroGuard AFM-274 Air Filter", code: "AFM-274", image: "./images/afm/afm-274.jpg", crossRef: [] }
+            { id: 1, name: "MicroGuard AFM-011 Air Filter", code: "AFM-011", image: "./images/afm/afm-011.jpg", crossRef: ["P608116", "Mahindra 6402DAB00011N", "Ashok Leyland", "F7B02100", "10004486"] },
+            { id: 2, name: "MicroGuard AFM-012 Air Filter", code: "AFM-012", image: "./images/afm/afm-012.jpg", crossRef: ["P608391", "Mahindra 6402DAB00021N", "Ashok Leyland", "F7B02000", "10004486", "Daimler-A4005280406"] },
+            { id: 3, name: "MicroGuard AFM-025 Air Filter", code: "AFM-025", image: "./images/afm/afm-025.jpg", crossRef: ["40052500006"] },
+            { id: 4, name: "MicroGuard AFM-025-026 Air Filter", code: "AFM-025-026", image: "./images/afm/afm-025-026.jpg", crossRef: ["40052500006"] },
+            // { id: 5, name: "MicroGuard AFM-026 Air Filter", code: "AFM-026", image: "./images/afm/afm-026.jpg", crossRef: [] },
+
+            { id: 6, name: "MicroGuard AFM-092 Air Filter", code: "AFM-092-401", image: "./images/afm/afm-092.jpeg", crossRef: ["AF26092"] },
+            { id: 7, name: "MicroGuard AFM-104 Air Filter", code: "AFM-104", image: "./images/afm/afm-104.jpg", crossRef: ["F/G-5003795", "ID303248"] },
+            { id: 8, name: "MicroGuard AFM-104-105 Air Filter", code: "AFM-104-105", image: "./images/afm/afm-104-105.jpg", crossRef: ["F/G-5003795", "ID303248", "F/G-5003796", "ID303249", "5010377"] },
+            { id: 9, name: "MicroGuard AFM-105 Air Filter", code: "AFM-105", image: "./images/afm/afm-105.jpg", crossRef: ["P2405339", "41200006"] },
+            { id: 10, name: "MicroGuard AFM-117 Air Filter", code: "AFM-117", image: "./images/afm/afm-117.jpg", crossRef: ["AF25884", "252509140134", "P500917", "8200009"] },
+            { id: 11, name: "MicroGuard AFM-117-118 Air Filter", code: "AFM-117-118", image: "./images/afm/afm-117-118.jpg", crossRef: ["AF25884/25885", "252509140134/133", "885409051613", "8200070"] },
+            { id: 12, name: "MicroGuard AFM-118 Air Filter", code: "AFM-118", image: "./images/afm/afm-118.jpg", crossRef: ["AF25885", "252509140133", "P500917", "8200009"] },
+            { id: 13, name: "MicroGuard AFM-155 Air Filter", code: "AFM-155", image: "./images/afm/afm-155.jpeg", crossRef: ["AF25155"] },
+            { id: 14, name: "MicroGuard AFM-155-156 Air Filter", code: "AFM-155-156", image: "./images/afm/afm-155-156.jpeg", crossRef: ["AF25155/56", "FG800500", "FG800600"] },
+            { id: 15, name: "MicroGuard AFM-207 Air Filter", code: "AFM-207", image: "./images/afm/afm-207.jpg", crossRef: ["PI2293", "AF2604600", "XENON"] },
+            { id: 16, name: "MicroGuard AFM-248-249 Air Filter", code: "AFM-248-249", image: "./images/afm/afm-248-249.jpg", crossRef: ["Air Filter 407", "AF4058", "ID202169", "ID202170"] },
+            { id: 17, name: "MicroGuard AFM-250 Air Filter", code: "AFM-250", image: "./images/afm/afm-250.jpg", crossRef: ["253409130262", "8200315", "GSK-05529", "8200667", "8200622", "253409130368", "9095787001", "AF26071"] },
+            { id: 18, name: "MicroGuard AFM-260 Air Filter", code: "AFM-260", image: "./images/afm/afm-260.jpeg", crossRef: ["FG802600", "5031949"] },
+            { id: 19, name: "MicroGuard AFM-260-261 Air Filter", code: "AFM-260-261", image: "./images/afm/afm-260-261.jpeg", crossRef: ["FG802600", "FG802700 (INNER)"] },
+            { id: 20, name: "MicroGuard AFM-300 Air Filter", code: "AFM-300", image: "./images/afm/afm-300.jpg", crossRef: ["KFA02-1-7056", "AF26097"] },
+            { id: 21, name: "MicroGuard AFM-305 Air Filter", code: "AFM-305", image: "./images/afm/afm-305.jpg", crossRef: ["AF26075", "253409130305"] },
+            { id: 22, name: "MicroGuard AFM-305-306 Air Filter", code: "AFM-305-306", image: "./images/afm/afm-305-306.jpg", crossRef: ["253409130305", "253409130306"] },
+            { id: 23, name: "MicroGuard AFM-306 Air Filter", code: "AFM-306", image: "./images/afm/afm-306.jpg", crossRef: ["AF26074", "253409130306"] },
+            // { id: 24, name: "MicroGuard AFM-315-316 Air Filter", code: "AFM-315-316", image: "./images/afm/afm-315-316.jpeg", crossRef: [] },
+
+            { id: 25, name: "MicroGuard AFM-481 Air Filter", code: "AFM-481", image: "./images/afm/afm-481.jpg", crossRef: ["04.760.01.0.00", "2890655", "AF26481", "5000144", "10005607", "8200819", "8200842", "FG800700"] },
+            { id: 26, name: "MicroGuard AFM-482 Air Filter", code: "AFM-482", image: "./images/afm/afm-482.jpg", crossRef: ["04.760.02.0.00", "2890656", "AF26121", "5000143", "10005606", "8200818", "8200841", "B4847806"] },
+            { id: 27, name: "MicroGuard AFM-483-484 Air Filter", code: "AFM-483-484", image: "./images/afm/afm-483-484.jpeg", crossRef: ["272709130143", "252709140258", "8200778", "AF26483U", "272709130144", "252709140259", "8200777", "AF25963U", "502621900", "8200756/8200757", "5026219"] },
+            { id: 28, name: "MicroGuard AFM-483 Air Filter", code: "AFM-483", image: "./images/afm/afm-483.jpg", crossRef: ["272709130143", "252709140258", "8200778", "AF26483U", "F7B02700", "8200756"] },
+            { id: 29, name: "MicroGuard AFM-484 Air Filter", code: "AFM-484", image: "./images/afm/afm-484.jpeg", crossRef: ["272709130144", "252709140259", "8200777", "AF25963U", "F7B02800", "8200757"] },
+            { id: 30, name: "MicroGuard AFM-485 Air Filter", code: "AFM-485", image: "./images/afm/afm-485.jpg", crossRef: ["AF26485", "F7B01100", "278609139936", "P617643"] },
+            // { id: 31, name: "MicroGuard AFM-485-with-assembly Air Filter", code: "AFM-485-with-assembly", image: "./images/afm/afm-485-with-assembly.jpeg", crossRef: [] },
+
+            { id: 32, name: "MicroGuard AFM-486 Air Filter", code: "AFM-486", image: "./images/afm/afm-486.jpg", crossRef: ["AF26125", "F7B01200", "278609139935", "P617644"] },
+            { id: 33, name: "MicroGuard AFM-600 Air Filter", code: "AFM-600", image: "./images/afm/afm-600.jpg", crossRef: ["286909139904", "AF26098"] },
+            { id: 34, name: "MicroGuard AFM-669 Air Filter", code: "AFM-669", image: "./images/afm/afm-669.jpg", crossRef: ["AF4669", "AF25939", "F8211200", "ID300068", "278609139908", "P759103"] },
+            { id: 35, name: "MicroGuard AFM-670 Air Filter", code: "AFM-670", image: "./images/afm/afm-670.jpg", crossRef: ["AF4670", "AF25948", "278609139909", "P759104", "ID300069"] },
+            { id: 36, name: "MicroGuard AFM-671 Air Filter", code: "AFM-671", image: "./images/afm/afm-671.jpg", crossRef: ["AF947", "278609139910", "P759101", "AF26076", "AF25921", "F8221200"] },
+            { id: 37, name: "MicroGuard AFM-672 Air Filter", code: "AFM-672", image: "./images/afm/afm-672.jpg", crossRef: ["AF963", "278609139911", "P759102", "AF25930", "F8221300"] },
+            { id: 38, name: "MicroGuard AFM-700 Air Filter", code: "AFM-700", image: "./images/afm/afm-700.jpg", crossRef: ["F8845800/900", "AF26069"] },
+            { id: 39, name: "MicroGuard AFM-700-701 Air Filter", code: "AFM-700-701", image: "./images/afm/afm-700-701.jpeg", crossRef: ["F8845800/900", "AF26069/70", "5026222", "P5104009", "AF26070"] },
+            { id: 40, name: "MicroGuard AFM-777 Air Filter", code: "AFM-777", image: "./images/afm/afm-777.jpeg", crossRef: ["EICHER-N/M-IM301144"] },
+            { id: 41, name: "MicroGuard AFM-777-778 Air Filter", code: "AFM-777-778", image: "./images/afm/afm-777-778.jpeg", crossRef: ["EICHER-N/M-IM301144"] },
+            { id: 42, name: "MicroGuard AFM-797 Air Filter", code: "AFM-797", image: "./images/afm/afm-797.jpg", crossRef: ["8200797", "AF26096 (OUTER)"] },
+            { id: 43, name: "MicroGuard AFM-797-798 Air Filter", code: "AFM-797-798", image: "./images/afm/afm-797-798.jpg", crossRef: ["8200796/8200797", "AF26095/AF26096", "88200696", "5003913", "8200698", "8200822"] },
+            // { id: 44, name: "MicroGuard AFM-798 Air Filter", code: "AFM-798", image: "./images/afm/afm-798.jpg", crossRef: [] },
+            // { id: 45, name: "MicroGuard AFM-901 Air Filter", code: "AFM-901", image: "./images/afm/afm-901.jpg", crossRef: [] },
+            { id: 46, name: "MicroGuard AFM-910 Air Filter", code: "AFM-910", image: "./images/afm/afm-910.jpeg", crossRef: ["AF26002", "X3962700", "AF26059", "252709130329", "P500955", "8200179"] },
+            { id: 47, name: "MicroGuard AFM-911 Air Filter", code: "AFM-911", image: "./images/afm/afm-911.jpeg", crossRef: ["AF26006", "X3962800", "AF26058", "252709130330", "P500956", "AF26079", "AF26080"] },
+            { id: 48, name: "MicroGuard AFM-928 Air Filter", code: "AFM-928", image: "./images/afm/afm-928.jpg", crossRef: ["AF26061", "492311211006", "AF26027", "AF25915", "F8283900", "286609139920", "286609139901N"] },
+            { id: 49, name: "MicroGuard AFM-928-929 Air Filter", code: "AFM-928-929", image: "./images/afm/afm-928-929.jpg", crossRef: ["AF25877/78", "AF26061/60", "AF26027/28", "AF25915/25924", "F8283900"] },
+            { id: 50, name: "MicroGuard AFM-929 Air Filter", code: "AFM-929", image: "./images/afm/afm-929.jpg", crossRef: ["AF26060", "492311211007", "AF26028", "AF25924", "F8284000", "286609139920", "286609139902N"] },
+            { id: 51, name: "MicroGuard AFM-932 Air Filter", code: "AFM-932", image: "./images/afm/afm-932.jpg", crossRef: ["8200354", "AF26063", "278609139931", "278609139931N"] },
+            { id: 52, name: "MicroGuard AFM-932-933 Air Filter", code: "AFM-932-933", image: "./images/afm/afm-932-933.jpeg", crossRef: ["8200354/AF26063", "8200344/AF26056"] },
+            { id: 53, name: "MicroGuard AFM-974 Air Filter", code: "AFM-974", image: "./images/afm/afm-974.jpeg", crossRef: ["286309139929N", "AF27974", "C281275"] },
+            { id: 54, name: "MicroGuard AFM-974-975 Air Filter", code: "AFM-974-975", image: "./images/afm/afm-974-975.jpg", crossRef: ["C281275", "CF1831"] },
+            { id: 55, name: "MicroGuard AFM-975 Air Filter", code: "AFM-975", image: "./images/afm/afm-975.jpg", crossRef: ["CF1831"] },
+            { id: 56, name: "MicroGuard AFM-2233-2234 Air Filter", code: "AFM-2233-2234", image: "./images/afm/afm-2233-2234.jpg", crossRef: ["ID362218", "ID362219"] },
+            { id: 57, name: "MicroGuard AFM-5566 Air Filter", code: "AFM-5566", image: "./images/afm/afm-5566.jpg", crossRef: ["570909130106", "ID316950", "D316951"] },
+            { id: 58, name: "MicroGuard AFM-5566-5567 Air Filter", code: "AFM-5566-5567", image: "./images/afm/afm-5566-5567.jpg", crossRef: ["570909130106/0107", "ID316950", "D316951"] },
+            { id: 59, name: "MicroGuard AFM-6077 Air Filter", code: "AFM-6077", image: "./images/afm/afm-6077.jpg", crossRef: ["AF26090", "AF26078", "ID341947"] },
+            { id: 60, name: "MicroGuard AFM-6077-6078 Air Filter", code: "AFM-6077-6078", image: "./images/afm/afm-6077-6078.jpg", crossRef: ["AF26090/89", "ID341947/ID341946"] },
+            { id: 61, name: "MicroGuard AFM-6078 Air Filter", code: "AFM-6078", image: "./images/afm/afm-6078.jpeg", crossRef: ["AF26089", "ID341946"] }
         ];
+
 
 
 
@@ -672,29 +683,11 @@
         // Load navbar and footer
         loadHTML("navbar", "navbar.html");
         loadHTML("footer", "footer.html");
+        loadHTML("scroll", "scroll.html");
     </script>
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0); 
-    </script>
-    <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        });
-
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
     </script>
 
     <script>

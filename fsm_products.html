@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>MicroGuard Fuel Water Separators - Professional Automotive Parts</title>
     <meta name="description"
         content="Premium Fuel Water Separators from MicroGuard Filters Corp - High efficiency automotive filtration solutions">
@@ -486,6 +488,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <div id="scroll"></div>
     <div id="footer"></div>
 
     <!-- <section class="bottom-section">
@@ -499,39 +502,45 @@
     <script>
         // Product data
         const products = [
-            { id: 1, name: "MicroGuard FSM-644V Fuel Water Separator", code: "FSM-644V", image: "./images/fsm/fsm-644v.jpg", crossRef: [] },
-            { id: 2, name: "MicroGuard FSM-662 Fuel Water Separator", code: "FSM-662", image: "./images/fsm/fsm-662.jpg", crossRef: [] },
-            { id: 3, name: "MicroGuard FSM-657V Fuel Water Separator", code: "FSM-657V", image: "./images/fsm/fsm-657v.jpg", crossRef: [] },
-            { id: 4, name: "MicroGuard FSM-660 Fuel Water Separator", code: "FSM-660", image: "./images/fsm/fsm-660.jpg", crossRef: [] },
-            { id: 5, name: "MicroGuard FSM-636 Fuel Water Separator", code: "FSM-636", image: "./images/fsm/fsm-636.jpg", crossRef: [] },
-            { id: 6, name: "MicroGuard FSM-275 Fuel Water Separator", code: "FSM-275", image: "./images/fsm/fsm-275.jpg", crossRef: [] },
-            { id: 7, name: "MicroGuard FSM-306 Fuel Water Separator", code: "FSM-306", image: "./images/fsm/fsm-306.jpg", crossRef: [] },
-            { id: 8, name: "MicroGuard FSM-634 Fuel Water Separator", code: "FSM-634", image: "./images/fsm/fsm-634.jpg", crossRef: [] },
-            { id: 9, name: "MicroGuard FSM-700 Fuel Water Separator", code: "FSM-700", image: "./images/fsm/fsm-700.jpg", crossRef: [] },
-            { id: 10, name: "MicroGuard FSM-400 Fuel Water Separator", code: "FSM-400", image: "./images/fsm/fsm-400.jpg", crossRef: [] },
-            { id: 11, name: "MicroGuard FSM-140 Fuel Water Separator", code: "FSM-140", image: "./images/fsm/fsm-140.jpg", crossRef: [] },
-            { id: 12, name: "MicroGuard FSM-140+CAP+HEAD Fuel Water Separator", code: "FSM-140+CAP+HEAD", image: "./images/fsm/fsm-140-cap-head.jpg", crossRef: [] },
-            { id: 13, name: "MicroGuard FSM-140 WITH CAP Fuel Water Separator", code: "FSM-140 WITH CAP", image: "./images/fsm/fsm-140-with-cap.jpg", crossRef: [] },
-            { id: 14, name: "MicroGuard FSM-003 Fuel Water Separator", code: "FSM-003", image: "./images/fsm/fsm-003.jpg", crossRef: [] },
-            { id: 15, name: "MicroGuard FSM-095 Fuel Water Separator", code: "FSM-095", image: "./images/fsm/fsm-095.jpg", crossRef: [] },
-            { id: 16, name: "MicroGuard FSM-641 Fuel Water Separator", code: "FSM-641", image: "./images/fsm/fsm-641.jpg", crossRef: [] },
-            { id: 17, name: "MicroGuard FSM-732 Fuel Water Separator", code: "FSM-732", image: "./images/fsm/fsm-732.jpg", crossRef: [] },
-            { id: 18, name: "MicroGuard FSM-701 Fuel Water Separator", code: "FSM-701", image: "./images/fsm/fsm-701.jpg", crossRef: [] },
-            { id: 19, name: "MicroGuard FSM-222 Fuel Water Separator", code: "FSM-222", image: "./images/fsm/fsm-222.jpg", crossRef: [] },
-            { id: 20, name: "MicroGuard FSM-333 Fuel Water Separator", code: "FSM-333", image: "./images/fsm/fsm-333.jpg", crossRef: [] },
-            { id: 21, name: "MicroGuard FSM-735 Fuel Water Separator", code: "FSM-735", image: "./images/fsm/fsm-735.jpg", crossRef: [] },
-            { id: 22, name: "MicroGuard FSM-425 Fuel Water Separator", code: "FSM-425", image: "./images/fsm/fsm-425.jpg", crossRef: [] },
-            { id: 23, name: "MicroGuard FSM-625 Fuel Water Separator", code: "FSM-625", image: "./images/fsm/fsm-625.jpg", crossRef: [] },
-            { id: 24, name: "MicroGuard FSM-426 Fuel Water Separator", code: "FSM-426", image: "./images/fsm/fsm-426.jpg", crossRef: [] },
-            { id: 25, name: "MicroGuard FSM-426 WITH CAP Fuel Water Separator", code: "FSM-426 WITH CAP", image: "./images/fsm/fsm-426-with-cap.jpg", crossRef: [] },
-            { id: 26, name: "MicroGuard FSM-148(B/B) Fuel Water Separator", code: "FSM-148(B/B)", image: "./images/fsm/fsm-148.jpg", crossRef: [] },
-            { id: 27, name: "MicroGuard FSM-652 Fuel Water Separator", code: "FSM-652", image: "./images/fsm/fsm-652.jpg", crossRef: [] },
-            { id: 28, name: "MicroGuard FSM-40N FILTER WITH CAP Fuel Water Separator", code: "FSM-40N FILTER WITH CAP", image: "./images/fsm/fsm-40n-filter-cap.jpg", crossRef: [] },
-            { id: 29, name: "MicroGuard FSM-40N ONLY HEAD Fuel Water Separator", code: "FSM-40N ONLY HEAD", image: "./images/fsm/fsm-40n-only-head.jpg", crossRef: [] },
-            { id: 30, name: "MicroGuard FSM-40N WITH HEAD AND CAP Fuel Water Separator", code: "FSM-40N WITH HEAD AND CAP", image: "./images/fsm/fsm-40n-head-cap.jpg", crossRef: [] },
-            { id: 31, name: "MicroGuard FSN-40N ONLY CAP Fuel Water Separator", code: "FSN-40N ONLY CAP", image: "./images/fsm/fsn-40n-only-cap.jpg", crossRef: [] },
-            { id: 32, name: "MicroGuard FSM-241 Fuel Water Separator", code: "FSM-241", image: "./images/fsm/fsm-241.jpg", crossRef: [] },
-            { id: 33, name: "MicroGuard FSM-242 Fuel Water Separator", code: "FSM-242", image: "./images/fsm/fsm-242.jpg", crossRef: [] }
+            { id: 1, name: "MicroGuard FSM-003 (ST28003)", code: "FSM-003", image: "./images/fsm/fsm-003.jpg", crossRef: ["F 7B 029 00", "FS19654", "220747709902", "FS1003", "F7B02900"] },
+            { id: 2, name: "MicroGuard FSM-40N ONLY CAP", code: "FSM-40N-ONLY-CAP", image: "./images/fsm/fsm-40n-only-cap.jpg", crossRef: ["CAP"] },
+            // { id: 3, name: "MicroGuard FSM-40N ONLY FILTER", code: "FSM-40N-ONLY-FILTER", image: "./images/fsm/fsm-40n-only-filter.jpg", crossRef: [] },
+
+            { id: 4, name: "MicroGuard FSM-40N ONLY HEAD", code: "FSM-40N-ONLY-HEAD", image: "./images/fsm/fsm-40n-only-head.jpg", crossRef: ["ONLY HEAD"] },
+            { id: 5, name: "MicroGuard FSM-40N WITH CAP", code: "FSM-40N-WITH-CAP", image: "./images/fsm/fsm-40n-with-cap.jpg", crossRef: [] },
+            { id: 6, name: "MicroGuard FSM-40N WITH HEAD AND CAP", code: "FSM-40N-WITH-HEAD-AND-CAP", image: "./images/fsm/fsm-40n-with-head-and-cap.jpg", crossRef: [] },
+            { id: 7, name: "MicroGuard FSM-095", code: "FSM-095", image: "./images/fsm/fsm-095.jpg", crossRef: ["FS19674", "F002H22095", "F002H24858", "252709119902", "ID307530", "P7B00022"] },
+            // { id: 8, name: "MicroGuard FSM-140 (CAP) ST-21350B", code: "FSM-140", image: "./images/fsm/fsm-140-cap-st21350b.jpg", crossRef: [] },
+            // { id: 9, name: "MicroGuard FSM-140 (CAP+HEAD) ST-21350B", code: "FSM-140", image: "./images/fsm/fsm-140-cap-head-st21350b.jpg", crossRef: [] },
+            // { id: 10, name: "MicroGuard FSM-140 (ONLY CAP)", code: "FSM-140", image: "./images/fsm/fsm-140-only-cap.jpg", crossRef: [] },
+            // { id: 11, name: "MicroGuard FSM-140 (ONLY HEAD)", code: "FSM-140", image: "./images/fsm/fsm-140-only-head.jpg", crossRef: [] },
+            // { id: 12, name: "MicroGuard FSM-140", code: "FSM-140", image: "./images/fsm/fsm-140.jpg", crossRef: [] },
+            { id: 13, name: "MicroGuard FSM-148", code: "FSM-148", image: "./images/fsm/fsm-148.jpg", crossRef: ["A4004770002", "DC"] },
+            { id: 14, name: "MicroGuard FSM-222", code: "FSM-222", image: "./images/fsm/fsm-222.jpg", crossRef: ["28323301", "KL1073", "PI 387100199", "253409110120"] },
+            { id: 15, name: "MicroGuard FSM-275 (12 VALVE)", code: "FSM-275-(12-VALVE)", image: "./images/fsm/fsm-275.jpg", crossRef: ["FS-1275 WITH DRAIN PLUG", "278607989914", "278607989916", "282947100119"] },
+            { id: 16, name: "MicroGuard FSM-306", code: "FSM-306", image: "./images/fsm/fsm-306.jpg", crossRef: ["F002H20306", "F002 H20 364", "BOSCH", "FS19599", "3H.132.01.0.00", "02.0.00"] },
+            { id: 17, name: "MicroGuard FSM-333", code: "FSM-333", image: "./images/fsm/fsm-333.jpg", crossRef: ["09110117", "KL 1071", "PI387000199", "253409110117"] },
+            { id: 18, name: "MicroGuard FSM-400", code: "FSM-400", image: "./images/fsm/fsm-400.jpg", crossRef: ["FS19671", "FHN0400", "ID366078", "PHJ00004"] },
+            { id: 19, name: "MicroGuard FSM-425", code: "FSM-425", image: "./images/fsm/fsm-425.jpg", crossRef: ["FHJ01400", "FS20283"] },
+            // { id: 20, name: "MicroGuard FSM-426 (ONLY CAP)", code: "FSM-426", image: "./images/fsm/fsm-426-only-cap.jpg", crossRef: [] },
+
+            { id: 21, name: "MicroGuard FSM-426 (ONLY FILTER)", code: "FSM-426", image: "./images/fsm/fsm-426.jpg", crossRef: [] },
+            { id: 22, name: "MicroGuard FSM-426 WITH CAP", code: "FSM-426-WITH-CAP", image: "./images/fsm/fsm-426-with-cap.jpg", crossRef: [] },
+            { id: 23, name: "MicroGuard FSM-625", code: "FSM-625", image: "./images/fsm/fsm-625.jpg", crossRef: ["FHJ01600"] },
+            { id: 24, name: "MicroGuard FSM-634", code: "FSM-634", image: "./images/fsm/fsm-634.jpg", crossRef: ["FS-19634", "4962810", "ID320704"] },
+            { id: 25, name: "MicroGuard FSM-636", code: "FSM-636", image: "./images/fsm/fsm-636.jpg", crossRef: ["F8835100", "FS 19636", "FHJ02100"] },
+            { id: 26, name: "MicroGuard FSM-641", code: "FSM-641", image: "./images/fsm/fsm-641.jpg", crossRef: ["FS19641", "WS-17", "288047704904", "01492932"] },
+            { id: 27, name: "MicroGuard FSM-644V (24 VALVE)", code: "FSM-644V", image: "./images/fsm/fsm-644v.jpg", crossRef: ["FS-19644V WITH SENSOR", "ID320451", "ID364170", "252509120239", "252509120240", "252509120235", "252509120264"] },
+            { id: 28, name: "MicroGuard FSM-652", code: "FSM-652", image: "./images/fsm/fsm-652.jpg", crossRef: ["FS19652"] },
+            { id: 29, name: "MicroGuard FSM-657V", code: "FSM-657V", image: "./images/fsm/fsm-657v.jpg", crossRef: ["FS-19657V WITH SENSOR", "5292575", "5293068", "278607989965", "278607989954"] },
+            // { id: 30, name: "MicroGuard FSM-660 (WITH KNOB)", code: "FSM-660", image: "./images/fsm/fsm-660-with-knob.jpg", crossRef: [] },
+
+            { id: 31, name: "MicroGuard FSM-660 (WITHOUT KNOB)", code: "FSM-660-WITHOUT-KNOB", image: "./images/fsm/fsm-660.jpg", crossRef: ["252709120259", "8050134", "252709120258"] },
+            { id: 32, name: "MicroGuard FSM-662", code: "FSM-662", image: "./images/fsm/fsm-662.jpg", crossRef: ["FS-19662", "278609110106", "9909", "5000549", "TAE-570609119901", "570609110108", "FLG-FS19665", "5014094"] },
+            { id: 33, name: "MicroGuard FSM-700", code: "FSM-700", image: "./images/fsm/fsm-700.jpg", crossRef: ["FS19669", "FHJ00700", "5010516"] },
+            { id: 34, name: "MicroGuard FSM-701", code: "FSM-701", image: "./images/fsm/fsm-701.jpg", crossRef: ["F002H22012"] },
+            { id: 35, name: "MicroGuard FSM-732", code: "FSM-732", image: "./images/fsm/fsm-732.jpg", crossRef: ["FS-19732", "288047704904", "WS-02-TP"] },
+            { id: 36, name: "MicroGuard FSM-735", code: "FSM-735", image: "./images/fsm/fsm-735.jpg", crossRef: ["23013839"] }
         ];
 
 
@@ -646,30 +655,13 @@
         // Load navbar and footer
         loadHTML("navbar", "navbar.html");
         loadHTML("footer", "footer.html");
+        loadHTML("scroll", "scroll.html");
     </script>
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0); 
     </script>
-    <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        });
-
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

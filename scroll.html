@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>scroll</title>
     <style>
         .scroll-top {
@@ -39,6 +41,42 @@
             background: #e55a0f;
             transform: translateY(-3px) scale(1.1);
         }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 110px;
+            /* a bit above the scroll button */
+            right: 40px;
+            background-color: #25d366;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .whatsapp-button img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .whatsapp-button.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 
@@ -46,15 +84,24 @@
     <button id="scrollTopBtn" class="scroll-top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <a href="https://wa.me/919876543210" id="whatsappBtn" class="whatsapp-button" target="_blank"
+        aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" />
+    </a>
+
 </body>
 <script>
     const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const whatsappBtn = document.getElementById("whatsappBtn");
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 200) {
             scrollTopBtn.classList.add("show");
+            whatsappBtn.classList.add("show");
         } else {
             scrollTopBtn.classList.remove("show");
+            whatsappBtn.classList.remove("show");
         }
     });
 
@@ -64,7 +111,6 @@
             behavior: "smooth"
         });
     });
-
 </script>
 
 </html>

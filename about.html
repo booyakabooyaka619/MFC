@@ -995,12 +995,8 @@
         </section>
     </main>
 
+    <div id="scroll"></div>
     <div id="footer"></div>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script>
         // Utility to load HTML and execute its scripts
@@ -1030,6 +1026,11 @@
         // Load navbar and footer
         loadHTML("navbar", "navbar.html");
         loadHTML("footer", "footer.html");
+        loadHTML("scroll", "scroll.html");
+    </script>
+
+    <script>
+
 
         // Scroll animations
         const observerOptions = {
@@ -1050,23 +1051,7 @@
             observer.observe(el);
         });
 
-        // Scroll to top functionality
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        });
-
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

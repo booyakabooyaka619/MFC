@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>MicroGuard Urea Filters - Professional Automotive Parts</title>
     <meta name="description"
         content="Premium urea filters from MicroGuard Filters Corp - High efficiency automotive filtration solutions">
@@ -486,6 +488,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <div id="scroll"></div>
     <div id="footer"></div>
 
     <!-- <section class="bottom-section">
@@ -499,17 +502,18 @@
     <script>
         // Product data
         const products = [
-            { id: 1, name: "MicroGuard UFM-101 Urea Filter", code: "UFM-101", image: "./images/ufm/ufm-101.jpg", crossRef: [] },
-            { id: 2, name: "MicroGuard UFM-102 Urea Filter", code: "UFM-102", image: "./images/ufm/ufm-102.jpg", crossRef: [] },
-            { id: 3, name: "MicroGuard UFM-103 Urea Filter", code: "UFM-103", image: "./images/ufm/ufm-103.jpg", crossRef: [] },
-            { id: 4, name: "MicroGuard UFM-104 Urea Filter", code: "UFM-104", image: "./images/ufm/ufm-104.jpg", crossRef: [] },
-            { id: 5, name: "MicroGuard UFM-105 Urea Filter", code: "UFM-105", image: "./images/ufm/ufm-105.jpg", crossRef: [] },
-            { id: 6, name: "MicroGuard UFM-106 Urea Filter", code: "UFM-106", image: "./images/ufm/ufm-106.jpg", crossRef: [] },
-            { id: 7, name: "MicroGuard UFM-107 Urea Filter", code: "UFM-107", image: "./images/ufm/ufm-107.jpg", crossRef: [] },
-            { id: 8, name: "MicroGuard CFM-1313 Urea Filter", code: "CFM-1313", image: "./images/ufm/cfm-1313.jpg", crossRef: [] },
-            { id: 9, name: "MicroGuard UFM-106 WITH ASSEMBLY Urea Filter", code: "UFM-106 WITH ASSEMBLY", image: "./images/ufm/ufm-106-assembly.jpg", crossRef: [] },
+            { id: 1, name: "MicroGuard UFM-101 Urea Filter", code: "UFM-101", image: "./images/ufm/ufm-101.jpg", crossRef: ["278614119917 (BS-4)", "5027256"] },
+            { id: 2, name: "MicroGuard UFM-102 Urea Filter", code: "UFM-102", image: "./images/ufm/ufm-102.jpg", crossRef: ["278614999801 (BS-4)", "5030843"] },
+            { id: 3, name: "MicroGuard UFM-103 Urea Filter", code: "UFM-103", image: "./images/ufm/ufm-103.jpg", crossRef: ["UREA FILTER MAHINDRA NAVISTAR"] },
+            { id: 4, name: "MicroGuard UFM-104 Urea Filter", code: "UFM-104", image: "./images/ufm/ufm-104.jpg", crossRef: ["5034263", "A051L411", "573714999858"] },
+            { id: 5, name: "MicroGuard UFM-105 Urea Filter", code: "UFM-105", image: "./images/ufm/ufm-105.jpg", crossRef: ["5034122", "A059Z389", "573714119921"] },
+            { id: 6, name: "MicroGuard UFM-106 Urea Filter", code: "UFM-106", image: "./images/ufm/ufm-106.jpg", crossRef: ["UREA FILTER BHARAT BENZ"] },
+            { id: 7, name: "MicroGuard UFM-107 Urea Filter", code: "UFM-107", image: "./images/ufm/ufm-107.jpg", crossRef: ["253414110379"] },
+            // { id: 8, name: "MicroGuard CFM-1313 Urea Filter", code: "CFM-1313", image: "./images/ufm/cfm-1313.jpg", crossRef: [] },
+            { id: 9, name: "MicroGuard UFM-106 WITH ASSEMBLY Urea Filter", code: "UFM-106-ASSEMBLY", image: "./images/ufm/ufm-106-with-assembly.jpg", crossRef: ["UREA FILTER BHARAT BENZ"] },
             { id: 10, name: "MicroGuard UFM-108 Urea Filter", code: "UFM-108", image: "./images/ufm/ufm-108.jpg", crossRef: [] }
         ];
+
 
 
 
@@ -623,30 +627,13 @@
         // Load navbar and footer
         loadHTML("navbar", "navbar.html");
         loadHTML("footer", "footer.html");
+        loadHTML("scroll", "scroll.html");
     </script>
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0); 
     </script>
-    <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        });
-
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

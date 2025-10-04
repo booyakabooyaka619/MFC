@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>MicroGuard Fuel Filters - Professional Automotive Parts</title>
     <meta name="description"
         content="Premium fuel filters from MicroGuard Filters Corp - High efficiency automotive filtration solutions">
@@ -486,6 +488,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <div id="scroll"></div>
     <div id="footer"></div>
 
     <!-- <section class="bottom-section">
@@ -499,29 +502,27 @@
     <script>
         // Product data
         const products = [
-            { id: 1, name: "MicroGuard FFM-421 Oil Filter", code: "FFM-421", image: "./images/ffm/ffm-421.jpg", crossRef: [] },
-            { id: 2, name: "MicroGuard FFM-1000 Oil Filter", code: "FFM-1000", image: "./images/ffm/ffm-1000.jpg", crossRef: [] },
-            { id: 3, name: "MicroGuard FFM-581 Oil Filter", code: "FFM-581", image: "./images/ffm/ffm-581.jpg", crossRef: [] },
-            { id: 4, name: "MicroGuard FFM-052 Oil Filter", code: "FFM-052", image: "./images/ffm/ffm-052.jpg", crossRef: [] },
-            { id: 5, name: "MicroGuard FFM-460 Oil Filter", code: "FFM-460", image: "./images/ffm/ffm-460.jpg", crossRef: [] },
-            { id: 6, name: "MicroGuard FFM-120 Oil Filter", code: "FFM-120", image: "./images/ffm/ffm-120.jpg", crossRef: [] },
-            { id: 7, name: "MicroGuard FFM-888 Oil Filter", code: "FFM-888", image: "./images/ffm/ffm-888.jpg", crossRef: [] },
-            { id: 8, name: "MicroGuard FFM-296 Oil Filter", code: "FFM-296", image: "./images/ffm/ffm-296.jpg", crossRef: [] },
-            { id: 9, name: "MicroGuard FFM-606 Oil Filter", code: "FFM-606", image: "./images/ffm/ffm-606.jpg", crossRef: [] },
-            { id: 10, name: "MicroGuard FFM-607 Oil Filter", code: "FFM-607", image: "./images/ffm/ffm-607.jpg", crossRef: [] },
-            { id: 11, name: "MicroGuard FFM-404 Oil Filter", code: "FFM-404", image: "./images/ffm/ffm-404.jpg", crossRef: [] },
-            { id: 12, name: "MicroGuard FFM-405 Oil Filter", code: "FFM-405", image: "./images/ffm/ffm-405.jpg", crossRef: [] },
-            { id: 13, name: "MicroGuard FFM-609 Oil Filter", code: "FFM-609", image: "./images/ffm/ffm-609.jpg", crossRef: [] },
-            { id: 14, name: "MicroGuard FFM-407 Oil Filter", code: "FFM-407", image: "./images/ffm/ffm-407.jpg", crossRef: [] },
-            { id: 15, name: "MicroGuard FFM-380 Oil Filter", code: "FFM-380", image: "./images/ffm/ffm-380.jpg", crossRef: [] },
-            { id: 16, name: "MicroGuard FFM-889 Oil Filter", code: "FFM-889", image: "./images/ffm/ffm-889.jpg", crossRef: [] },
-            { id: 17, name: "MicroGuard FFM-540 Oil Filter", code: "FFM-540", image: "./images/ffm/ffm-540.jpg", crossRef: [] },
-            { id: 18, name: "MicroGuard FFM-555 Oil Filter", code: "FFM-555", image: "./images/ffm/ffm-555.jpg", crossRef: [] },
-            { id: 19, name: "MicroGuard FFM-461 Oil Filter", code: "FFM-461", image: "./images/ffm/ffm-461.jpg", crossRef: [] },
-            { id: 20, name: "MicroGuard FFM-709 Oil Filter", code: "FFM-709", image: "./images/ffm/ffm-709.jpg", crossRef: [] },
-            { id: 21, name: "MicroGuard FFM-462 Oil Filter", code: "FFM-462", image: "./images/ffm/ffm-462.jpg", crossRef: [] },
-            { id: 22, name: "MicroGuard FFM-147 B/B Oil Filter", code: "FFM-147 B/B", image: "./images/ffm/ffm-147.jpg", crossRef: [] },
-            { id: 23, name: "MicroGuard FFM-50N Oil Filter", code: "FFM-50N", image: "./images/ffm/ffm-50n.jpg", crossRef: [] }
+            { id: 1, name: "MicroGuard FFM-147 Oil Filter", code: "FFM-147", image: "./images/ffm/ffm-147.jpg", crossRef: ["A 4004770401"] },
+            { id: 2, name: "MicroGuard FFM-120 Oil Filter", code: "FFM-120", image: "./images/ffm/ffm-120.jpg", crossRef: ["S6056 NE2 SOFIMA", "DCA 400 092 00 05"] },
+            { id: 3, name: "MicroGuard FFM-296 Oil Filter", code: "FFM-296", image: "./images/ffm/ffm-296.jpg", crossRef: ["Diesel Filter CAV", "5535"] },
+            { id: 4, name: "MicroGuard FFM-380 Oil Filter", code: "FFM-380", image: "./images/ffm/ffm-380.jpg", crossRef: ["P550632", "FF5380", "PU1046/1x", "0000901551", "ST-21016", "901251"] },
+            { id: 5, name: "MicroGuard FFM-404 Oil Filter", code: "FFM-404", image: "./images/ffm/ffm-404.jpg", crossRef: ["FF 5524", "9451037405"] },
+            { id: 6, name: "MicroGuard FFM-405 Oil Filter", code: "FFM-405", image: "./images/ffm/ffm-405.jpg", crossRef: ["FF 5523", "9451037404"] },
+            { id: 7, name: "MicroGuard FFM-407 Oil Filter", code: "FFM-407", image: "./images/ffm/ffm-407.jpg", crossRef: ["FF 5533", "ID201628", "9451037407", "F4003300"] },
+            { id: 8, name: "MicroGuard FFM-460 Oil Filter", code: "FFM-460", image: "./images/ffm/ffm-460.jpg", crossRef: ["278609119910", "FS2011700", "FS20117"] },
+            { id: 9, name: "MicroGuard FFM-461 Oil Filter", code: "FFM-461", image: "./images/ffm/ffm-461.jpg", crossRef: ["278609119914", "5030529", "141107406134"] },
+            { id: 10, name: "MicroGuard FFM-462 Oil Filter", code: "FFM-462", image: "./images/ffm/ffm-462.jpg", crossRef: ["570109117704"] },
+            { id: 11, name: "MicroGuard FFM-540 Oil Filter", code: "FFM-540", image: "./images/ffm/ffm-540.jpg", crossRef: ["FF-5540", "OEM 4345001", "CUMMINS5317717", "ID328305", "0305DAV03030N", "FF-123"] },
+            { id: 12, name: "MicroGuard FFM-555 Oil Filter", code: "FFM-555", image: "./images/ffm/ffm-555.jpg", crossRef: ["278609999828", "5403508", "FF5551"] },
+            { id: 13, name: "MicroGuard FFM-581 Oil Filter", code: "FFM-581", image: "./images/ffm/ffm-581.jpg", crossRef: ["305DAB00581N", "9188-506", "FF-113", "P7B00030", "279709119901"] },
+            { id: 14, name: "MicroGuard FFM-606 Oil Filter", code: "FFM-606", image: "./images/ffm/ffm-606.jpg", crossRef: ["FF 05526", "9451037406"] },
+            { id: 15, name: "MicroGuard FFM-607 Oil Filter", code: "FFM-607", image: "./images/ffm/ffm-607.jpg", crossRef: ["1457431003", "FF 5525"] },
+            { id: 16, name: "MicroGuard FFM-421 Oil Filter", code: "FFM-421", image: "./images/ffm/ffm-421.jpg", crossRef: ["FF-5544", "5332229", "278607989967"] },
+            { id: 17, name: "MicroGuard FFM-709 Oil Filter", code: "FFM-709", image: "./images/ffm/ffm-709.jpg", crossRef: ["FF 5534", "ID 206984", "F4003400", "9451037409", "886309000034"] },
+            { id: 18, name: "MicroGuard FFM-50N Oil Filter", code: "FFM-50N", image: "./images/ffm/ffm-50n.jpg", crossRef: ["305DAV00350N", "KC 467"] },
+            { id: 19, name: "MicroGuard FFM-1000 Oil Filter", code: "FFM-1000", image: "./images/ffm/ffm-1000.jpg", crossRef: ["50110283", "FHJ01000", "FF5552"] },
+            { id: 20, name: "MicroGuard FFM-888 Oil Filter", code: "FFM-888", image: "./images/ffm/ffm-888.jpg", crossRef: ["FF-571000000000", "570909129904 (YELLOW)", "FS20308", "P7B00048"] },
+            { id: 21, name: "MicroGuard FFM-052 Oil Filter", code: "FFM-052", image: "./images/ffm/ffm-052.jpg", crossRef: ["FF-5052", "278618139904/278609119904"] }
         ];
 
 
@@ -636,30 +637,13 @@
         // Load navbar and footer
         loadHTML("navbar", "navbar.html");
         loadHTML("footer", "footer.html");
+        loadHTML("scroll", "scroll.html");
     </script>
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0); 
     </script>
-    <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        });
-
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

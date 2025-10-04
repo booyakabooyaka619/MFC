@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
     <title>MicroGuard Steering Filters - Professional Automotive Parts</title>
     <meta name="description"
         content="Premium steering filters from MicroGuard Filters Corp - High efficiency automotive filtration solutions">
@@ -486,6 +488,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <div id="scroll"></div>
     <div id="footer"></div>
 
     <!-- <section class="bottom-section">
@@ -499,12 +502,48 @@
     <script>
         // Product data
         const products = [
-            { id: 1, name: "MicroGuard STM-851 Steering Filter", code: "STM-851", image: "./images/stm/stm-851.jpg", crossRef: [] },
-            { id: 2, name: "MicroGuard STM-852 Steering Filter", code: "STM-852", image: "./images/stm/stm-852.jpg", crossRef: [] },
-            { id: 3, name: "MicroGuard STM-803 Steering Filter", code: "STM-803", image: "./images/stm/stm-803.jpg", crossRef: [] },
-            { id: 4, name: "MicroGuard STM-806 Steering Filter", code: "STM-806", image: "./images/stm/stm-806.jpg", crossRef: [] },
-            { id: 5, name: "MicroGuard STM-801 Steering Filter", code: "STM-801", image: "./images/stm/stm-801.jpg", crossRef: [] },
-            { id: 6, name: "MicroGuard STM-804 Steering Filter", code: "STM-804", image: "./images/stm/stm-804.jpg", crossRef: [] }
+            {
+                id: 1,
+                name: "MicroGuard STM-851 Steering Filter",
+                code: "STM-851",
+                image: "./images/stm/stm-851.jpg",
+                crossRef: ["F8824500", "FF5479", "278609999951", "ID301958"]
+            },
+            {
+                id: 2,
+                name: "MicroGuard STM-852 Steering Filter",
+                code: "STM-852",
+                image: "./images/stm/stm-852.jpg",
+                crossRef: ["FF 5522", "278609999920"]
+            },
+            {
+                id: 3,
+                name: "MicroGuard STM-803 Steering Filter",
+                code: "STM-803",
+                image: "./images/stm/stm-803.jpg",
+                crossRef: ["42200007", "277046609901", "5006457"]
+            },
+            {
+                id: 4,
+                name: "MicroGuard STM-806 Steering Filter",
+                code: "STM-806",
+                image: "./images/stm/stm-806.jpg",
+                crossRef: ["P 2405339", "41200006", "5007109"]
+            },
+            {
+                id: 5,
+                name: "MicroGuard STM-801 Steering Filter",
+                code: "STM-801",
+                image: "./images/stm/stm-801.jpg",
+                crossRef: ["HF-35470", "7632141102"]
+            },
+            {
+                id: 6,
+                name: "MicroGuard STM-804 Steering Filter",
+                code: "STM-804",
+                image: "./images/stm/stm-804.jpg",
+                crossRef: ["SFM-112", "Rane TRW 19105200", "275144169901", "5012155"]
+            }
         ];
 
 
@@ -619,30 +658,13 @@
         // Load navbar and footer
         loadHTML("navbar", "navbar.html");
         loadHTML("footer", "footer.html");
+        loadHTML("scroll", "scroll.html");
     </script>
     <script>
         window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0); 
     </script>
-    <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
-            }
-        });
-
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
