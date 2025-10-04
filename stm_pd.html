@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steering Filters - Hydraulic & Power Steering Protection | High Efficiency Filtration</title>
+    <meta name="description"
+        content="Ensure smooth hydraulic and power steering operation with MicroGuard steering filters. High-efficiency media removes contaminants, protects pumps and valves, and prolongs system life." />
+    <meta name="keywords"
+        content="steering filters, hydraulic protection, power steering filters, hydraulic fluid filtration, high efficiency filtration" />
+    <meta name="author" content="Premium Steering Filters" />
+
+    <meta property="og:title"
+        content="Steering Filters - Hydraulic & Power Steering Protection | High Efficiency Filtration" />
+    <meta property="og:description"
+        content="Ensure smooth hydraulic and power steering operation with MicroGuard steering filters. High-efficiency media removes contaminants, protects pumps and valves, and prolongs system life." />
+    <meta property="og:type" content="website" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+
+
+        :root {
+            --background: 0 0% 98%;
+            --foreground: 220 15% 15%;
+            --card: 0 0% 100%;
+            --card-foreground: 220 15% 15%;
+            --primary: 221 83% 53%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 220 15% 15%;
+            --muted: 220 14% 96%;
+            --muted-foreground: 220 8.9% 46%;
+            --accent: 22 88% 62%;
+            --accent-foreground: 0 0% 98%;
+            --border: 220 13% 91%;
+            --radius: 0.75rem;
+
+            /* Industrial color palette */
+            --industrial-blue: 221 83% 53%;
+            --industrial-blue-dark: 221 83% 43%;
+            --industrial-blue-light: 221 83% 63%;
+            --industrial-gray: 220 8.9% 46%;
+            --industrial-gray-light: 220 14% 96%;
+
+            /* Filter accent colors */
+            --filter-orange: 22 88% 62%;
+            --filter-red: 0 72% 51%;
+            --filter-yellow: 43 96% 56%;
+
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, hsl(var(--industrial-blue)) 0%, hsl(var(--industrial-blue-dark)) 100%);
+            --gradient-section: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--industrial-gray-light)) 100%);
+            --gradient-accent: linear-gradient(135deg, hsl(var(--filter-orange)) 0%, hsl(var(--filter-red)) 100%);
+
+            /* Shadows */
+            --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-hero: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --shadow-filter: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+            /* Animations */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Animation classes */
+        .slide-in-left {
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide-in-right {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide-in-up {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide-in-visible {
+            transform: translateX(0) translateY(0);
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            /* min-height: 90vh; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (min-width: 1201px) {
+            .hero-section {
+                height: 100vh;
+            }
+
+            .hero-image {
+                padding-top: 70px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-section {
+                height: 60vh;
+            }
+
+            .hero-image {
+                padding-top: 0px;
+            }
+        }
+
+
+
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: bold;
+            color: hsl(var(--primary-foreground));
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-description {
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            color: hsl(var(--primary-foreground) / 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: var(--gradient-accent);
+            color: hsl(var(--accent-foreground));
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            box-shadow: var(--shadow-hero);
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #001a66, #e66c16);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+            margin-bottom: 1em;
+        }
+
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 1.9em;
+            }
+        }
+
+
+        .section-description {
+            font-size: 1.25rem;
+            color: hsl(var(--muted-foreground));
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--gradient-section);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .about-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+        }
+
+        .about-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .about-text h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text p {
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-filter);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Filter Types Section */
+        .filter-types-section {
+            background: var(--gradient-section);
+        }
+
+        .filter-types-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .filter-types-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .filter-type-card {
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .filter-type-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-filter);
+        }
+
+        .filter-type-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .filter-type-description {
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Product Gallery Section */
+        .gallery-section {
+            background: hsl(var(--background));
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .slider-track {
+            display: flex;
+            animation: slide 20s infinite linear;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .slide {
+            min-width: 300px;
+            margin-right: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-filter);
+            transition: var(--transition-smooth);
+        }
+
+        .slide:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hero);
+        }
+
+        .slide-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            transition: var(--transition-smooth);
+            padding-top: 20px;
+        }
+
+        .slide:hover .slide-image {
+            transform: scale(1.1);
+        }
+
+        .slide-content {
+            padding: 1.5rem;
+            text-align: center;
+
+        }
+
+        .slide-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-description {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Technical Section */
+        .technical-section {
+            background: var(--gradient-section);
+        }
+
+        .technical-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .technical-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .technical-card {
+            text-align: center;
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .technical-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-filter);
+        }
+
+        .technical-metric {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: hsl(var(--primary));
+            margin-bottom: 0.5rem;
+        }
+
+        .technical-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .technical-description {
+            color: hsl(var(--muted-foreground));
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #e55a0f;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .cta2 {
+            width: 100%;
+            background: linear-gradient(45deg, #0d2235, #09223b, #2f3841);
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cta2-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            /* allows stacking on smaller screens */
+        }
+
+        .cta2 h1 {
+            font-family: Gill Sans, sans-serif;
+            color: #fff;
+            font-size: 2.8rem;
+            flex: 1 1 500px;
+            /* flexible resizing */
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .vertline {
+            width: 3px;
+            height: 100px;
+            background-color: #fff;
+            flex-shrink: 0;
+        }
+
+        .button-19 {
+            align-items: center;
+            background-color: #fff;
+            border: 0;
+            border-radius: 100px;
+            box-sizing: border-box;
+            color: #203444;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 1rem;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 20px;
+            padding: 15px 30px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .button-19:hover,
+        .button-19:focus {
+            background-color: #111b24;
+            color: #ffffff;
+            border: 1px solid #fff;
+        }
+
+        .button-19 .c-arrow {
+            font-size: 1.5rem;
+            padding-left: 8px;
+        }
+
+        /* Tablets */
+        @media (max-width: 1200px) {
+            .cta2 h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .cta2-inner {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .vertline {
+                display: none;
+                /* hide decorative line on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg slide-in-up">
+            <img src="./images/stm/steering_filter_readmore-Photoroom.png" alt="Premium Steering Filters Collection"
+                class="hero-image" />
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content reveal reveal-right">
+            <h1 class="hero-title slide-in-up">Premium Steering Filters</h1>
+            <p class="hero-description slide-in-up">
+                Advanced filtration systems designed to protect hydraulic steering systems by removing contaminants,
+                ensuring smooth and responsive steering performance across automotive, heavy-duty, and industrial
+                machinery.
+            </p>
+            <div class="hero-actions slide-in-up">
+                <button id="exploreBtn" class="btn-primary">Explore Features</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">What Are Steering Filters?</h2>
+                <p class="section-description">
+                    Steering filters are critical components in hydraulic steering systems. They remove dirt, metal
+                    particles, and other contaminants from hydraulic fluid, protecting pumps, valves, and steering
+                    actuators. This ensures smooth operation, precise control, and extended system life, even under
+                    high-load or extreme conditions.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-item slide-in-left">
+                    <div class="about-icon">🔧</div>
+                    <div class="about-text">
+                        <h3>System Protection</h3>
+                        <p>Filters prevent abrasive particles from damaging pumps, valves, and steering actuators,
+                            reducing maintenance costs and extending system life.</p>
+                    </div>
+                </div>
+
+                <div class="about-item slide-in-right">
+                    <div class="about-icon">⚙️</div>
+                    <div class="about-text">
+                        <h3>Consistent Steering Performance</h3>
+                        <p>Maintains clean hydraulic fluid, ensuring smooth, responsive steering under all operating
+                            conditions, from light vehicles to heavy-duty machinery.</p>
+                    </div>
+                </div>
+
+                <div class="about-item slide-in-left">
+                    <div class="about-icon">🛡️</div>
+                    <div class="about-text">
+                        <h3>High Contaminant Capacity</h3>
+                        <p>Advanced filter media traps microscopic impurities while allowing optimal fluid flow, ideal
+                            for high-pressure hydraulic systems and long service intervals.</p>
+                    </div>
+                </div>
+
+                <div class="about-item slide-in-right">
+                    <div class="about-icon">💧</div>
+                    <div class="about-text">
+                        <h3>Hydraulic Fluid Integrity</h3>
+                        <p>Prevents oxidation and maintains fluid viscosity by minimizing contamination, ensuring
+                            reliable operation and reduced system wear.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-description">
+                    Precision-engineered steering filters with high-efficiency media, robust housings, and consistent
+                    flow for reliable hydraulic system performance.
+                </p>
+            </div>
+
+            <div class="features-grid reveal reveal-left">
+                <div class="feature-card slide-in-left">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">High Filtration Efficiency</h3>
+                    <p class="feature-description">Multi-layer media captures particles as small as 10 microns,
+                        protecting pumps and valves while maintaining hydraulic efficiency.</p>
+                </div>
+
+                <div class="feature-card slide-in-up">
+                    <div class="feature-icon">💨</div>
+                    <h3 class="feature-title">Optimized Flow Dynamics</h3>
+                    <p class="feature-description">Maintains steady hydraulic flow under varying pressures, ensuring
+                        responsive steering and reducing system stress.</p>
+                </div>
+
+                <div class="feature-card slide-in-right">
+                    <div class="feature-icon">⏱️</div>
+                    <h3 class="feature-title">Durable Construction</h3>
+                    <p class="feature-description">Strong steel or composite housings and heat-resistant seals ensure
+                        long service life and resistance to harsh operating environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Types Section -->
+    <section id="filter-types" class="section filter-types-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Applications & Types</h2>
+                <p class="section-description">
+                    MicroGuard Steering Filters are designed for light vehicles, commercial trucks, industrial
+                    machinery, and marine hydraulic systems, providing maximum protection and smooth operation.
+                </p>
+            </div>
+
+            <div class="filter-types-grid">
+                <div class="filter-type-card slide-in-left">
+                    <h3 class="filter-type-title">Automotive & Light Commercial</h3>
+                    <p class="filter-type-description">
+                        Compact steering filters designed for cars, vans, and small trucks, ensuring responsive and
+                        precise steering under daily driving conditions.
+                    </p>
+                </div>
+
+                <div class="filter-type-card slide-in-up">
+                    <h3 class="filter-type-title">Industrial & Heavy-Duty Vehicles</h3>
+                    <p class="filter-type-description">
+                        High-capacity filters for construction equipment, forklifts, and industrial machinery, built to
+                        handle high pressure and contaminated environments.
+                    </p>
+                </div>
+
+                <div class="filter-type-card slide-in-right">
+                    <h3 class="filter-type-title">Marine Hydraulic Systems</h3>
+                    <p class="filter-type-description">
+                        Corrosion-resistant filters designed for continuous-duty marine applications, providing clean
+                        hydraulic fluid and smooth steering performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Section -->
+    <section id="technical" class="section technical-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Technical Excellence</h2>
+                <p class="section-description">
+                    Built to meet or exceed OEM standards, MicroGuard steering filters provide consistent flow, high
+                    contaminant holding capacity, and maximum protection for hydraulic systems.
+                </p>
+            </div>
+
+            <div class="technical-grid">
+                <div class="technical-card slide-in-left">
+                    <div class="technical-metric">99%</div>
+                    <div class="technical-label">Filtration Efficiency</div>
+                    <p class="technical-description">Removes up to 99% of contaminants from hydraulic fluid, protecting
+                        pumps and actuators.</p>
+                </div>
+
+                <div class="technical-card slide-in-up">
+                    <div class="technical-metric">12,000+</div>
+                    <div class="technical-label">Service Hours</div>
+                    <p class="technical-description">Long-lasting performance even in high-demand, continuous-duty
+                        hydraulic applications.</p>
+                </div>
+
+                <div class="technical-card slide-in-right">
+                    <div class="technical-metric">250°F</div>
+                    <div class="technical-label">Temperature Resistance</div>
+                    <p class="technical-description">Withstands high hydraulic fluid temperatures without loss of
+                        efficiency or durability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta2 fade-in">
+        <div class="cta2-inner">
+            <div class="vertline"></div>
+            <h1>Explore Our Wide Range of <br>Premium MicroGuard Steering Filters</h1>
+            <a href="./stm_products.html" class="button-19" role="button">
+                EXPLORE PRODUCTS
+                <span class="c-arrow">&#8594;</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Product Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="text-center section-header slide-in-up">
+                <h2 class="section-title">Product Gallery</h2>
+                <p class="section-description">
+                    Explore our range of steering filters designed for automotive, industrial, and marine hydraulic
+                    systems.
+                </p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide">
+                        <img src="./images/stm/stm-801.png" alt="STM-801" class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">STM-801</h3>
+                            <p class="slide-description">High-efficiency steering filter for light vehicles</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/stm/stm-804.png" alt="STM-804" class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">STM-804</h3>
+                            <p class="slide-description">Compact steering filter for commercial vehicles</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/stm/stm-806.png" alt="STM-806" class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">STM-806</h3>
+                            <p class="slide-description">High-capacity filter for heavy-duty steering systems</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/stm/stm-852.jpg" alt="STM-852" class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">STM-852</h3>
+                            <p class="slide-description">Industrial steering filter with long service life</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/stm/stm-851.jpg" alt="STM-851" class="slide-image" />
+                        <div class="slide-content">
+                            <h3 class="slide-title">STM-851</h3>
+                            <p class="slide-description">Marine-grade steering filter for corrosion resistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="scroll"></div>
+    <div id="footer"></div>
+</body>
+
+
+
+<script>
+    // Utility to load HTML and execute its scripts
+    function loadHTML(containerId, file) {
+        fetch(file)
+            .then((res) => res.text())
+            .then((data) => {
+                const container = document.getElementById(containerId);
+                container.innerHTML = data;
+
+                // Run any <script> tags inside the loaded file
+                const scripts = container.querySelectorAll("script");
+                scripts.forEach((oldScript) => {
+                    const newScript = document.createElement("script");
+                    if (oldScript.src) {
+                        // External script file
+                        newScript.src = oldScript.src;
+                    } else {
+                        // Inline script
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            });
+    }
+
+    // Load navbar and footer
+    loadHTML("navbar", "navbar.html");
+    loadHTML("footer", "footer.html");
+    loadHTML("scroll", "scroll.html");
+</script>
+<script>
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up');
+        animatedElements.forEach(el => observer.observe(el));
+    }
+
+    // Smooth scroll to next section
+    function initScrollToSection() {
+        const exploreBtn = document.getElementById('exploreBtn');
+        const aboutSection = document.getElementById('about');
+
+        if (exploreBtn && aboutSection) {
+            exploreBtn.addEventListener('click', () => {
+                // Default offset
+                let offset = 0;
+
+                // If screen width is <= 1200px, add top margin offset
+                if (window.innerWidth <= 1200) {
+                    offset = 100; // adjust this value to the desired top margin
+                }
+
+                const topPosition = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top: topPosition,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    }
+
+
+    // Initialize automatic slider
+    function initSlider() {
+        const sliderTrack = document.getElementById('sliderTrack');
+        if (!sliderTrack) return;
+
+        // Clone slides for seamless loop
+        const slides = sliderTrack.children;
+        const slideCount = slides.length;
+
+        // Clone all slides and append them for seamless loop
+        for (let i = 0; i < slideCount; i++) {
+            const clone = slides[i].cloneNode(true);
+            sliderTrack.appendChild(clone);
+        }
+
+        // Pause animation on hover
+        sliderTrack.addEventListener('mouseenter', () => {
+            sliderTrack.style.animationPlayState = 'paused';
+        });
+
+        sliderTrack.addEventListener('mouseleave', () => {
+            sliderTrack.style.animationPlayState = 'running';
+        });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        initScrollAnimations();
+        initScrollToSection();
+        initSlider();
+    });
+
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', () => {
+        // Reinitialize animations if needed
+        initScrollAnimations();
+    });
+</script>
+
+<script>
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0); 
+</script>
+
+</html>
