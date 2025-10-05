@@ -396,31 +396,17 @@
     /* Fleetguard H1 with white honeycomb pattern inside the letters */
     .fleetguard-content h1 {
       font-size: 4rem;
+      color: var(--primary-color);
       font-weight: 800;
-      line-height: 1.05;
+      line-height: 1.2;
       margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      position: relative;
-
-      /* Top layer: white honeycomb SVG
-     Bottom layer: solid primary color */
-      background-image:
-        url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='60'%20height='52'%20viewBox='0%200%2060%2052'%3E%3Cpolygon%20points='30,1%2058,13%2058,39%2030,51%202,39%202,13'%20fill='none'%20stroke='white'%20stroke-width='2'%20stroke-opacity='1'/%3E%3C/svg%3E"),
-        linear-gradient(var(--primary-color), var(--primary-color));
-
-      background-repeat: repeat, no-repeat;
-      background-size: 60px 52px, 100% 100%;
-      background-position: 0 0, center;
-
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
     }
 
     @media (max-width:1200px) {
+      .fleetguard-wrapper {
+        display: none;
+      }
+
       .fleetguard-content h1 {
         font-size: 2.5rem;
         background-size: 40px 35px, 100% 100%;
@@ -670,9 +656,10 @@
 
     .parallaxComp-bg img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: 90%;
+      object-fit: contain;
       object-position: center -50px;
+      margin-top: 100px;
       /* same as your previous CSS */
     }
 
@@ -831,6 +818,8 @@
         object-fit: cover;
         object-position: center;
         transform: none !important;
+        margin-top: 0px;
+
         /* prevent accidental parallax transforms */
       }
 
@@ -1289,7 +1278,7 @@
     /* Tablets */
     @media (max-width: 1200px) {
       .cta2 h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         text-align: center;
       }
 
@@ -1545,7 +1534,7 @@
 
     <div class="parallaxComp-section" id="parallaxCompSection">
       <div class="parallaxComp-bg" id="parallaxCompBg">
-        <img src="./images/industrial-filter.png" alt="Industrial Filter" />
+        <img src="./images/bg_img31-Photoroom.png" alt="Industrial Filter" />
       </div>
 
       <!-- Mobile Promo Banner -->
@@ -1734,7 +1723,8 @@
       <div class="stickyComp-container">
         <!-- Left: Image -->
         <div class="stickyComp-imageWrapper slide-in-left">
-          <img src="./images/industrial_bg.png" alt="FleetguardFIT Technology" />
+          <img src="./images/Gemini_Generated_Image_d8whcad8whcad8wh (1)-Photoroom.png"
+            alt="FleetguardFIT Technology" />
         </div>
 
         <!-- Right: Content -->
